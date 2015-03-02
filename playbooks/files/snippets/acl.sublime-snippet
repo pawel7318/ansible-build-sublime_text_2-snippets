@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  acl: >
+    name=${1:None # ! The full path of the file or object.}
+    default=${2:False #  if the target is a directory, setting this to yes will make it the default acl for entities created inside the directory. It causes an error if name is a file.}
+    entity=${3: #  actual user or group that the ACL applies to when matching entity types user or group are selected.}
+    state=${4:query #  defines whether the ACL should be present or not.  The C(query) state gets the current acl C(present) without changing it, for use in 'register' operations.}
+    entry=${5:None #  DEPRECATED. The acl to set or remove.  This must always be quoted in the form of '<etype>:<qualifier>:<perms>'.  The qualifier may be empty for some types, but the type and perms are always requried. '-' can be used as placeholder when you do not care about permissions. This is now superceeded by entity, type and permissions fields.}
+    etype=${6:None #  the entity type of the ACL to apply, see setfacl documentation for more info.}
+    follow=${7:True #  whether to follow symlinks on the path if a symlink is encountered.}
+    permissions=${8:None #  Permissions to apply/remove can be any combination of r, w and  x (read, write and execute respectively)}
+  ]]></content>
+  <tabTrigger>an-acl</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

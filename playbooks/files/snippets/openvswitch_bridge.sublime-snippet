@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  openvswitch_bridge: >
+    bridge=${1: # ! Name of bridge to manage}
+    state=${2:present #  Whether the bridge should exist}
+    timeout=${3:5 #  How long to wait for ovs-vswitchd to respond}
+  ]]></content>
+  <tabTrigger>an-openvswitch_bridge</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

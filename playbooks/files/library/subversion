@@ -1,0 +1,58 @@
+---
+module: subversion
+short_description: Deploys a subversion repository.
+description:
+   - Deploy given repository URL / revision to dest. If dest exists, update to the specified revision, otherwise perform a checkout.
+version_added: "0.7"
+author: Dane Summers, njharman@gmail.com
+notes:
+   - Requires I(svn) to be installed on the client.
+requirements: []
+options:
+  repo:
+    description:
+      - The subversion URL to the repository.
+    required: true
+    aliases: [ name, repository ]
+    default: null
+  dest:
+    description:
+      - Absolute path where the repository should be deployed.
+    required: true
+    default: null
+  revision:
+    description:
+      - Specific revision to checkout.
+    required: false
+    default: HEAD
+    aliases: [ version ]
+  force:
+    description:
+      - If C(yes), modified files will be discarded. If C(no), module will fail if it encounters modified files.
+    required: false
+    default: "yes"
+    choices: [ "yes", "no" ]
+  username:
+    description:
+      - --username parameter passed to svn.
+    required: false
+    default: null
+  password:
+    description:
+      - --password parameter passed to svn.
+    required: false
+    default: null
+  executable:
+    required: false
+    default: null
+    version_added: "1.4"
+    description:
+      - Path to svn executable to use. If not supplied,
+        the normal mechanism for resolving binary paths will be used.
+  export:
+    required: false
+    default: "no"
+    choices: [ "yes", "no" ]
+    version_added: "1.6"
+    description:
+      - If C(yes), do export instead of checkout/update.

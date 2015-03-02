@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  win_user: >
+    state=${1:present #  Whether to create or delete a user}
+    password=${2:None # ! Password for the user (plain text)}
+    name=${3:None # ! Username of the user to manage}
+  ]]></content>
+  <tabTrigger>an-win_user</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

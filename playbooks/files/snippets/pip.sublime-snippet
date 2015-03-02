@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  pip: >
+    virtualenv=${1:None #  An optional path to a I(virtualenv) directory to install into}
+    extra_args=${2:None #  Extra arguments passed to pip.}
+    virtualenv_command=${3:virtualenv #  The command or a pathname to the command to create the virtual environment with. For example C(pyvenv), C(virtualenv), C(virtualenv2), C(~/bin/virtualenv), C(/usr/local/bin/virtualenv).}
+    chdir=${4:None #  cd into this directory before running the command}
+    requirements=${5:None #  The path to a pip requirements file}
+    name=${6:None #  The name of a Python library to install or the url of the remote package.}
+    executable=${7:None #  The explicit executable or a pathname to the executable to be used to run pip for a specific version of Python installed in the system. For example C(pip-3.3), if there are both Python 2.7 and 3.3 installations in the system and you want to run pip for the Python 3.3 installation.}
+    virtualenv_site_packages=${8:no #  Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if this setting is changed on an already existing virtual environment it will not have any effect, the environment must be deleted and newly created.}
+    state=${9:present #  The state of module}
+    version=${10:None #  The version number to install of the Python library specified in the I(name) parameter}
+  ]]></content>
+  <tabTrigger>an-pip</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

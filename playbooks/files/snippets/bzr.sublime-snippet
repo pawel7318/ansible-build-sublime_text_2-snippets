@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  bzr: >
+    dest=${1: # ! Absolute path of where the branch should be cloned to.}
+    executable=${2:None #  Path to bzr executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.}
+    version=${3:head #  What version of the branch to clone.  This can be the bzr revno or revid.}
+    force=${4:yes #  If C(yes), any modified files in the working tree will be discarded.}
+    name=${5: # ! SSH or HTTP protocol address of the parent branch.}
+  ]]></content>
+  <tabTrigger>an-bzr</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

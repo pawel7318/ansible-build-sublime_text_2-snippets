@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  fetch: >
+    dest=${1:None # ! A directory to save the file into. For example, if the I(dest) directory is C(/backup) a I(src) file named C(/etc/profile) on host C(host.example.com), would be saved into C(/backup/host.example.com/etc/profile)}
+    src=${2:None # ! The file on the remote system to fetch. This I(must) be a file, not a directory. Recursive fetching may be supported in a later release.}
+    validate_md5=${3:yes #  Verify that the source and destination md5sums match after the files are fetched.}
+    fail_on_missing=${4:no #  Makes it fails when the source file is missing.}
+    flat=${5: #  A}
+  ]]></content>
+  <tabTrigger>an-fetch</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

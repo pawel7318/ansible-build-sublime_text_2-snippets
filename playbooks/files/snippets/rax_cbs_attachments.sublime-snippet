@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  rax_cbs_attachments: >
+    server=${1:None # ! Name or id of the server to attach/detach}
+    volume=${2:None # ! Name or id of the volume to attach/detach}
+    state=${3:present # ! Indicate desired state of the resource}
+    wait_timeout=${4:300 #  how long before wait gives up, in seconds}
+    device=${5:None # ! The device path to attach the volume to, e.g. /dev/xvde}
+    wait=${6:no #  wait for the volume to be in 'in-use'/'available' state before returning}
+  ]]></content>
+  <tabTrigger>an-rax_cbs_attachments</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

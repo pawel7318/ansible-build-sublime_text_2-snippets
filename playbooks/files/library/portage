@@ -1,0 +1,105 @@
+---
+module: portage
+short_description: Package manager for Gentoo
+description:
+  - Manages Gentoo packages
+version_added: "1.6"
+
+options:
+  package:
+    description:
+      - Package atom or set, e.g. C(sys-apps/foo) or C(>foo-2.13) or C(@world)
+    required: false
+    default: null
+
+  state:
+    description:
+      - State of the package atom
+    required: false
+    default: "present"
+    choices: [ "present", "installed", "emerged", "absent", "removed", "unmerged" ]
+
+  update:
+    description:
+      - Update packages to the best version available (--update)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  deep:
+    description:
+      - Consider the entire dependency tree of packages (--deep)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  newuse:
+    description:
+      - Include installed packages where USE flags have changed (--newuse)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  oneshot:
+    description:
+      - Do not add the packages to the world file (--oneshot)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  noreplace:
+    description:
+      - Do not re-emerge installed packages (--noreplace)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  nodeps:
+    description:
+      - Only merge packages but not their dependencies (--nodeps)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  onlydeps:
+    description:
+      - Only merge packages' dependencies but not the packages (--onlydeps)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  depclean:
+    description:
+      - Remove packages not needed by explicitly merged packages (--depclean)
+      - If no package is specified, clean up the world's dependencies
+      - Otherwise, --depclean serves as a dependency aware version of --unmerge
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  quiet:
+    description:
+      - Run emerge in quiet mode (--quiet)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  verbose:
+    description:
+      - Run emerge in verbose mode (--verbose)
+    required: false
+    default: null
+    choices: [ "yes" ]
+
+  sync:
+    description:
+      - Sync package repositories first
+      - If yes, perform "emerge --sync"
+      - If web, perform "emerge-webrsync"
+    required: false
+    default: null
+    choices: [ "yes", "web" ]
+
+requirements: [ gentoolkit ]
+author: Yap Sok Ann
+notes:  []

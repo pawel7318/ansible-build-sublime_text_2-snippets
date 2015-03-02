@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  debconf: >
+    unseen=${1:False #  Do not set 'seen' flag when pre-seeding}
+    vtype=${2:None #  The type of the value supplied}
+    question=${3:None #  A debconf configuration setting}
+    name=${4:None # ! Name of package to configure.}
+    value=${5:None #  Value to set the configuration to}
+  ]]></content>
+  <tabTrigger>an-debconf</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

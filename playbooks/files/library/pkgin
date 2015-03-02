@@ -1,0 +1,19 @@
+---
+module: pkgin
+short_description: Package manager for SmartOS
+description:
+    - Manages SmartOS packages
+version_added: "1.0"
+options:
+    name:
+        description:
+            - name of package to install/remove
+        required: true
+    state:
+        description:
+            - state of the package
+        choices: [ 'present', 'absent' ]
+        required: false
+        default: present
+author: Shaun Zinck
+notes:  []

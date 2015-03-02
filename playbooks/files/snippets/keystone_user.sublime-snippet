@@ -1,0 +1,19 @@
+<snippet>
+  <content><![CDATA[
+  keystone_user: >
+    endpoint=${1:http://127.0.0.1:35357/v2.0/ #  The keystone url for authentication}
+    description=${2:None #  A description for the tenant}
+    login_user=${3:admin #  login username to authenticate to keystone}
+    token=${4:None #  The token to be uses in case the password is not specified}
+    login_tenant_name=${5:None #  The tenant login_user belongs to}
+    state=${6:present #  Indicate desired state of the resource}
+    role=${7:None #  The name of the role to be assigned or created}
+    user=${8:None #  The name of the user that has to added/removed from OpenStack}
+    login_password=${9:yes #  Password of login user}
+    password=${10:None #  The password to be assigned to the user}
+    email=${11:None #  An email address for the user}
+    tenant=${12:None #  The tenant name that has be added/removed}
+  ]]></content>
+  <tabTrigger>an-keystone_user</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,86 @@
+---
+module: ufw
+short_description: Manage firewall with UFW
+description:
+    - Manage firewall with UFW.
+version_added: 1.6
+author: Aleksey Ovcharenko, Jarno Keskikangas, Ahti Kitsik
+notes:
+    - See C(man ufw) for more examples.
+requirements:
+    - C(ufw) package
+options:
+  state:
+    description:
+      - C(enabled) reloads firewall and enables firewall on boot.
+      - C(disabled) unloads firewall and disables firewall on boot.
+      - C(reloaded) reloads firewall.
+      - C(reset) disables and resets firewall to installation defaults.
+    required: false
+    choices: ['enabled', 'disabled', 'reloaded', 'reset']
+  policy:
+    description:
+      - Change the default policy for incoming or outgoing traffic.
+    required: false
+    alias: default
+    choices: ['allow', 'deny', 'reject']
+  direction:
+    description:
+      - Select direction for a rule or default policy command.
+    required: false
+    choices: ['in', 'out', 'incoming', 'outgoing']
+  logging:
+    description:
+      - Toggles logging. Logged packets use the LOG_KERN syslog facility.
+    choices: ['on', 'off', 'low', 'medium', 'high', 'full']
+    required: false
+  insert:
+    description:
+      - Insert the corresponding rule as rule number NUM
+    required: false
+  rule:
+    description:
+      - Add firewall rule
+    required: false
+    choices: ['allow', 'deny', 'reject', 'limit']
+  log:
+    description:
+      - Log new connections matched to this rule
+    required: false
+    choices: ['yes', 'no']
+  from_ip:
+    description:
+      - Source IP address.
+    required: false
+    aliases: ['from', 'src']
+    default: 'any'
+  from_port:
+    description:
+      - Source port.
+    required: false
+  to_ip:
+    description:
+      - Destination IP address.
+    required: false
+    aliases: ['to', 'dest']
+    default: 'any'
+  to_port:
+    description:
+      - Destination port.
+    required: false
+    aliases: ['port']
+  proto:
+    description:
+      - TCP/IP protocol.
+    choices: ['any', 'tcp', 'udp', 'ipv6', 'esp', 'ah']
+    required: false
+  name:
+    description:
+      - Use profile located in C(/etc/ufw/applications.d)
+    required: false
+    aliases: ['app']
+  delete:
+    description:
+      - Delete rule.
+    required: false
+    choices: ['yes', 'no']

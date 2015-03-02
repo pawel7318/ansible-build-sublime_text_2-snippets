@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  mysql_variables: >
+    login_user=${1: #  username to connect mysql host, if defined login_password also needed.}
+    login_host=${2: #  mysql host to connect}
+    value=${3: #  If set, then sets variable value to this}
+    login_unix_socket=${4: #  unix socket to connect mysql server}
+    login_password=${5: #  password to connect mysql host, if defined login_user also needed.}
+    variable=${6: # ! Variable name to operate}
+  ]]></content>
+  <tabTrigger>an-mysql_variables</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

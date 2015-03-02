@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  postgresql_db: >
+    login_host=${1:localhost #  Host running the database}
+    name=${2:None # ! name of the database to add or remove}
+    encoding=${3:None #  Encoding of the database}
+    login_user=${4:None #  The username used to authenticate with}
+    lc_collate=${5:None #  Collation order (LC_COLLATE) to use in the database. Must match collation order of template database unless C(template0) is used as template.}
+    lc_ctype=${6:None #  Character classification (LC_CTYPE) to use in the database (e.g. lower, upper, ...) Must match LC_CTYPE of template database unless C(template0) is used as template.}
+    state=${7:present #  The database state}
+    template=${8:None #  Template used to create the database}
+    login_password=${9:None #  The password used to authenticate with}
+    owner=${10:None #  Name of the role to set as owner of the database}
+    port=${11:5432 #  Database port to connect to.}
+  ]]></content>
+  <tabTrigger>an-postgresql_db</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  ini_file: >
+    option=${1:None #  if set (required for changing a I(value)), this is the name of the option.}
+    dest=${2:None # ! Path to the INI-style file; this file is created if required}
+    section=${3:None # ! Section name in INI file. This is added if C(state=present) automatically when a single value is being set.}
+    value=${4:None #  the string value to be associated with an I(option). May be omitted when removing an I(option).}
+    others=${5: #  all arguments accepted by the M(file) module also work here}
+    backup=${6:no #  Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.}
+  ]]></content>
+  <tabTrigger>an-ini_file</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

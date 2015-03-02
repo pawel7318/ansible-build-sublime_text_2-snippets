@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  zypper: >
+    state=${1:present #  C(present) will make sure the package is installed. C(latest)  will make sure the latest version of the package is installed. C(absent)  will make sure the specified package is not installed.}
+    name=${2: # ! package name or package specifier wth version C(name) or C(name-1.0).}
+    disable_gpg_check=${3:no #  Whether to disable to GPG signature checking of the package signature being installed. Has an effect only if state is I(present) or I(latest).}
+  ]]></content>
+  <tabTrigger>an-zypper</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

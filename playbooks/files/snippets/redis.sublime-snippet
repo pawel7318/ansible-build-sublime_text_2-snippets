@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  redis: >
+    login_port=${1:6379 #  The port to connect to}
+    name=${2:None #  A redis config key.}
+    flush_mode=${3:all #  Type of flush (all the dbs in a redis instance or a specific one) [flush command]}
+    db=${4:None #  The database to flush (used in db mode) [flush command]}
+    login_host=${5:localhost #  The host running the database}
+    login_password=${6:None #  The password used to authenticate with (usually not used)}
+    master_host=${7:None #  The host of the master instance [slave command]}
+    value=${8:None #  A redis config value.}
+    command=${9:None # ! The selected redis command}
+    master_port=${10:None #  The port of the master instance [slave command]}
+    slave_mode=${11:slave #  the mode of the redis instance [slave command]}
+  ]]></content>
+  <tabTrigger>an-redis</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

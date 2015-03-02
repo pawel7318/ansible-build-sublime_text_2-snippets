@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  lvol: >
+    lv=${1: # ! The name of the logical volume.}
+    state=${2:present #  Control if the logical volume exists.}
+    size=${3: #  The size of the logical volume, according to lvcreate(8) --size, by default in megabytes or optionally with one of [bBsSkKmMgGtTpPeE] units; or according to lvcreate(8) --extents as a percentage of [VG|PVS|FREE]; resizing is not supported with percentages.}
+    force=${4:no #  Shrink or remove operations of volumes requires this switch. Ensures that that filesystems get never corrupted/destroyed by mistake.}
+    vg=${5: # ! The volume group this logical volume is part of.}
+  ]]></content>
+  <tabTrigger>an-lvol</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

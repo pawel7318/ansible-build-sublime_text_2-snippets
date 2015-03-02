@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  hipchat: >
+    from=${1:Ansible #  Name the message will appear be sent from. max 15 characters. Over 15, will be shorten.}
+    room=${2: # ! ID or name of the room.}
+    color=${3:yellow #  Background color for the message. Default is yellow.}
+    msg_format=${4:text #  message format. html or text. Default is text.}
+    token=${5: # ! API token.}
+    api=${6:https://api.hipchat.com/v1/rooms/message #  API url if using a self-hosted hipchat server}
+    notify=${7:yes #  notify or not (change the tab color, play a sound, etc)}
+    msg=${8:None # ! The message body.}
+    validate_certs=${9:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+  ]]></content>
+  <tabTrigger>an-hipchat</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

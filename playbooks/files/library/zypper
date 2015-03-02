@@ -1,0 +1,35 @@
+---
+module: zypper
+author: Patrick Callahan
+version_added: "1.2"
+short_description: Manage packages on SuSE and openSuSE
+description:
+    - Manage packages on SuSE and openSuSE using the zypper and rpm tools.
+options:
+    name:
+        description:
+        - package name or package specifier wth version C(name) or C(name-1.0).
+        required: true
+        aliases: [ 'pkg' ]
+    state:
+        description:
+          - C(present) will make sure the package is installed.
+            C(latest)  will make sure the latest version of the package is installed.
+            C(absent)  will make sure the specified package is not installed.
+        required: false
+        choices: [ present, latest, absent ]
+        default: "present"
+    disable_gpg_check:
+        description:
+          - Whether to disable to GPG signature checking of the package
+            signature being installed. Has an effect only if state is
+            I(present) or I(latest).
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        aliases: []
+
+notes: []
+# informational: requirements for nodes
+requirements: [ zypper, rpm ]
+author: Patrick Callahan

@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  flowdock: >
+    from_name=${1: #  (inbox only) Name of the message sender}
+    from_address=${2: #  (inbox only - required) Email address of the message sender}
+    tags=${3: #  tags of the message, separated by commas}
+    validate_certs=${4:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    external_user_name=${5: #  (chat only - required) Name of the "user" sending the message}
+    project=${6: #  (inbox only) Human readable identifier for more detailed message categorization}
+    source=${7: #  (inbox only - required) Human readable identifier of the application that uses the Flowdock API}
+    token=${8: # ! API token.}
+    link=${9: #  (inbox only) Link associated with the message. This will be used to link the message subject in Team Inbox.}
+    msg=${10: # ! Content of the message}
+    reply_to=${11: #  (inbox only) Email address for replies}
+    type=${12: # ! Whether to post to 'inbox' or 'chat'}
+    subject=${13: #  (inbox only - required) Subject line of the message}
+  ]]></content>
+  <tabTrigger>an-flowdock</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

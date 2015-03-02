@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  open_iscsi: >
+    auto_node_startup=${1: #  whether the target node should be automatically connected at startup}
+    target=${2: #  the iscsi target name}
+    show_nodes=${3: #  whether the list of nodes in the persistent iscsi database should be returned by the module}
+    node_auth=${4:CHAP #  discovery.sendtargets.auth.authmethod}
+    node_pass=${5: #  discovery.sendtargets.auth.password}
+    discover=${6: #  whether the list of target nodes on the portal should be (re)discovered and added to the persistent iscsi database. Keep in mind that iscsiadm discovery resets configurtion, like node.startup to manual, hence combined with auto_node_startup=yes will allways return a changed state.}
+    portal=${7: #  the ip address of the iscsi target}
+    login=${8: #  whether the target node should be connected}
+    node_user=${9: #  discovery.sendtargets.auth.username}
+    port=${10:3260 #  the port on which the iscsi target process listens}
+  ]]></content>
+  <tabTrigger>an-open_iscsi</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

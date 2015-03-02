@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  rhn_channel: >
+    sysname=${1:None # ! name of the system as it is known in RHN/Satellite}
+    name=${2:None # ! name of the software channel}
+    url=${3: # ! The full url to the RHN/Satellite api}
+    state=${4:present #  whether the channel should be present or not}
+    user=${5: # ! RHN/Satellite user}
+    password=${6: # ! the user's password}
+  ]]></content>
+  <tabTrigger>an-rhn_channel</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

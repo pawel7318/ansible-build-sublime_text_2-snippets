@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+  bigip_monitor_tcp: >
+    parent_partition=${1:Common #  Partition for the parent monitor}
+    partition=${2:Common #  Partition for the monitor}
+    name=${3:None # ! Monitor name}
+    parent=${4:tcp #  The parent template of this monitor template}
+    receive=${5:none # ! The receive string for the monitor call}
+    ip=${6:none #  IP address part of the ipport definition. The default API setting is "0.0.0.0".}
+    interval=${7:none #  The interval specifying how frequently the monitor instance of this template will run. By default, this interval is used for up and down states. The default API setting is 5.}
+    send=${8:none # ! The send string for the monitor call}
+    server=${9:None # ! BIG-IP host}
+    state=${10:present #  Monitor state}
+    time_until_up=${11:none #  Specifies the amount of time in seconds after the first successful response before a node will be marked up. A value of 0 will cause a node to be marked up immediately after a valid response is received from the node. The default API setting is 0.}
+    user=${12:None # ! BIG-IP username}
+    timeout=${13:none #  The number of seconds in which the node or service must respond to the monitor request. If the target responds within the set time period, it is considered up. If the target does not respond within the set time period, it is considered down. You can change this number to any number you want, however, it should be 3 times the interval number of seconds plus 1 second. The default API setting is 16.}
+    password=${14:None # ! BIG-IP password}
+    type=${15:tcp #  The template type of this monitor template}
+    port=${16:none #  port address part op the ipport definition. Tyhe default API setting is 0.}
+  ]]></content>
+  <tabTrigger>an-bigip_monitor_tcp</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

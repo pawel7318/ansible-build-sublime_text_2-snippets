@@ -1,0 +1,31 @@
+<snippet>
+  <content><![CDATA[
+  user: >
+    comment=${1: #  Optionally sets the description (aka I(GECOS)) of user account.}
+    ssh_key_bits=${2:2048 #  Optionally specify number of bits in SSH key to create.}
+    update_password=${3:always #  C(always) will update passwords if they differ.  C(on_create) will only set the password for newly created users.}
+    non_unique=${4:no #  Optionally when used with the -u option, this option allows to change the user ID to a non-unique value.}
+    force=${5:no #  When used with C(state=absent), behavior is as with C(userdel --force).}
+    ssh_key_type=${6:rsa #  Optionally specify the type of SSH key to generate. Available SSH key types will depend on implementation present on target host.}
+    ssh_key_passphrase=${7: #  Set a passphrase for the SSH key.  If no passphrase is provided, the SSH key will default to having no passphrase.}
+    home=${8: #  Optionally set the user's home directory.}
+    append=${9:no #  If C(yes), will only add groups, not set them to just the list in I(groups).}
+    uid=${10: #  Optionally sets the I(UID) of the user.}
+    ssh_key_comment=${11:ansible-generated #  Optionally define the comment for the SSH key.}
+    group=${12: #  Optionally sets the user's primary group (takes a group name).}
+    system=${13:no #  When creating an account, setting this to C(yes) makes the user a system account.  This setting cannot be changed on existing users.}
+    state=${14:present #  Whether the account should exist.  When C(absent), removes the user account.}
+    shell=${15: #  Optionally set the user's shell.}
+    ssh_key_file=${16:$HOME/.ssh/id_rsa #  Optionally specify the SSH key filename.}
+    groups=${17: #  Puts the user in this comma-delimited list of groups. When set to the empty string ('groups='), the user is removed from all groups except the primary group.}
+    move_home=${18:no #  If set to C(yes) when used with C(home=), attempt to move the user's home directory to the specified directory if it isn't there already.}
+    password=${19: #  Optionally set the user's password to this crypted value.  See the user example in the github examples directory for what this looks like in a playbook. The `FAQ <http://docs.ansible.com/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module>`_ contains details on various ways to generate these password values.}
+    name=${20: # ! Name of the user to create, remove or modify.}
+    createhome=${21:yes #  Unless set to C(no), a home directory will be made for the user when the account is created or if the home directory does not exist.}
+    remove=${22:no #  When used with C(state=absent), behavior is as with C(userdel --remove).}
+    login_class=${23: #  Optionally sets the user's login class for FreeBSD, OpenBSD and NetBSD systems.}
+    generate_ssh_key=${24:no #  Whether to generate a SSH key for the user in question. This will B(not) overwrite an existing SSH key.}
+  ]]></content>
+  <tabTrigger>an-user</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

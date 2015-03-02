@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  ec2_elb_lb: >
+    subnets=${1:None #  A list of VPC subnets to use when creating ELB. Zones should be empty if using this.}
+    health_check=${2:None #  An associative array of health check configuration settigs (see example)}
+    name=${3: # ! The name of the ELB}
+    scheme=${4:internet-facing #  The scheme to use when creating the ELB. For a private VPC-visible ELB use 'internal'.}
+    region=${5: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    purge_subnets=${6:False #  Purge existing subnet on ELB that are not found in subnets}
+    state=${7: # ! Create or destroy the ELB}
+    zones=${8: #  List of availability zones to enable on this ELB}
+    listeners=${9: #  List of ports/protocols for this ELB to listen on (see example)}
+    purge_listeners=${10:True #  Purge existing listeners on ELB that are not found in listeners}
+    security_group_ids=${11:None #  A list of security groups to apply to the elb}
+    validate_certs=${12:yes #  When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.}
+    purge_zones=${13:False #  Purge existing availability zones on ELB that are not found in zones}
+  ]]></content>
+  <tabTrigger>an-ec2_elb_lb</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

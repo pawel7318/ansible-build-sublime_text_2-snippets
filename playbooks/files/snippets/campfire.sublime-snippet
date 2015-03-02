@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  campfire: >
+    msg=${1: # ! The message body.}
+    token=${2: # ! API token.}
+    room=${3: # ! Room number to which the message should be sent.}
+    notify=${4: #  Send a notification sound before the message.}
+    subscription=${5: # ! The subscription name to use.}
+  ]]></content>
+  <tabTrigger>an-campfire</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

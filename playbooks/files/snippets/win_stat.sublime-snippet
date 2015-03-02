@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  win_stat: >
+    path=${1:None # ! The full path of the file/object to get the facts of; both forward and back slashes are accepted.}
+    get_md5=${2:True #  Whether to return the md5 sum of the file}
+  ]]></content>
+  <tabTrigger>an-win_stat</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

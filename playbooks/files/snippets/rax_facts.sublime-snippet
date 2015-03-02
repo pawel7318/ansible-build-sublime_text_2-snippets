@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  rax_facts: >
+    id=${1: #  Server ID to retrieve facts for}
+    name=${2:None #  Server name to retrieve facts for}
+    address=${3: #  Server IP address to retrieve facts for, will match any IP assigned to the server}
+  ]]></content>
+  <tabTrigger>an-rax_facts</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

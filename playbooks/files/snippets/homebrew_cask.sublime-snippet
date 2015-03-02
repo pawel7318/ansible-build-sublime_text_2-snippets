@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  homebrew_cask: >
+    state=${1:present #  state of the cask}
+    name=${2: # ! name of cask to install/remove}
+  ]]></content>
+  <tabTrigger>an-homebrew_cask</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

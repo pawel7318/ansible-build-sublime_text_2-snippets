@@ -1,0 +1,61 @@
+---
+module: composer
+author: Dimitrios Tydeas Mengidis
+short_description: Dependency Manager for PHP
+version_added: "1.6"
+description:
+    - Composer is a tool for dependency management in PHP. It allows you to declare the dependent libraries your project needs and it will install them in your project for you
+options:
+    working_dir:
+        description:
+            - Directory of your project ( see --working-dir )
+        required: true
+        default: null
+        aliases: [ "working-dir" ]
+    prefer_source:
+        description:
+            - Forces installation from package sources when possible ( see --prefer-source )
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        aliases: [ "prefer-source" ]
+    prefer_dist:
+        description:
+            - Forces installation from package dist even for de versions ( see --prefer-dist )
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        aliases: [ "prefer-dist" ]
+    no_dev:
+        description:
+            - Disables installation of require-dev packages ( see --no-dev )
+        required: false
+        default: "yes"
+        choices: [ "yes", "no" ]
+        aliases: [ "no-dev" ]
+    no_scripts:
+        description:
+            - Skips the execution of all scripts defined in composer.json ( see --no-scripts )
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        aliases: [ "no-scripts" ]
+    no_plugins:
+        description:
+            - Disables all plugins ( see --no-plugins )
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        aliases: [ "no-plugins" ]
+    optimize_autoloader:
+        description:
+            - Optimize autoloader during autoloader dump ( see --optimize-autoloader ). Convert PSR-0/4 autoloading to classmap to get a faster autoloader. This is recommended especially for production, but can take a bit of time to run so it is currently not done by default.
+        required: false
+        default: "yes"
+        choices: [ "yes", "no" ]
+        aliases: [ "optimize-autoloader" ]
+requirements:
+    - php
+    - composer installed in bin path (recommended /usr/local/bin)
+notes:
+    - Default options that are always appended in each execution are --no-ansi, --no-progress, and --no-interaction

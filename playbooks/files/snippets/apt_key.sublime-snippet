@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  apt_key: >
+    keyserver=${1:none #  keyserver to retrieve key from.}
+    url=${2:none #  url to retrieve key from.}
+    validate_certs=${3:yes #  If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    keyring=${4:none #  path to specific keyring file in /etc/apt/trusted.gpg.d}
+    state=${5:present #  used to specify if key is being added or revoked}
+    file=${6:none #  keyfile path}
+    data=${7:none #  keyfile contents}
+    id=${8:none #  identifier of key}
+  ]]></content>
+  <tabTrigger>an-apt_key</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

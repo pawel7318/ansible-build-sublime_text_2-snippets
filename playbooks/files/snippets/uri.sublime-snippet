@@ -1,0 +1,22 @@
+<snippet>
+  <content><![CDATA[
+  uri: >
+    body=${1:None #  The body of the http request/response to the web service.}
+    url=${2:None # ! HTTP or HTTPS URL in the form (http|https)://host.domain[:port]/path}
+    follow_redirects=${3:safe #  Whether or not the URI module should follow redirects. C(all) will follow all redirects. C(safe) will follow only "safe" redirects, where "safe" means that the client is only doing a GET or HEAD on the URI to which it is being redirected. C(none) will not follow any redirects. Note that C(yes) and C(no) choices are accepted for backwards compatibility, where C(yes) is the equivalent of C(all) and C(no) is the equivalent of C(safe). C(yes) and C(no) are deprecated and will be removed in some future version of Ansible.}
+    force_basic_auth=${4:no #  httplib2, the library used by the uri module only sends authentication information when a webservice responds to an initial request with a 401 status. Since some basic auth services do not properly send a 401, logins will fail. This option forces the sending of the Basic authentication header upon initial request.}
+    removes=${5: #  a filename, when it does not exist, this step will not be run.}
+    HEADER_=${6:None #  Any parameter starting with "HEADER_" is a sent with your request as a header. For example, HEADER_Content-Type="application/json" would send the header "Content-Type" along with your request with a value of "application/json".}
+    creates=${7: #  a filename, when it already exists, this step will not be run.}
+    dest=${8:None #  path of where to download the file to (if desired). If I(dest) is a directory, the basename of the file on the remote server will be used.}
+    user=${9:None #  username for the module to use for Digest, Basic or WSSE authentication.}
+    timeout=${10:30 #  The socket level timeout in seconds}
+    status_code=${11:200 #  A valid, numeric, HTTP status code that signifies success of the request. Can also be comma separated list of status codes.}
+    return_content=${12:no #  Whether or not to return the body of the request as a "content" key in the dictionary result. If the reported Content-type is "application/json", then the JSON is additionally loaded into a key called C(json) in the dictionary results.}
+    password=${13:None #  password for the module to use for Digest, Basic or WSSE authentication.}
+    method=${14:GET #  The HTTP method of the request or response.}
+    others=${15: #  all arguments accepted by the M(file) module also work here}
+  ]]></content>
+  <tabTrigger>an-uri</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

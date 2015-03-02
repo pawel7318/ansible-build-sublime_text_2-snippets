@@ -1,0 +1,24 @@
+<snippet>
+  <content><![CDATA[
+  azure: >
+    endpoints=${1:22 #  a comma-separated list of TCP ports to expose on the virtual machine (e.g., "22,80")}
+    role_size=${2:Small #  azure role size for the new virtual machine (e.g., Small, ExtraLarge, A6)}
+    name=${3:None # ! name of the virtual machine and associated cloud service.}
+    location=${4:None # ! the azure location to use (e.g. 'East US')}
+    virtual_network_name=${5:None #  Name of virtual network.}
+    image=${6:None # ! system image for creating the virtual machine (e.g., b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-precise-12_04_3-LTS-amd64-server-20131205-en-us-30GB)}
+    hostname=${7:None #  hostname to write /etc/hostname. Defaults to <name>.cloudapp.net.}
+    state=${8:present #  create or terminate instances}
+    wait_timeout_redirects=${9:300 #  how long before wait gives up for redirects, in seconds}
+    management_cert_path=${10:None #  path to an azure management certificate associated with the subscription id. Overrides the AZURE_CERT_PATH environement variable.}
+    ssh_cert_path=${11:None #  path to an X509 certificate containing the public ssh key to install in the virtual machine. See http://www.windowsazure.com/en-us/manage/linux/tutorials/intro-to-linux/ for more details.}
+    wait_timeout=${12:600 #  how long before wait gives up, in seconds}
+    user=${13:None #  the unix username for the new virtual machine.}
+    storage_account=${14: # ! the azure storage account in which to store the data disks.}
+    subscription_id=${15:None #  azure subscription id. Overrides the AZURE_SUBSCRIPTION_ID environement variable.}
+    password=${16:None #  the unix password for the new virtual machine.}
+    wait=${17:no #  wait for the instance to be in state 'running' before returning}
+  ]]></content>
+  <tabTrigger>an-azure</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

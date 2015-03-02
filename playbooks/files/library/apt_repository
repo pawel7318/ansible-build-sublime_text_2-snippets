@@ -1,0 +1,36 @@
+---
+module: apt_repository
+short_description: Add and remove APT repositores
+description:
+    - Add or remove an APT repositories in Ubuntu and Debian.
+notes:
+    - This module works on Debian and Ubuntu and requires C(python-apt).
+    - This module supports Debian Squeeze (version 6) as well as its successors.
+    - This module treats Debian and Ubuntu distributions separately. So PPA could be installed only on Ubuntu machines.
+options:
+    repo:
+        required: true
+        default: none
+        description:
+            - A source string for the repository.
+    state:
+        required: false
+        choices: [ "absent", "present" ]
+        default: "present"
+        description:
+            - A source string state.
+    mode:
+        required: false
+        default: 0644
+        description:
+            - The octal mode for newly created files in sources.list.d
+        version_added: "1.6"
+    update_cache:
+        description:
+            - Run the equivalent of C(apt-get update) when a change occurs.  Cache updates are run after making changes.
+        required: false
+        default: "yes"
+        choices: [ "yes", "no" ]
+author: Alexander Saltanov
+version_added: "0.7"
+requirements: [ python-apt ]

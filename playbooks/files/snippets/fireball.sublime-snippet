@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  fireball: >
+    minutes=${1:30 #  The I(fireball) listener daemon is started on nodes and will stay around for this number of minutes before turning itself off.}
+    port=${2:5099 #  TCP port for ZeroMQ}
+  ]]></content>
+  <tabTrigger>an-fireball</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

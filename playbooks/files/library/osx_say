@@ -1,0 +1,19 @@
+---
+module: osx_say
+version_added: "1.2"
+short_description: Makes an OSX computer to speak.
+description:
+   - makes an OS computer speak!  Amuse your friends, annoy your coworkers!
+notes:
+   - If you like this module, you may also be interested in the osx_say callback in the plugins/ directory of the source checkout. 
+options:
+  msg:
+    description:
+      What to say
+    required: true
+  voice:
+    description:
+      What voice to use
+    required: false
+requirements: [ say ]
+author: Michael DeHaan

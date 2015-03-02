@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  rpm_key: >
+    state=${1:present #  Wheather the key will be imported or removed from the rpm db.}
+    validate_certs=${2:yes #  If C(no) and the C(key) is a url starting with https, SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    key=${3:None # ! Key that will be modified. Can be a url, a file, or a keyid if the key already exists in the database.}
+  ]]></content>
+  <tabTrigger>an-rpm_key</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

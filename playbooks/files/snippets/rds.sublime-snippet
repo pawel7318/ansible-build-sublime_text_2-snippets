@@ -1,0 +1,39 @@
+<snippet>
+  <content><![CDATA[
+  rds: >
+    db_engine=${1:None #  The type of database.  Used only when command=create.}
+    iops=${2:None #  Specifies the number of IOPS for the instance.  Used only when command=create or command=modify. Must be an integer greater than 1000.}
+    backup_window=${3:None #  Backup window in format of hh24:mi-hh24:mi.  If not specified then a random backup window is assigned. Used only when command=create or command=modify.}
+    backup_retention=${4:None #  Number of days backups are retained.  Set to 0 to disable backups.  Default is 1 day.  Valid range: 0-35. Used only when command=create or command=modify.}
+    port=${5:None #  Port number that the DB instance uses for connections.  Defaults to 3306 for mysql. Must be changed to 1521 for Oracle, 1443 for SQL Server, 5432 for PostgreSQL. Used only when command=create or command=replicate.}
+    security_groups=${6:None #  Comma separated list of one or more security groups.  Used only when command=create or command=modify.}
+    size=${7:None #  Size in gigabytes of the initial storage for the DB instance. Used only when command=create or command=modify.}
+    aws_secret_key=${8:None #  AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.}
+    subnet=${9:None #  VPC subnet group.  If specified then a VPC instance is created. Used only when command=create.}
+    vpc_security_groups=${10:None #  Comma separated list of one or more vpc security group ids. Also requires `subnet` to be specified. Used only when command=create or command=modify.}
+    upgrade=${11:False #  Indicates that minor version upgrades should be applied automatically. Used only when command=create or command=replicate.}
+    zone=${12:None #  availability zone in which to launch the instance. Used only when command=create, command=replicate or command=restore.}
+    source_instance=${13:None #  Name of the database to replicate. Used only when command=replicate.}
+    parameter_group=${14:None #  Name of the DB parameter group to associate with this instance.  If omitted then the RDS default DBParameterGroup will be used. Used only when command=create or command=modify.}
+    snapshot=${15:None #  Name of snapshot to take. When command=delete, if no snapshot name is provided then no snapshot is taken. Used only when command=delete or command=snapshot.}
+    multi_zone=${16:None #  Specifies if this is a Multi-availability-zone deployment. Can not be used in conjunction with zone parameter. Used only when command=create or command=modify.}
+    new_instance_name=${17:None #  Name to rename an instance to. Used only when command=modify.}
+    username=${18:None #  Master database username. Used only when command=create.}
+    db_name=${19:None #  Name of a database to create within the instance.  If not specified then no database is created. Used only when command=create.}
+    license_model=${20:None #  The license model for this DB instance. Used only when command=create or command=restore.}
+    password=${21:None #  Password for the master database username. Used only when command=create or command=modify.}
+    apply_immediately=${22:False #  Used only when command=modify.  If enabled, the modifications will be applied as soon as possible rather than waiting for the next preferred maintenance window.}
+    wait=${23:no #  When command=create, replicate, modify or restore then wait for the database to enter the 'available' state.  When command=delete wait for the database to be terminated.}
+    aws_access_key=${24:None #  AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.}
+    region=${25:None # ! The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    option_group=${26:None #  The name of the option group to use.  If not specified then the default option group is used. Used only when command=create.}
+    engine_version=${27:None #  Version number of the database engine to use. Used only when command=create. If not specified then the current Amazon RDS default engine version is used.}
+    instance_name=${28:None # ! Database instance identifier.}
+    instance_type=${29:None #  The instance type of the database.  Must be specified when command=create. Optional when command=replicate, command=modify or command=restore. If not specified then the replica inherits the same instance type as the source instance.}
+    wait_timeout=${30:300 #  how long before wait gives up, in seconds}
+    command=${31:None # ! Specifies the action to take.}
+    maint_window=${32:None #  Maintenance window in format of ddd:hh24:mi-ddd:hh24:mi.  (Example: Mon:22:00-Mon:23:15) If not specified then a random maintenance window is assigned. Used only when command=create or command=modify.}
+  ]]></content>
+  <tabTrigger>an-rds</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

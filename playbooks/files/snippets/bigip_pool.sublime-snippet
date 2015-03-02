@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+  bigip_pool: >
+    monitors=${1:None #  Monitor template name list. Always use the full path to the monitor.}
+    lb_method=${2:round_robin #  Load balancing method}
+    quorum=${3:None #  Monitor quorum value when monitor_type is m_of_n}
+    partition=${4:Common #  Partition of pool/pool member}
+    slow_ramp_time=${5:None #  Sets the ramp-up time (in seconds) to gradually ramp up the load on newly added or freshly detected up pool members}
+    host=${6:None #  Pool member IP}
+    service_down_action=${7:None #  Sets the action to take when node goes down in pool}
+    server=${8:None # ! BIG-IP host}
+    monitor_type=${9:None #  Monitor rule type when monitors > 1}
+    state=${10:present #  Pool/pool member state}
+    user=${11:None # ! BIG-IP username}
+    password=${12:None # ! BIG-IP password}
+    port=${13:None #  Pool member port}
+    name=${14:None # ! Pool name}
+  ]]></content>
+  <tabTrigger>an-bigip_pool</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

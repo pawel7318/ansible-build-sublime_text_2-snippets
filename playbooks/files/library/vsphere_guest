@@ -1,0 +1,89 @@
+---
+module: vsphere_guest
+short_description: Create/delete/manage a guest VM through VMware vSphere.
+description:
+     - Create/delete/reconfigure a guest VM through VMware vSphere. This module has a dependency on pysphere >= 1.7
+version_added: "1.6"
+options:
+  vcenter_hostname:
+    description:
+      - The hostname of the vcenter server the module will connect to, to create the guest.
+    required: true
+    default: null
+    aliases: []
+  guest:
+    description:
+      - The virtual server name you wish to manage.
+    required: true
+  user:
+    description:
+      - Username to connect to vcenter as.
+    required: true
+    default: null
+  password:
+    description:
+      - Password of the user to connect to vcenter as.
+    required: true
+    default: null
+  resource_pool:
+    description:
+      - The name of the resource_pool to create the VM in.
+    required: false
+    default: None
+  cluster:
+    description:
+      - The name of the cluster to create the VM in. By default this is derived from the host you tell the module to build the guest on.
+    required: false
+    default: None
+  esxi:
+    description:
+      - Dictionary which includes datacenter and hostname on which the VM should be created.
+    required: false
+    default: null
+  state:
+    description:
+     - Indicate desired state of the vm.
+    default: present
+    choices: ['present', 'powered_on', 'absent', 'powered_on', 'restarted', 'reconfigured']
+  vm_disk:
+    description:
+      - A key, value list of disks and their sizes and which datastore to keep it in.
+    required: false
+    default: null
+  vm_hardware:
+    description:
+      - A key, value list of VM config settings. Must include ['memory_mb', 'num_cpus', 'osid', 'scsi'].
+    required: false
+    default: null
+  vm_nic:
+    description:
+      - A key, value list of nics, their types and what network to put them on.
+    required: false
+    default: null
+  vm_extra_config:
+    description:
+      - A key, value pair of any extra values you want set or changed in the vmx file of the VM. Useful to set advanced options on the VM.
+    required: false
+    default: null
+  vm_hw_version:
+    description:
+      - Desired hardware version identifier (for example, "vmx-08" for vms that needs to be managed with vSphere Client). Note that changing hardware version of existing vm is not supported.
+    required: false
+    default: null
+    version_added: "1.7"
+  vmware_guest_facts:
+    description:
+      - Gather facts from vCenter on a particular VM
+    required: false
+    default: null
+  force:
+    description:
+      - Boolean. Allows you to run commands which may alter the running state of a guest. Also used to reconfigure and destroy.
+    default: "no"
+    choices: [ "yes", "no" ]
+
+notes:
+  - This module should run from a system that can access vSphere directly.
+    Either by using local_action, or using delegate_to.
+author: Richard Hoop <wrhoop@gmail.com>
+requirements: [ pysphere ]

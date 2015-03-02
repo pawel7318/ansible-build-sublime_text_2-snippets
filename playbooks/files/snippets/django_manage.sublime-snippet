@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  django_manage: >
+    virtualenv=${1: #  An optional path to a I(virtualenv) installation to use while running the manage application.}
+    app_path=${2: # ! The path to the root of the Django application where B(manage.py) lives.}
+    database=${3: #  The database to target. Used by the 'createcachetable', 'flush', 'loaddata', and 'syncdb' commands.}
+    pythonpath=${4: #  A directory to add to the Python path. Typically used to include the settings module if it is located external to the application directory.}
+    settings=${5: #  The Python path to the application's settings module, such as 'myapp.settings'.}
+    apps=${6: #  A list of space-delimited apps to target. Used by the 'test' command.}
+    cache_table=${7: #  The name of the table used for database-backed caching. Used by the 'createcachetable' command.}
+    merge=${8: #  Will run out-of-order or missing migrations as they are not rollback migrations, you can only use this parameter with 'migrate' command}
+    command=${9: # ! The name of the Django management command to run. Built in commands are cleanup, collectstatic, flush, loaddata, migrate, runfcgi, syncdb, test, and validate. Other commands can be entered, but will fail if they're unknown to Django.}
+    skip=${10: #  Will skip over out-of-order missing migrations, you can only use this parameter with I(migrate)}
+    link=${11: #  Will create links to the files instead of copying them, you can only use this parameter with 'collectstatic' command}
+    fixtures=${12: #  A space-delimited list of fixture file names to load in the database. B(Required) by the 'loaddata' command.}
+    failfast=${13:no #  Fail the command immediately if a test fails. Used by the 'test' command.}
+  ]]></content>
+  <tabTrigger>an-django_manage</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

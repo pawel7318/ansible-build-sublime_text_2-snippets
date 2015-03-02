@@ -1,0 +1,28 @@
+---
+module: openvswitch_port
+version_added: 1.4
+author: David Stygstra
+short_description: Manage Open vSwitch ports
+requirements: [ ovs-vsctl ]
+description:
+    - Manage Open vSwitch ports
+options:
+    bridge:
+        required: true
+        description:
+            - Name of bridge to manage
+    port:
+        required: true
+        description:
+            - Name of port to manage on the bridge
+    state:
+        required: false
+        default: "present"
+        choices: [ present, absent ]
+        description:
+            - Whether the port should exist
+    timeout:
+        required: false
+        default: 5
+        description:
+            - How long to wait for ovs-vswitchd to respond

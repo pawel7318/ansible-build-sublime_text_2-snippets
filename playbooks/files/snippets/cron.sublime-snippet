@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  cron: >
+    name=${1:None #  Description of a crontab entry.}
+    hour=${2:* #  Hour when the job should run ( 0-23, *, */2, etc )}
+    state=${3:present #  Whether to ensure the job is present or absent.}
+    cron_file=${4:None #  If specified, uses this file in cron.d instead of an individual user's crontab.}
+    reboot=${5:no #  If the job should be run at reboot. This option is deprecated. Users should use special_time.}
+    month=${6:* #  Month of the year the job should run ( 1-12, *, */2, etc )}
+    job=${7:None #  The command to execute. Required if state=present.}
+    special_time=${8:None #  Special time specification nickname.}
+    user=${9:root #  The specific user whose crontab should be modified.}
+    backup=${10:False #  If set, create a backup of the crontab before it is modified. The location of the backup is returned in the C(backup) variable by this module.}
+    day=${11:* #  Day of the month the job should run ( 1-31, *, */2, etc )}
+    minute=${12:* #  Minute when the job should run ( 0-59, *, */2, etc )}
+    weekday=${13:* #  Day of the week that the job should run ( 0-6 for Sunday-Saturday, *, etc )}
+  ]]></content>
+  <tabTrigger>an-cron</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

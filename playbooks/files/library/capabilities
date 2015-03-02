@@ -1,0 +1,31 @@
+---
+module: capabilities
+short_description: Manage Linux capabilities
+description:
+    - This module manipulates files privileges using the Linux capabilities(7) system.
+version_added: "1.6"
+options:
+    path:
+        description:
+            - Specifies the path to the file to be managed.
+        required: true
+        default: null
+    capability:
+        description:
+            - Desired capability to set (with operator and flags, if state is C(present)) or remove (if state is C(absent))
+        required: true
+        default: null
+        aliases: [ 'cap' ]
+    state:
+        description:
+            - Whether the entry should be present or absent in the file's capabilities.
+        choices: [ "present", "absent" ]
+        default: present
+notes:
+    - The capabilities system will automatically transform operators and flags
+      into the effective set, so (for example, cap_foo=ep will probably become
+      cap_foo+ep). This module does not attempt to determine the final operator
+      and flags to compare, so you will want to ensure that your capabilities
+      argument matches the final capabilities.
+requirements: []
+author: Nate Coraor <nate@bx.psu.edu>

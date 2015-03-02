@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  capabilities: >
+    capability=${1:None # ! Desired capability to set (with operator and flags, if state is C(present)) or remove (if state is C(absent))}
+    path=${2:None # ! Specifies the path to the file to be managed.}
+    state=${3:present #  Whether the entry should be present or absent in the file's capabilities.}
+  ]]></content>
+  <tabTrigger>an-capabilities</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

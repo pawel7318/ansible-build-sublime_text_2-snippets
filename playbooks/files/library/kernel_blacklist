@@ -1,0 +1,25 @@
+---
+module: kernel_blacklist
+author: Matthias Vogelgesang
+version_added: 1.4
+short_description: Blacklist kernel modules
+description:
+    - Add or remove kernel modules from blacklist.
+options:
+    name:
+        required: true
+        description:
+            - Name of kernel module to black- or whitelist.
+    state:
+        required: false
+        default: "present"
+        choices: [ present, absent ]
+        description:
+            - Whether the module should be present in the blacklist or absent.
+    blacklist_file:
+        required: false
+        description:
+            - If specified, use this blacklist file instead of
+              C(/etc/modprobe.d/blacklist-ansible.conf).
+        default: null
+requirements: []

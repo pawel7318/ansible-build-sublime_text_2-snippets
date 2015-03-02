@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+  ohai: >
+  ]]></content>
+  <tabTrigger>an-ohai</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

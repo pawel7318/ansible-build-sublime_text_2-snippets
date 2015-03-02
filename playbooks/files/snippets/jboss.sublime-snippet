@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  jboss: >
+    src=${1: #  The remote path of the application ear or war to deploy}
+    deploy_path=${2:/var/lib/jbossas/standalone/deployments #  The location in the filesystem where the deployment scanner listens}
+    state=${3:present #  Whether the application should be deployed or undeployed}
+    deployment=${4: # ! The name of the deployment}
+  ]]></content>
+  <tabTrigger>an-jboss</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

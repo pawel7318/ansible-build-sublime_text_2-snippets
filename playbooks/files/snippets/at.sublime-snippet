@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  at: >
+    count=${1: # ! The count of units in the future to execute the command or script file.}
+    state=${2:present #  The state dictates if the command or script file should be evaluated as present(added) or absent(deleted).}
+    command=${3:None #  A command to be executed in the future.}
+    units=${4: # ! The type of units in the future to execute the command or script file.}
+    unique=${5:False #  If a matching job is present a new job will not be added.}
+    script_file=${6:None #  An existing script file to be executed in the future.}
+  ]]></content>
+  <tabTrigger>an-at</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

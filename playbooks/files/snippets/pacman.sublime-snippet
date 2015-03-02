@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  pacman: >
+    update_cache=${1:no #  Whether or not to refresh the master package lists. This can be run as part of a package installation or as a separate step.}
+    state=${2:present #  Desired state of the package.}
+    recurse=${3:no #  When removing a package, also remove its dependencies, provided that they are not required by other packages and were not explicitly installed by a user.}
+    name=${4:None #  Name of the package to install, upgrade, or remove.}
+  ]]></content>
+  <tabTrigger>an-pacman</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

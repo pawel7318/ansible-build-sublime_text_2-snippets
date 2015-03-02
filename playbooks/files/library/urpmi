@@ -1,0 +1,38 @@
+---
+module: urpmi
+short_description: Urpmi manager
+description:
+  - Manages packages with I(urpmi) (such as for Mageia or Mandriva)
+version_added: "1.3.4"
+options:
+  pkg:
+    description:
+      - name of package to install, upgrade or remove.
+    required: true
+    default: null
+  state:
+    description:
+      - Indicates the desired package state
+    required: false
+    default: present
+    choices: [ "absent", "present" ]
+  update_cache:
+    description:
+      - update the package database first C(urpmi.update -a).
+    required: false
+    default: no
+    choices: [ "yes", "no" ]
+  no-suggests:
+    description:
+      - Corresponds to the C(--no-suggests) option for I(urpmi).
+    required: false
+    default: yes
+    choices: [ "yes", "no" ]
+  force:
+    description:
+      - Corresponds to the C(--force) option for I(urpmi).
+    required: false
+    default: yes
+    choices: [ "yes", "no" ]
+author: Philippe Makowski
+notes:  []

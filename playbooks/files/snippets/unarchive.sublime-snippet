@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  unarchive: >
+    dest=${1:None # ! Remote absolute path where the archive should be unpacked}
+    src=${2:None # ! Local path to archive file to copy to the remote server; can be absolute or relative.}
+    copy=${3:yes #  Should the file be copied from the local to the remote machine?}
+    creates=${4:None #  a filename, when it already exists, this step will B(not) be run.}
+  ]]></content>
+  <tabTrigger>an-unarchive</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  arista_interface: >
+    logging=${1:False #  enables or disables the syslog facility for this module}
+    description=${2: #  a single line text string describing the interface}
+    duplex=${3:auto #  sets the interface duplex setting}
+    interface_id=${4: # ! the full name of the interface}
+    admin=${5: #  controls the operational state of the interface}
+    mtu=${6:1500 #  configureds the maximum transmission unit for the interface}
+    speed=${7:auto #  sets the interface speed setting}
+  ]]></content>
+  <tabTrigger>an-arista_interface</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

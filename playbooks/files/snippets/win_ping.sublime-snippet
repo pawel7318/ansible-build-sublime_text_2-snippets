@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+  win_ping: >
+    data=${1:pong #  Alternate data to return instead of 'pong'}
+  ]]></content>
+  <tabTrigger>an-win_ping</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

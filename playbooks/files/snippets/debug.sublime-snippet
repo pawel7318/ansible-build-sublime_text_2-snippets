@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  debug: >
+    msg=${1:Hello world! #  The customized message that is printed. If omitted, prints a generic message.}
+    var=${2: #  A variable name to debug.  Mutually exclusive with the 'msg' option.}
+  ]]></content>
+  <tabTrigger>an-debug</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

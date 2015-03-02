@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  kernel_blacklist: >
+    blacklist_file=${1:None #  If specified, use this blacklist file instead of C(/etc/modprobe.d/blacklist-ansible.conf).}
+    state=${2:present #  Whether the module should be present in the blacklist or absent.}
+    name=${3: # ! Name of kernel module to black- or whitelist.}
+  ]]></content>
+  <tabTrigger>an-kernel_blacklist</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

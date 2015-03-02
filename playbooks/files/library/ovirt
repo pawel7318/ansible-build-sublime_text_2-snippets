@@ -1,0 +1,135 @@
+---
+module: ovirt
+author: Vincent Van der Kussen
+short_description: oVirt/RHEV platform management
+description:
+    - allows you to create new instances, either from scratch or an image, in addition to deleting or stopping instances on the oVirt/RHEV platform
+version_added: "1.4"
+options:
+  user:
+    description:
+     - the user to authenticate with
+    default: null
+    required: true
+    aliases: []
+  url:
+    description:
+     - the url of the oVirt instance
+    default: null
+    required: true
+    aliases: []
+  instance_name:
+    description:
+     - the name of the instance to use
+    default: null
+    required: true
+    aliases: [ vmname ]
+  password:
+    description:
+     - password of the user to authenticate with
+    default: null
+    required: true
+    aliases: []
+  image:
+    description:
+     - template to use for the instance
+    default: null
+    required: false
+    aliases: []
+  resource_type:
+    description:
+     - whether you want to deploy an image or create an instance from scratch.
+    default: null
+    required: false
+    aliases: []
+    choices: [ 'new', 'template' ]
+  zone:
+    description:
+     - deploy the image to this oVirt cluster
+    default: null
+    required: false
+    aliases: []
+  instance_disksize:
+    description:
+     - size of the instance's disk in GB
+    default: null
+    required: false
+    aliases: [ vm_disksize]
+  instance_cpus:
+    description:
+     - the instance's number of cpu's
+    default: 1
+    required: false
+    aliases: [ vmcpus ]
+  instance_nic:
+    description:
+     - name of the network interface in oVirt/RHEV
+    default: null
+    required: false
+    aliases: [ vmnic  ]
+  instance_network:
+    description:
+     - the logical network the machine should belong to
+    default: rhevm
+    required: false
+    aliases: [ vmnetwork ]
+  instance_mem:
+    description:
+     - the instance's amount of memory in MB
+    default: null
+    required: false
+    aliases: [ vmmem ]
+  instance_type:
+    description:
+     - define if the instance is a server or desktop
+    default: server
+    required: false
+    aliases: [ vmtype ]
+    choices: [ 'server', 'desktop' ]
+  disk_alloc:
+    description:
+     - define if disk is thin or preallocated
+    default: thin
+    required: false
+    aliases: []
+    choices: [ 'thin', 'preallocated' ]
+  disk_int:
+    description:
+     - interface type of the disk
+    default: virtio
+    required: false
+    aliases: []
+    choices: [ 'virtio', 'ide' ]
+  instance_os:
+    description:
+     - type of Operating System
+    default: null
+    required: false
+    aliases: [ vmos ]
+  instance_cores:
+    description:
+     - define the instance's number of cores
+    default: 1
+    required: false
+    aliases: [ vmcores ]
+  sdomain:
+    description:
+     - the Storage Domain where you want to create the instance's disk on.
+    default: null
+    required: false
+    aliases: []
+  region:
+    description:
+     - the oVirt/RHEV datacenter where you want to deploy to
+    default: null
+    required: false
+    aliases: []
+  state:
+    description:
+     - create, terminate or remove instances
+    default: 'present'
+    required: false
+    aliases: []
+    choices: ['present', 'absent', 'shutdown', 'started', 'restarted']
+
+requirements: [ "ovirt-engine-sdk" ]

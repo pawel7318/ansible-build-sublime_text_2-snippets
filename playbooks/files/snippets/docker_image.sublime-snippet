@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  docker_image: >
+    name=${1:None # ! Image name to work with}
+    nocache=${2:False #  Do not use cache with building}
+    docker_url=${3:unix://var/run/docker.sock #  URL of docker host to issue commands to}
+    state=${4:present #  Set the state of the image}
+    tag=${5:latest #  Image tag to work with}
+    timeout=${6:600 #  Set image operation timeout}
+    path=${7:None #  Path to directory with Dockerfile}
+  ]]></content>
+  <tabTrigger>an-docker_image</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

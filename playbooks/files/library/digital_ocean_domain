@@ -1,0 +1,30 @@
+---
+module: digital_ocean_domain
+short_description: Create/delete a DNS record in DigitalOcean
+description:
+     - Create/delete a DNS record in DigitalOcean.
+version_added: "1.6"
+options:
+  state:
+    description:
+     - Indicate desired state of the target.
+    default: present
+    choices: ['present', 'active', 'absent', 'deleted']
+  client_id:
+     description:
+     - Digital Ocean manager id.
+  api_key:
+    description:
+     - Digital Ocean api key.
+  id:
+    description:
+     - Numeric, the droplet id you want to operate on.
+  name:
+    description:
+     - String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key, or the name of a domain.
+  ip:
+    description:
+     - The IP address to point a domain at.
+
+notes:
+  - Two environment variables can be used, DO_CLIENT_ID and DO_API_KEY.

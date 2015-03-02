@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  mount: >
+    src=${1:None # ! device to be mounted on I(name).}
+    name=${2:None # ! path to the mount point, eg: C(/mnt/files)}
+    dump=${3:None #  dump (see fstab(8))}
+    passno=${4:None #  passno (see fstab(8))}
+    fstype=${5:None # ! file-system type}
+    state=${6:None # ! If C(mounted) or C(unmounted), the device will be actively mounted or unmounted as well as just configured in I(fstab). C(absent) and C(present) only deal with I(fstab). C(mounted) will also automatically create the mount point directory if it doesn't exist. If C(absent) changes anything, it will remove the mount point directory.}
+    opts=${7:None #  mount options (see fstab(8))}
+  ]]></content>
+  <tabTrigger>an-mount</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

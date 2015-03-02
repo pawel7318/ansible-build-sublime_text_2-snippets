@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  rabbitmq_plugin: >
+    state=${1:enabled #  Specify if plugins are to be enabled or disabled}
+    names=${2:None # ! Comma-separated list of plugin names}
+    prefix=${3:None #  Specify a custom install prefix to a Rabbit}
+    new_only=${4:no #  Only enable missing plugins}
+  ]]></content>
+  <tabTrigger>an-rabbitmq_plugin</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

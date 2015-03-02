@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  ec2_asg: >
+    availability_zones=${1: #  List of availability zone names in which to create the group.  Defaults to all the availability zones in the region if vpc_zone_identifier is not set.}
+    name=${2: # ! Unique name for group to be created or deleted}
+    tags=${3:None #  List of tag dictionaries to use. Required keys are 'key', 'value'. Optional key is 'propagate_at_launch', which defaults to true.}
+    region=${4: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    min_size=${5: #  Minimum number of instances in group}
+    desired_capacity=${6: #  Desired number of instances in group}
+    state=${7: # ! register or deregister the instance}
+    vpc_zone_identifier=${8:None #  List of VPC subnets to use}
+    max_size=${9: #  Maximum number of instances in group}
+    health_check_period=${10:500 seconds #  Length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts checking its health.}
+    load_balancers=${11: #  List of ELB names to use for the group}
+    launch_config_name=${12: #  Name of the Launch configuration to use for the group. See the ec2_lc module for managing these.}
+    health_check_type=${13:EC2 #  The service you want the health status from, Amazon EC2 or Elastic Load Balancer.}
+  ]]></content>
+  <tabTrigger>an-ec2_asg</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

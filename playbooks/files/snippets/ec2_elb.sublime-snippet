@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  ec2_elb: >
+    region=${1: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    instance_id=${2: # ! EC2 Instance ID}
+    state=${3: # ! register or deregister the instance}
+    wait_timeout=${4:0 #  Number of seconds to wait for an instance to change state. If 0 then this module may return an error if a transient error occurs. If non-zero then any transient errors are ignored until the timeout is reached. Ignored when wait=no.}
+    ec2_elbs=${5:None #  List of ELB names, required for registration. The ec2_elbs fact should be used if there was a previous de-register.}
+    validate_certs=${6:yes #  When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.}
+    enable_availability_zone=${7:True #  Whether to enable the availability zone of the instance on the target ELB if the availability zone has not already been enabled. If set to no, the task will fail if the availability zone is not enabled on the ELB.}
+    wait=${8:True #  Wait for instance registration or deregistration to complete successfully before returning.}
+  ]]></content>
+  <tabTrigger>an-ec2_elb</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

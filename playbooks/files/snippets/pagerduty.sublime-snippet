@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  pagerduty: >
+    name=${1:None # ! PagerDuty unique subdomain.}
+    service=${2:None #  PagerDuty service ID.}
+    passwd=${3:None # ! PagerDuty user password.}
+    hours=${4:1 #  Length of maintenance window in hours.}
+    state=${5:None # ! Create a maintenance window or get a list of ongoing windows.}
+    user=${6:None # ! PagerDuty user ID.}
+    validate_certs=${7:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    desc=${8:Created by Ansible #  Short description of maintenance window.}
+  ]]></content>
+  <tabTrigger>an-pagerduty</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

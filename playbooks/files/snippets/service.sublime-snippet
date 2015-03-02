@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  service: >
+    name=${1: # ! Name of the service.}
+    pattern=${2: #  If the service does not respond to the status command, name a substring to look for as would be found in the output of the I(ps) command as a stand-in for a status result.  If the string is found, the service will be assumed to be running.}
+    enabled=${3: #  Whether the service should start on boot. B(At least one of state and enabled are required.)}
+    state=${4: #  C(started)/C(stopped) are idempotent actions that will not run commands unless necessary.  C(restarted) will always bounce the service.  C(reloaded) will always reload. B(At least one of state and enabled are required.)}
+    sleep=${5: #  If the service is being C(restarted) then sleep this many seconds between the stop and start command. This helps to workaround badly behaving init scripts that exit immediately after signaling a process to stop.}
+    arguments=${6: #  Additional arguments provided on the command line}
+    runlevel=${7:default #  For OpenRC init scripts (ex: Gentoo) only.  The runlevel that this service belongs to.}
+  ]]></content>
+  <tabTrigger>an-service</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

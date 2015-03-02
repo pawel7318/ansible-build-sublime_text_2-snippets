@@ -1,0 +1,26 @@
+---
+module: stat
+version_added: "1.3"
+short_description: retrieve file or file system status
+description:
+     - Retrieves facts for a file similar to the linux/unix 'stat' command.
+options:
+  path:
+    description:
+      - The full path of the file/object to get the facts of
+    required: true
+    default: null
+    aliases: []
+  follow:
+    description:
+      - Whether to follow symlinks
+    required: false
+    default: no
+    aliases: []
+  get_md5:
+    description:
+      - Whether to return the md5 sum of the file
+    required: false
+    default: yes
+    aliases: []
+author: Bruce Pennypacker

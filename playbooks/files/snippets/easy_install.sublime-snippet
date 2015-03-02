@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  easy_install: >
+    virtualenv=${1:None #  an optional I(virtualenv) directory path to install into. If the I(virtualenv) does not exist, it is created automatically}
+    virtualenv_site_packages=${2:no #  Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if this setting is changed on an already existing virtual environment it will not have any effect, the environment must be deleted and newly created.}
+    virtualenv_command=${3:virtualenv #  The command to create the virtual environment with. For example C(pyvenv), C(virtualenv), C(virtualenv2).}
+    executable=${4:None #  The explicit executable or a pathname to the executable to be used to run easy_install for a specific version of Python installed in the system. For example C(easy_install-3.3), if there are both Python 2.7 and 3.3 installations in the system and you want to run easy_install for the Python 3.3 installation.}
+    name=${5:None # ! A Python library name}
+  ]]></content>
+  <tabTrigger>an-easy_install</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,115 @@
+---
+module: rax
+short_description: create / delete an instance in Rackspace Public Cloud
+description:
+     - creates / deletes a Rackspace Public Cloud instance and optionally
+       waits for it to be 'running'.
+version_added: "1.2"
+options:
+  auto_increment:
+    description:
+      - Whether or not to increment a single number with the name of the
+        created servers. Only applicable when used with the I(group) attribute
+        or meta key.
+    default: yes
+    version_added: 1.5
+  count:
+    description:
+      - number of instances to launch
+    default: 1
+    version_added: 1.4
+  count_offset:
+    description:
+      - number count to start at
+    default: 1
+    version_added: 1.4
+  disk_config:
+    description:
+      - Disk partitioning strategy
+    choices:
+      - auto
+      - manual
+    version_added: '1.4'
+    default: auto
+  exact_count:
+    description:
+      - Explicitly ensure an exact count of instances, used with
+        state=active/present
+    default: no
+    version_added: 1.4
+  extra_client_args:
+    description:
+      - A hash of key/value pairs to be used when creating the cloudservers
+        client. This is considered an advanced option, use it wisely and
+        with caution.
+    version_added: 1.6
+  extra_create_args:
+    description:
+      - A hash of key/value pairs to be used when creating a new server.
+        This is considered an advanced option, use it wisely and with caution.
+    version_added: 1.6
+  files:
+    description:
+      - Files to insert into the instance. remotefilename:localcontent
+    default: null
+  flavor:
+    description:
+      - flavor to use for the instance
+    default: null
+  group:
+    description:
+      - host group to assign to server, is also used for idempotent operations
+        to ensure a specific number of instances
+    version_added: 1.4
+  image:
+    description:
+      - image to use for the instance. Can be an C(id), C(human_id) or C(name)
+    default: null
+  instance_ids:
+    description:
+      - list of instance ids, currently only used when state='absent' to
+        remove instances
+    version_added: 1.4
+  key_name:
+    description:
+      - key pair to use on the instance
+    default: null
+    aliases:
+      - keypair
+  meta:
+    description:
+      - A hash of metadata to associate with the instance
+    default: null
+  name:
+    description:
+      - Name to give the instance
+    default: null
+  networks:
+    description:
+      - The network to attach to the instances. If specified, you must include
+        ALL networks including the public and private interfaces. Can be C(id)
+        or C(label).
+    default:
+      - public
+      - private
+    version_added: 1.4
+  state:
+    description:
+      - Indicate desired state of the resource
+    choices:
+      - present
+      - absent
+    default: present
+  wait:
+    description:
+      - wait for the instance to be in state 'running' before returning
+    default: "no"
+    choices:
+      - "yes"
+      - "no"
+  wait_timeout:
+    description:
+      - how long before wait gives up, in seconds
+    default: 300
+author: Jesse Keating, Matt Martz
+extends_documentation_fragment: rackspace.openstack

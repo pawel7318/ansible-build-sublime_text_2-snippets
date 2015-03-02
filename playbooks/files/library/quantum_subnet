@@ -1,0 +1,89 @@
+---
+module: quantum_subnet
+version_added: "1.2"
+short_description: Add/Remove floating IP from an instance
+description:
+   - Add or Remove a floating IP to an instance
+options:
+   login_username:
+     description:
+        - login username to authenticate to keystone
+     required: true
+     default: admin
+   login_password:
+     description:
+        - Password of login user
+     required: true
+     default: True
+   login_tenant_name:
+     description:
+        - The tenant name of the login user
+     required: true
+     default: True
+   auth_url:
+     description:
+        - The keystone URL for authentication
+     required: false
+     default: 'http://127.0.0.1:35357/v2.0/'
+   region_name:
+     description:
+        - Name of the region
+     required: false
+     default: None
+   state:
+     description:
+        - Indicate desired state of the resource
+     choices: ['present', 'absent']
+     default: present
+   network_name:
+     description:
+        - Name of the network to which the subnet should be attached
+     required: true
+     default: None
+   name:
+     description:
+       - The name of the subnet that should be created
+     required: true
+     default: None
+   cidr:
+     description:
+        - The CIDR representation of the subnet that should be assigned to the subnet
+     required: true
+     default: None
+   tenant_name:
+     description:
+        - The name of the tenant for whom the subnet should be created
+     required: false
+     default: None
+   ip_version:
+     description:
+        - The IP version of the subnet 4 or 6
+     required: false
+     default: 4
+   enable_dhcp:
+     description:
+        - Whether DHCP should be enabled for this subnet.
+     required: false
+     default: true
+   gateway_ip:
+     description:
+        - The ip that would be assigned to the gateway for this subnet
+     required: false
+     default: None
+   dns_nameservers:
+     description:
+        - DNS nameservers for this subnet, comma-separated
+     required: false
+     default: None
+     version_added: "1.4"
+   allocation_pool_start:
+     description:
+        - From the subnet pool the starting address from which the IP should be allocated
+     required: false
+     default: None
+   allocation_pool_end:
+     description:
+        - From the subnet pool the last IP that should be assigned to the virtual machines
+     required: false
+     default: None
+requirements: ["quantumclient", "neutronclient", "keystoneclient"]

@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  rabbitmq_policy: >
+    node=${1:rabbit #  Erlang node name of the rabbit we wish to configure.}
+    name=${2:None # ! The name of the policy to manage.}
+    tags=${3:None # ! A dict or string describing the policy.}
+    pattern=${4:None # ! A regex of queues to apply the policy to.}
+    priority=${5:0 #  The priority of the policy.}
+    vhost=${6:/ #  The name of the vhost to apply to.}
+    state=${7:present #  The state of the policy.}
+  ]]></content>
+  <tabTrigger>an-rabbitmq_policy</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

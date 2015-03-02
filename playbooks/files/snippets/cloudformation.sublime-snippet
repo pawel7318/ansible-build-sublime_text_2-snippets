@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  cloudformation: >
+    aws_secret_key=${1:None #  AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.}
+    aws_access_key=${2:None #  AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.}
+    disable_rollback=${3:no #  If a stacks fails to form, rollback will remove the stack}
+    tags=${4:None #  Dictionary of tags to associate with stack and it's resources during stack creation. Cannot be updated later. Requires at least Boto version 2.6.0.}
+    stack_name=${5:None # ! name of the cloudformation stack}
+    region=${6: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    template_parameters=${7:{} #  a list of hashes of all the template variables for the stack}
+    state=${8:None # ! If state is "present", stack will be created.  If state is "present" and if stack exists and template has changed, it will be updated. If state is absent, stack will be removed.}
+    template=${9:None # ! the path of the cloudformation template}
+  ]]></content>
+  <tabTrigger>an-cloudformation</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

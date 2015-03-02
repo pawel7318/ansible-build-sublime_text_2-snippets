@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  subversion: >
+    username=${1:None #  --username parameter passed to svn.}
+    executable=${2:None #  Path to svn executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.}
+    force=${3:yes #  If C(yes), modified files will be discarded. If C(no), module will fail if it encounters modified files.}
+    dest=${4:None # ! Absolute path where the repository should be deployed.}
+    repo=${5:None # ! The subversion URL to the repository.}
+    export=${6:no #  If C(yes), do export instead of checkout/update.}
+    password=${7:None #  --password parameter passed to svn.}
+    revision=${8:HEAD #  Specific revision to checkout.}
+  ]]></content>
+  <tabTrigger>an-subversion</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

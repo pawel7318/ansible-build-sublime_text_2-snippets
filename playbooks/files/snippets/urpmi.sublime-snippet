@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  urpmi: >
+    no-suggests=${1:True #  Corresponds to the C(--no-suggests) option for I(urpmi).}
+    state=${2:present #  Indicates the desired package state}
+    force=${3:True #  Corresponds to the C(--force) option for I(urpmi).}
+    update_cache=${4:False #  update the package database first C(urpmi.update -a).}
+    pkg=${5:None # ! name of package to install, upgrade or remove.}
+  ]]></content>
+  <tabTrigger>an-urpmi</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

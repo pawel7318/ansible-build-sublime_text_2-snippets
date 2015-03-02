@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  quantum_router_interface: >
+    region_name=${1:None #  Name of the region}
+    tenant_name=${2:None #  Name of the tenant whose subnet has to be attached.}
+    login_tenant_name=${3:yes # ! The tenant name of the login user}
+    state=${4:present #  Indicate desired state of the resource}
+    auth_url=${5:http://127.0.0.1:35357/v2.0/ #  The keystone URL for authentication}
+    login_password=${6:yes # ! Password of login user}
+    login_username=${7:admin # ! login username to authenticate to keystone}
+    subnet_name=${8:None # ! Name of the subnet to whose interface should be attached to the router.}
+    router_name=${9:None # ! Name of the router to which the subnet's interface should be attached.}
+  ]]></content>
+  <tabTrigger>an-quantum_router_interface</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

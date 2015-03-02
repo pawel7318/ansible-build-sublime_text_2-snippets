@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  ec2_ami_search: >
+    stream=${1:server #  T}
+    virt=${2:paravirtual #  v}
+    region=${3:us-east-1 #  E}
+    release=${4: # ! s}
+    arch=${5:amd64 #  C}
+    store=${6:ebs #  B}
+    distro=${7: # ! L}
+  ]]></content>
+  <tabTrigger>an-ec2_ami_search</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

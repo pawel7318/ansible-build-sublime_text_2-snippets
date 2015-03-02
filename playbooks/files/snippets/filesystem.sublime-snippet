@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  filesystem: >
+    force=${1:no #  If yes, allows to create new filesystem on devices that already has filesystem.}
+    opts=${2: #  List of options to be passed to mkfs command.}
+    dev=${3: # ! Target block device.}
+    fstype=${4: # ! File System type to be created.}
+  ]]></content>
+  <tabTrigger>an-filesystem</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

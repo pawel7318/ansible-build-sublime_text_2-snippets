@@ -1,0 +1,42 @@
+---
+module: boundary_meter
+short_description: Manage boundary meters
+description:
+    - This module manages boundary meters
+version_added: "1.3"
+author: curtis@serverascode.com
+requirements:
+    - Boundary API access
+    - bprobe is required to send data, but not to register a meter
+    - Python urllib2
+options:
+    name:
+        description:
+            - meter name
+        required: true
+    state:
+        description:
+            - Whether to create or remove the client from boundary
+        required: false
+        default: true
+        choices: ["present", "absent"]
+    apiid:
+        description:
+            - Organizations boundary API ID
+        required: true
+    apikey:
+        description:
+            - Organizations boundary API KEY
+        required: true
+    validate_certs:
+        description:
+            - If C(no), SSL certificates will not be validated. This should only be used
+              on personally controlled sites using self-signed certificates.
+        required: false
+        default: 'yes'
+        choices: ['yes', 'no']
+        version_added: 1.5.1
+
+notes:
+    - This module does not yet support boundary tags.
+

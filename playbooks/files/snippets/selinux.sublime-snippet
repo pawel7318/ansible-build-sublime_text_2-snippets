@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  selinux: >
+    policy=${1:None #  name of the SELinux policy to use (example: C(targeted)) will be required if state is not C(disabled)}
+    state=${2:None # ! The SELinux mode}
+    conf=${3:/etc/selinux/config #  path to the SELinux configuration file, if non-standard}
+  ]]></content>
+  <tabTrigger>an-selinux</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

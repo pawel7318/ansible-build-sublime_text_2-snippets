@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  ec2_snapshot: >
+    description=${1: #  description to be applied to the snapshot}
+    snapshot_tags=${2: #  a hash/dictionary of tags to add to the snapshot}
+    region=${3: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    device_name=${4: #  device name of a mounted volume to be snapshotted}
+    instance_id=${5: #  instance that has the required volume to snapshot mounted}
+    volume_id=${6: #  volume from which to take the snapshot}
+  ]]></content>
+  <tabTrigger>an-ec2_snapshot</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

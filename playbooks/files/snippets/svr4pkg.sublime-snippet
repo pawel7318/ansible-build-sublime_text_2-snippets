@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  svr4pkg: >
+    category=${1: #  Install/Remove category instead of a single package.}
+    src=${2: #  Specifies the location to install the package from. Required when C(state=present).}
+    name=${3: # ! Package name, e.g. C(SUNWcsr)}
+    zone=${4:all #  Whether to install the package only in the current zone, or install it into all zones.}
+    state=${5: # ! Whether to install (C(present)), or remove (C(absent)) a package.}
+    proxy=${6: #  HTTP[s] proxy to be used if C(src) is a URL.}
+    response_file=${7: #  Specifies the location of a response file to be used if package expects input on install. (added in Ansible 1.4)}
+  ]]></content>
+  <tabTrigger>an-svr4pkg</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

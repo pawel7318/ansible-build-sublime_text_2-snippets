@@ -1,0 +1,65 @@
+---
+module: ec2_lc
+short_description: Create or delete AWS Autoscaling Launch Configurations
+description:
+  - Can create or delete AwS Autoscaling Configurations
+  - Works with the ec2_asg module to manage Autoscaling Groups
+version_added: "1.6"
+author: Gareth Rushgrove
+options:
+  state:
+    description:
+      - register or deregister the instance
+    required: true
+    choices: ['present', 'absent']
+  name:
+    description:
+      - Unique name for configuration
+    required: true
+  instance_type:
+    description:
+      - instance type to use for the instance
+    required: true
+    default: null
+    aliases: []
+  image_id:
+    description:
+      - The AMI unique identifier to be used for the group
+    required: false
+  key_name:
+    description:
+      - The SSH key name to be used for access to managed instances
+    required: false
+  security_groups:
+    description:
+      - A list of security groups into which instances should be found
+    required: false
+  region:
+    description:
+      - The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+    required: false
+    aliases: ['aws_region', 'ec2_region']
+  volumes:
+    description:
+      - a list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and type (and number of iops for io device type) must be specified for a new volume or a root volume, and may be passed for a snapshot volume. For any volume, a volume size less than 1 will be interpreted as a request not to create the volume.
+    required: false
+    default: null
+    aliases: []
+  user_data:
+    description:
+      - opaque blob of data which is made available to the ec2 instance
+    required: false
+    default: null
+    aliases: []
+  spot_price:
+    description:
+      - The spot price you are bidding. Only applies for an autoscaling group with spot instances.
+    required: false
+    default: null
+  instance_monitoring:
+    description:
+      - whether instances in group are launched with detailed monitoring.
+    required: false
+    default: false
+    aliases: []
+extends_documentation_fragment: aws

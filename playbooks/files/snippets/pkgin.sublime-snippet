@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  pkgin: >
+    state=${1:present #  state of the package}
+    name=${2: # ! name of package to install/remove}
+  ]]></content>
+  <tabTrigger>an-pkgin</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

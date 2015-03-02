@@ -1,0 +1,89 @@
+---
+module: nova_compute
+version_added: "1.2"
+short_description: Create/Delete VMs from OpenStack
+description:
+   - Create or Remove virtual machines from Openstack.
+options:
+   login_username:
+     description:
+        - login username to authenticate to keystone
+     required: true
+     default: admin
+   login_password:
+     description:
+        - Password of login user
+     required: true
+     default: 'yes'
+   login_tenant_name:
+     description:
+        - The tenant name of the login user
+     required: true
+     default: 'yes'
+   auth_url:
+     description:
+        - The keystone url for authentication
+     required: false
+     default: 'http://127.0.0.1:35357/v2.0/'
+   region_name:
+     description:
+        - Name of the region
+     required: false
+     default: None
+   state:
+     description:
+        - Indicate desired state of the resource
+     choices: ['present', 'absent']
+     default: present
+   name:
+     description:
+        - Name that has to be given to the instance
+     required: true
+     default: None
+   image_id:
+     description:
+        - The id of the image that has to be cloned
+     required: true
+     default: None
+   flavor_id:
+     description:
+        - The id of the flavor in which the new VM has to be created
+     required: false
+     default: 1
+   key_name:
+     description:
+        - The key pair name to be used when creating a VM
+     required: false
+     default: None
+   security_groups:
+     description:
+        - The name of the security group to which the VM should be added
+     required: false
+     default: None
+   nics:
+     description:
+        - A list of network id's to which the VM's interface should be attached
+     required: false
+     default: None
+   meta:
+     description:
+        - A list of key value pairs that should be provided as a metadata to the new VM
+     required: false
+     default: None
+   wait:
+     description:
+        - If the module should wait for the VM to be created.
+     required: false
+     default: 'yes'
+   wait_for:
+     description:
+        - The amount of time the module should wait for the VM to get into active state
+     required: false
+     default: 180
+   user_data:
+     description:
+        - Opaque blob of data which is made available to the instance
+     required: false
+     default: None
+     version_added: "1.6"
+requirements: ["novaclient"]

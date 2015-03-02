@@ -1,0 +1,53 @@
+---
+module: quantum_router_interface
+version_added: "1.2"
+short_description: Attach/Dettach a subnet's interface to a router
+description:
+   - Attach/Dettach a subnet interface to a router, to provide a gateway for the subnet.
+options:
+   login_username:
+     description:
+        - login username to authenticate to keystone
+     required: true
+     default: admin
+   login_password:
+     description:
+        - Password of login user
+     required: true
+     default: 'yes'
+   login_tenant_name:
+     description:
+        - The tenant name of the login user
+     required: true
+     default: 'yes'
+   auth_url:
+     description:
+        - The keystone URL for authentication
+     required: false
+     default: 'http://127.0.0.1:35357/v2.0/'
+   region_name:
+     description:
+        - Name of the region
+     required: false
+     default: None
+   state:
+     description:
+        - Indicate desired state of the resource
+     choices: ['present', 'absent']
+     default: present
+   router_name:
+     description:
+        - Name of the router to which the subnet's interface should be attached.
+     required: true
+     default: None
+   subnet_name:
+     description:
+        - Name of the subnet to whose interface should be attached to the router.
+     required: true
+     default: None
+   tenant_name:
+     description:
+        - Name of the tenant whose subnet has to be attached.
+     required: false
+     default: None
+requirements: ["quantumclient", "keystoneclient"]

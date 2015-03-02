@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  rds_param_group: >
+    engine=${1:None #  The type of database for this group. Required for state=present.}
+    aws_secret_key=${2:None #  AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.}
+    aws_access_key=${3:None #  AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.}
+    name=${4:None # ! Database parameter group identifier.}
+    region=${5:None # ! The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    immediate=${6:None #  Whether to apply the changes immediately, or after the next reboot of any associated instances.}
+    state=${7:present # ! Specifies whether the group should be present or absent.}
+    params=${8:None #  Map of parameter names and values. Numeric values may be represented as K for kilo (1024), M for mega (1024^2), G for giga (1024^3), or T for tera (1024^4), and these values will be expanded into the appropriate number before being set in the parameter group.}
+    description=${9:None #  Database parameter group description. Only set when a new group is added.}
+  ]]></content>
+  <tabTrigger>an-rds_param_group</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  rax_meta: >
+    meta=${1:None #  A hash of metadata to associate with the instance}
+    id=${2: #  Server ID to modify metadata for}
+    name=${3:None #  Server name to modify metadata for}
+    address=${4: #  Server IP address to modify metadata for, will match any IP assigned to the server}
+  ]]></content>
+  <tabTrigger>an-rax_meta</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

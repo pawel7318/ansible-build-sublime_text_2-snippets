@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  twilio: >
+    msg=${1: # ! t}
+    auth_token=${2: # ! u}
+    from_number=${3: # ! w}
+    to_number=${4: # ! w}
+    account_sid=${5: # ! u}
+  ]]></content>
+  <tabTrigger>an-twilio</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+  git: >
+    executable=${1:None #  Path to git executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.}
+    remote=${2:origin #  Name of the remote.}
+    recursive=${3:yes #  if C(no), repository will be cloned without the --recursive option, skipping sub-modules.}
+    reference=${4:None #  Reference repository (see "git clone --reference ...")}
+    dest=${5: # ! Absolute path of where the repository should be checked out to.}
+    accept_hostkey=${6:no #  if C(yes), adds the hostkey for the repo url if not already added. If ssh_args contains "-o StrictHostKeyChecking=no", this parameter is ignored.}
+    update=${7:yes #  If C(no), just returns information about the repository without updating.}
+    ssh_opts=${8:None #  Creates a wrapper script and exports the path as GIT_SSH which git then automatically uses to override ssh arguments. An example value could be "-o StrictHostKeyChecking=no"}
+    repo=${9: # ! git, SSH, or HTTP protocol address of the git repository.}
+    depth=${10:None #  Create a shallow clone with a history truncated to the specified number or revisions. The minimum possible value is C(1), otherwise ignored.}
+    version=${11:HEAD #  What version of the repository to check out.  This can be the full 40-character I(SHA-1) hash, the literal string C(HEAD), a branch name, or a tag name.}
+    bare=${12:no #  if C(yes), repository will be created as a bare repo, otherwise it will be a standard repo with a workspace.}
+    force=${13:yes #  If C(yes), any modified files in the working repository will be discarded.  Prior to 0.7, this was always 'yes' and could not be disabled.}
+    key_file=${14:None #  Uses the same wrapper method as ssh_opts to pass "-i <key_file>" to the ssh arguments used by git}
+  ]]></content>
+  <tabTrigger>an-git</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

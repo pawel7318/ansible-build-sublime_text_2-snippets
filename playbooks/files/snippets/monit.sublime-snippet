@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  monit: >
+    state=${1:None # ! The state of service}
+    name=${2:None # ! The name of the I(monit) program/process to manage}
+  ]]></content>
+  <tabTrigger>an-monit</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  rabbitmq_user: >
+    node=${1:rabbit #  erlang node name of the rabbit we wish to configure}
+    force=${2:no #  Deletes and recreates the user.}
+    write_priv=${3:^$ #  Regular expression to restrict configure actions on a resource for the specified vhost.}
+    tags=${4:None #  User tags specified as comma delimited}
+    read_priv=${5:^$ #  Regular expression to restrict configure actions on a resource for the specified vhost.}
+    state=${6:present #  Specify if user is to be added or removed}
+    user=${7:None # ! Name of user to add}
+    configure_priv=${8:^$ #  Regular expression to restrict configure actions on a resource for the specified vhost.}
+    vhost=${9:/ #  vhost to apply access privileges.}
+    password=${10:None #  Password of user to add.}
+  ]]></content>
+  <tabTrigger>an-rabbitmq_user</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

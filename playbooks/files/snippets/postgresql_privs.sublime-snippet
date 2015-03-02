@@ -1,0 +1,19 @@
+<snippet>
+  <content><![CDATA[
+  postgresql_privs: >
+    objs=${1: #  Comma separated list of database objects to set privileges on.}
+    roles=${2: # ! Comma separated list of role (user/group) names to set permissions for.}
+    database=${3: # ! Name of database to connect to.}
+    privs=${4: #  Comma separated list of privileges to grant/revoke.}
+    state=${5:present #  If C(present), the specified privileges are granted, if C(absent) they are revoked.}
+    host=${6:None #  Database host address. If unspecified, connect via Unix socket.}
+    login=${7:postgres #  The username to authenticate with.}
+    password=${8:None #  The password to authenticate with.}
+    type=${9:table #  Type of database object to set privileges on.}
+    port=${10:5432 #  Database port to connect to.}
+    grant_option=${11: #  Whether C(role) may grant/revoke the specified privileges/group memberships to others.}
+    schema=${12: #  Schema that contains the database objects specified via I(objs).}
+  ]]></content>
+  <tabTrigger>an-postgresql_privs</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  rax_clb_nodes: >
+    node_id=${1: #  Node id}
+    weight=${2: #  Weight of node}
+    load_balancer_id=${3: # ! Load balancer id}
+    state=${4:present #  Indicate desired state of the node}
+    wait_timeout=${5:30 #  How long to wait before giving up and returning an error}
+    address=${6: #  IP address or domain name of the node}
+    type=${7: #  Type of node}
+    port=${8: #  Port number of the load balanced service on the node}
+    condition=${9: #  Condition for the node, which determines its role within the load balancer}
+    wait=${10:no #  Wait for the load balancer to become active before returning}
+  ]]></content>
+  <tabTrigger>an-rax_clb_nodes</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

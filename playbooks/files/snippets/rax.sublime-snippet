@@ -1,0 +1,26 @@
+<snippet>
+  <content><![CDATA[
+  rax: >
+    files=${1:None #  Files to insert into the instance. remotefilename:localcontent}
+    count=${2:1 #  number of instances to launch}
+    group=${3: #  host group to assign to server, is also used for idempotent operations to ensure a specific number of instances}
+    name=${4:None #  Name to give the instance}
+    exact_count=${5:False #  Explicitly ensure an exact count of instances, used with state=active/present}
+    auto_increment=${6:True #  Whether or not to increment a single number with the name of the created servers. Only applicable when used with the I(group) attribute or meta key.}
+    image=${7:None #  image to use for the instance. Can be an C(id), C(human_id) or C(name)}
+    disk_config=${8:auto #  Disk partitioning strategy}
+    count_offset=${9:1 #  number count to start at}
+    instance_ids=${10: #  list of instance ids, currently only used when state='absent' to remove instances}
+    state=${11:present #  Indicate desired state of the resource}
+    wait_timeout=${12:300 #  how long before wait gives up, in seconds}
+    meta=${13:None #  A hash of metadata to associate with the instance}
+    extra_create_args=${14: #  A hash of key/value pairs to be used when creating a new server. This is considered an advanced option, use it wisely and with caution.}
+    extra_client_args=${15: #  A hash of key/value pairs to be used when creating the cloudservers client. This is considered an advanced option, use it wisely and with caution.}
+    flavor=${16:None #  flavor to use for the instance}
+    networks=${17:['public', 'private'] #  The network to attach to the instances. If specified, you must include ALL networks including the public and private interfaces. Can be C(id) or C(label).}
+    key_name=${18:None #  key pair to use on the instance}
+    wait=${19:no #  wait for the instance to be in state 'running' before returning}
+  ]]></content>
+  <tabTrigger>an-rax</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

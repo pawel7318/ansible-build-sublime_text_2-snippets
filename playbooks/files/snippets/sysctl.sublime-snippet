@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  sysctl: >
+    name=${1:None # ! The dot-separated path (aka I(key)) specifying the sysctl variable.}
+    ignoreerrors=${2:False #  Use this option to ignore errors about unknown keys.}
+    value=${3:None #  Desired value of the sysctl key.}
+    reload=${4:yes #  If C(yes), performs a I(/sbin/sysctl -p) if the C(sysctl_file) is updated. If C(no), does not reload I(sysctl) even if the C(sysctl_file) is updated.}
+    state=${5:present #  Whether the entry should be present or absent in the sysctl file.}
+    sysctl_set=${6:False #  Verify token value with the sysctl command and set with -w if necessary}
+    sysctl_file=${7:/etc/sysctl.conf #  Specifies the absolute path to C(sysctl.conf), if not C(/etc/sysctl.conf).}
+  ]]></content>
+  <tabTrigger>an-sysctl</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

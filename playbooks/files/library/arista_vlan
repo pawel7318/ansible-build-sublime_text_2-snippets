@@ -1,0 +1,38 @@
+---
+module: arista_vlan
+version_added: "1.3"
+author: Peter Sprygada
+short_description: Manage VLAN resources
+requirements:
+    - Arista EOS 4.10
+    - Netdev extension for EOS
+description:
+    - Manage VLAN resources on Arista EOS network devices.  This module 
+      requires the Netdev EOS extension to be installed in EOS.  For detailed
+      instructions for installing and using the Netdev module please see 
+      [link]
+options:
+    vlan_id:
+        description:
+            - the vlan id 
+        required: true
+    state:
+        description:
+            - describe the desired state of the vlan related to the config
+        required: false
+        default: 'present'
+        choices: [ 'present', 'absent' ]
+    logging:
+        description:
+            - enables or disables the syslog facility for this module
+        required: false
+        choices: [ 'true', 'false', 'yes', 'no' ]
+    name:
+        description:
+            - a descriptive name for the vlan
+        required: false
+notes:
+    - Requires EOS 4.10 or later 
+    - The Netdev extension for EOS must be installed and active in the 
+      available extensions (show extensions from the EOS CLI)
+    - See http://eos.aristanetworks.com for details

@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  grove: >
+    service=${1:ansible #  Name of the service (displayed as the "user" in the message)}
+    url=${2: #  Service URL for the web client}
+    icon_url=${3: #  Icon for the service}
+    channel_token=${4: # ! Token of the channel to post to.}
+    message=${5: # ! Message content}
+    validate_certs=${6:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+  ]]></content>
+  <tabTrigger>an-grove</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

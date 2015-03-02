@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  win_group: >
+    state=${1:present #  Create or remove the group}
+    name=${2:None # ! Name of the group}
+    description=${3:None #  Description of the group}
+  ]]></content>
+  <tabTrigger>an-win_group</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

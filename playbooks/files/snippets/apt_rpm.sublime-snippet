@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  apt_rpm: >
+    state=${1:present #  Indicates the desired package state}
+    update_cache=${2:False #  update the package database first C(apt-get update).}
+    pkg=${3:None # ! name of package to install, upgrade or remove.}
+  ]]></content>
+  <tabTrigger>an-apt_rpm</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

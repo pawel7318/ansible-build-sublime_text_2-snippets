@@ -1,0 +1,44 @@
+---
+module: pkgng
+short_description: Package manager for FreeBSD >= 9.0
+description:
+    - Manage binary packages for FreeBSD using 'pkgng' which
+      is available in versions after 9.0.
+version_added: "1.2"
+options:
+    name:
+        description:
+            - name of package to install/remove
+        required: true
+    state:
+        description:
+            - state of the package
+        choices: [ 'present', 'absent' ]
+        required: false
+        default: present
+    cached:
+        description:
+            - use local package base or try to fetch an updated one
+        choices: [ 'yes', 'no' ]
+        required: false
+        default: no
+    annotation:
+        description:
+            - a comma-separated list of keyvalue-pairs of the form
+              <+/-/:><key>[=<value>]. A '+' denotes adding an annotation, a
+              '-' denotes removing an annotation, and ':' denotes modifying an 
+              annotation.
+              If setting or modifying annotations, a value must be provided.
+        required: false
+        version_added: "1.6"
+    pkgsite:
+        description:
+            - for pkgng versions before 1.1.4, specify packagesite to use
+              for downloading packages, if not specified, use settings from
+              /usr/local/etc/pkg.conf
+              for newer pkgng versions, specify a the name of a repository
+              configured in /usr/local/etc/pkg/repos
+        required: false
+author: bleader
+notes:
+    - When using pkgsite, be careful that already in cache packages won't be downloaded again.

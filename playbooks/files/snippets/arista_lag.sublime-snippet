@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  arista_lag: >
+    minimum_links=${1: #  the minimum number of physical interaces that must be operationally up to consider the lag operationally up}
+    logging=${2:False #  enables or disables the syslog facility for this module}
+    links=${3: #  array of physical interface links to include in this lag}
+    interface_id=${4: # ! the full name of the interface}
+    lacp=${5:active #  enables the use of the LACP protocol for managing link bundles}
+    state=${6:present #  describe the desired state of the interface related to the config}
+  ]]></content>
+  <tabTrigger>an-arista_lag</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

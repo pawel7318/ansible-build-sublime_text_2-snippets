@@ -1,0 +1,61 @@
+---
+module: netscaler
+version_added: "1.1"
+short_description: Manages Citrix NetScaler entities
+description:
+     - Manages Citrix NetScaler server and service entities.
+options:
+  nsc_host:
+    description:
+      - hostname or ip of your netscaler
+    required: true
+    default: null
+    aliases: []
+  nsc_protocol:
+    description:
+      - protocol used to access netscaler
+    required: false
+    default: https
+    aliases: []
+  user:
+    description:
+      - username
+    required: true
+    default: null
+    aliases: []
+  password:
+    description:
+      - password
+    required: true
+    default: null
+    aliases: []
+  action:
+    description:
+      - the action you want to perform on the entity
+    required: false
+    default: disable
+    choices: ["enable", "disable"]
+    aliases: []
+  name:
+    description:
+      - name of the entity
+    required: true
+    default: hostname
+    aliases: []
+  type:
+    description:
+      - type of the entity
+    required: false
+    default: server
+    choices: ["server", "service"]
+    aliases: []
+  validate_certs:
+    description:
+      - If C(no), SSL certificates for the target url will not be validated. This should only be used
+        on personally controlled sites using self-signed certificates.
+    required: false
+    default: 'yes'
+    choices: ['yes', 'no']
+
+requirements: [ "urllib", "urllib2" ]
+author: Nandor Sivok

@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  mysql_db: >
+    login_port=${1:3306 #  Port of the MySQL server. Requires login_host be defined as other then localhost if login_port is used}
+    name=${2:None # ! name of the database to add or remove}
+    encoding=${3:None #  Encoding mode}
+    login_user=${4:None #  The username used to authenticate with}
+    login_host=${5:localhost #  Host running the database}
+    login_unix_socket=${6:None #  The path to a Unix domain socket for local connections}
+    state=${7:present #  The database state}
+    login_password=${8:None #  The password used to authenticate with}
+    collation=${9:None #  Collation mode}
+    target=${10: #  Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (C(.sql)) as well as bzip2 (C(.bz2)) and gzip (C(.gz)) compressed files are supported.}
+  ]]></content>
+  <tabTrigger>an-mysql_db</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  cpanm: >
+    from_path=${1:None #  The local directory from where to install}
+    mirror=${2:False #  Specifies the base URL for the CPAN mirror to use}
+    name=${3:None #  The name of the Perl library to install}
+    locallib=${4:False #  Specify the install base to install modules}
+    notest=${5:False #  Do not run unit tests}
+  ]]></content>
+  <tabTrigger>an-cpanm</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

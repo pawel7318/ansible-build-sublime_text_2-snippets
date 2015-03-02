@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  dnsmadeeasy: >
+    domain=${1:None # ! Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the domain in DNS Made Easy (e.g. "839989") for faster resolution.}
+    record_name=${2:None #  Record name to get/create/delete/update. If record_name is not specified; all records for the domain will be returned in "result" regardless of the state argument.}
+    record_ttl=${3:1800 #  record's "Time to live".  Number of seconds the record remains cached in DNS servers.}
+    account_secret=${4:None # ! Accout Secret Key.}
+    account_key=${5:None # ! Accout API Key.}
+    record_type=${6:None #  Record type.}
+    state=${7:None # ! whether the record should exist or not}
+    record_value=${8:None #  Record value. HTTPRED: <redirection URL>, MX: <priority> <target name>, NS: <name server>, PTR: <target name>, SRV: <priority> <weight> <port> <target name>, TXT: <text value>}
+    validate_certs=${9:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+  ]]></content>
+  <tabTrigger>an-dnsmadeeasy</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

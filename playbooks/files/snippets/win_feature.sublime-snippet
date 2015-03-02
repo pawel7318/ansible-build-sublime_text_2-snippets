@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  win_feature: >
+    state=${1:present #  State of the features or roles on the system}
+    name=${2:None # ! Names of roles or features to install as a single feature or a comma-separated list of features}
+    restart=${3:None #  Restarts the computer automatically when installation is complete, if restarting is required by the roles or features installed.}
+  ]]></content>
+  <tabTrigger>an-win_feature</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

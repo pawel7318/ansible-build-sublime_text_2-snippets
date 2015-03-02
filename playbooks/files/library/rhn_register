@@ -1,0 +1,43 @@
+---
+module: rhn_register
+short_description: Manage Red Hat Network registration using the C(rhnreg_ks) command
+description:
+    - Manage registration to the Red Hat Network.
+version_added: "1.2"
+author: James Laska
+notes:
+    - In order to register a system, rhnreg_ks requires either a username and password, or an activationkey.
+requirements:
+    - rhnreg_ks
+options:
+    state:
+        description:
+          - whether to register (C(present)), or unregister (C(absent)) a system
+        required: false
+        choices: [ "present", "absent" ]
+        default: "present"
+    username:
+        description:
+            - Red Hat Network username
+        required: False
+        default: null
+    password:
+        description:
+            - Red Hat Network password
+        required: False
+        default: null
+    server_url:
+        description:
+            - Specify an alternative Red Hat Network server URL
+        required: False
+        default: Current value of I(serverURL) from C(/etc/sysconfig/rhn/up2date) is the default
+    activationkey:
+        description:
+            - supply an activation key for use with registration
+        required: False
+        default: null
+    channels:
+        description:
+            - Optionally specify a list of comma-separated channels to subscribe to upon successful registration.
+        required: false
+        default: []

@@ -1,0 +1,50 @@
+---
+module: arista_l2interface
+version_added: "1.2"
+author: Peter Sprygada
+short_description: Manage layer 2 interfaces
+requirements:
+    - Arista EOS 4.10
+    - Netdev extension for EOS
+description:
+    - Manage layer 2 interface resources on Arista EOS network devices
+options:
+    interface_id:
+        description:
+            - the full name of the interface
+        required: true
+    state:
+        description:
+            - describe the desired state of the interface related to the config
+        required: false
+        default: 'present'
+        choices: [ 'present', 'absent' ]
+    logging:
+        description:
+            - enables or disables the syslog facility for this module
+        required: false
+        default: false
+        choices: [ 'true', 'false', 'yes', 'no' ]
+    vlan_tagging:
+        description:
+            - specifies whether or not vlan tagging should be enabled for 
+              this interface
+        required: false
+        default: true
+        choices: [ 'enable', 'disable' ]
+    tagged_vlans: 
+        description:
+            - specifies the list of vlans that should be allowed to transit
+              this interface
+        required: false
+    untagged_vlan:
+        description:
+            - specifies the vlan that untagged traffic should be placed in for
+              transit across a vlan tagged link
+        required: false
+        default: 'default'
+notes:
+    - Requires EOS 4.10 or later 
+    - The Netdev extension for EOS must be installed and active in the 
+      available extensions (show extensions from the EOS CLI)
+    - See http://eos.aristanetworks.com for details

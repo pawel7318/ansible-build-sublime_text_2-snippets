@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  rax_files: >
+    web_index=${1: #  Sets an object to be presented as the HTTP index page when accessed by the CDN URL}
+    container=${2: # ! The container to use for container or metadata operations.}
+    region=${3:DFW #  Region to create an instance in}
+    private=${4: #  Used to set a container as private, removing it from the CDN.  B(Warning!) Private containers, if previously made public, can have live objects available until the TTL on cached objects expires}
+    state=${5:present #  Indicate desired state of the resource}
+    clear_meta=${6:no #  Optionally clear existing metadata when applying metadata to existing containers. Selecting this option is only appropriate when setting type=meta}
+    meta=${7: #  A hash of items to set as metadata values on a container}
+    ttl=${8: #  In seconds, set a container-wide TTL for all objects cached on CDN edge nodes. Setting a TTL is only appropriate for containers that are public}
+    web_error=${9: #  Sets an object to be presented as the HTTP error page when accessed by the CDN URL}
+    type=${10:file #  Type of object to do work on, i.e. metadata object or a container object}
+    public=${11: #  Used to set a container as public, available via the Cloud Files CDN}
+  ]]></content>
+  <tabTrigger>an-rax_files</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

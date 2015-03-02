@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  rax_scaling_policy: >
+    is_percent=${1:False #  Whether the value in I(change) is a percent value}
+    name=${2: # ! Name to give the policy}
+    scaling_group=${3: # ! Name of the scaling group that this policy will be added to}
+    cron=${4: #  The time when the policy will be executed, as a cron entry. For example, if this is parameter is set to C(1 0 * * *)}
+    desired_capacity=${5: #  The desired server capacity of the scaling the group; that is, how many servers should be in the scaling group.}
+    state=${6:present #  Indicate desired state of the resource}
+    cooldown=${7: #  The period of time, in seconds, that must pass before any scaling can occur after the previous scaling. Must be an integer between 0 and 86400 (24 hrs).}
+    at=${8: #  The UTC time when this policy will be executed. The time must be formatted according to C(yyyy-MM-dd'T'HH:mm:ss.SSS) such as C(2013-05-19T08:07:08Z)}
+    policy_type=${9: # ! The type of policy that will be executed for the current release.}
+    change=${10: #  The change, either as a number of servers or as a percentage, to make in the scaling group. If this is a percentage, you must set I(is_percent) to C(true) also.}
+  ]]></content>
+  <tabTrigger>an-rax_scaling_policy</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

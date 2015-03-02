@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  gce_pd: >
+    size_gb=${1:10 #  whole integer size of disk (in GB) to create, default is 10 GB}
+    name=${2:None # ! name of the disk}
+    zone=${3:us-central1-b #  zone in which to create the disk}
+    service_account_email=${4:None #  service account email}
+    pem_file=${5:None #  path to the pem file associated with the service account email}
+    instance_name=${6:None #  instance name if you wish to attach or detach the disk}
+    state=${7:present #  desired state of the persistent disk}
+    detach_only=${8:no #  do not destroy the disk, merely detach it from an instance}
+    project_id=${9:None #  your GCE project ID}
+    mode=${10:READ_ONLY #  GCE mount mode of disk, READ_ONLY (default) or READ_WRITE}
+  ]]></content>
+  <tabTrigger>an-gce_pd</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

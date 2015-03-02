@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  supervisorctl: >
+    username=${1:None #  username to use for authentication}
+    supervisorctl_path=${2:None #  path to supervisorctl executable}
+    name=${3:None # ! The name of the supervisord program or group to manage.}
+    server_url=${4:None #  URL on which supervisord server is listening}
+    state=${5:None # ! The desired state of program/group.}
+    password=${6:None #  password to use for authentication}
+    config=${7:None #  The supervisor configuration file path}
+  ]]></content>
+  <tabTrigger>an-supervisorctl</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  ec2_eip: >
+    instance_id=${1: #  The EC2 instance id}
+    reuse_existing_ip_allowed=${2:False #  Reuse an EIP that is not associated to an instance (when available), instead of allocating a new one.}
+    region=${3:None #  the EC2 region to use}
+    public_ip=${4: #  The elastic IP address to associate with the instance.}
+    state=${5:present #  If present, associate the IP with the instance.}
+    in_vpc=${6:False #  allocate an EIP inside a VPC or not}
+  ]]></content>
+  <tabTrigger>an-ec2_eip</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

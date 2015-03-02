@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  redhat_subscription: >
+    username=${1:None #  Red Hat Network username}
+    server_hostname=${2:Current value from C(/etc/rhsm/rhsm.conf) is the default #  Specify an alternative Red Hat Network server}
+    state=${3:present #  whether to register and subscribe (C(present)), or unregister (C(absent)) a system}
+    pool=${4:^$ #  Specify a subscription pool name to consume.  Regular expressions accepted.}
+    activationkey=${5:None #  supply an activation key for use with registration}
+    server_insecure=${6:Current value from C(/etc/rhsm/rhsm.conf) is the default #  Allow traffic over insecure http}
+    password=${7:None #  Red Hat Network password}
+    rhsm_baseurl=${8:Current value from C(/etc/rhsm/rhsm.conf) is the default #  Specify CDN baseurl}
+    autosubscribe=${9:False #  Upon successful registration, auto-consume available subscriptions}
+  ]]></content>
+  <tabTrigger>an-redhat_subscription</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

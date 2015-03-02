@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+  nova_compute: >
+    region_name=${1:None #  Name of the region}
+    login_tenant_name=${2:yes # ! The tenant name of the login user}
+    key_name=${3:None #  The key pair name to be used when creating a VM}
+    user_data=${4:None #  Opaque blob of data which is made available to the instance}
+    name=${5:None # ! Name that has to be given to the instance}
+    nics=${6:None #  A list of network id's to which the VM's interface should be attached}
+    image_id=${7:None # ! The id of the image that has to be cloned}
+    state=${8:present #  Indicate desired state of the resource}
+    meta=${9:None #  A list of key value pairs that should be provided as a metadata to the new VM}
+    auth_url=${10:http://127.0.0.1:35357/v2.0/ #  The keystone url for authentication}
+    flavor_id=${11:1 #  The id of the flavor in which the new VM has to be created}
+    login_password=${12:yes # ! Password of login user}
+    login_username=${13:admin # ! login username to authenticate to keystone}
+    wait_for=${14:180 #  The amount of time the module should wait for the VM to get into active state}
+    security_groups=${15:None #  The name of the security group to which the VM should be added}
+    wait=${16:yes #  If the module should wait for the VM to be created.}
+  ]]></content>
+  <tabTrigger>an-nova_compute</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

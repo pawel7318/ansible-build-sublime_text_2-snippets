@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  homebrew_tap: >
+    state=${1:present #  state of the repository.}
+    tap=${2: # ! The repository to tap.}
+  ]]></content>
+  <tabTrigger>an-homebrew_tap</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

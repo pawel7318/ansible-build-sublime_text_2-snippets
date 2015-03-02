@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  zypper_repository: >
+    repo=${1:none # ! URI of the repository or .repo file.}
+    state=${2:present #  A source string state.}
+    description=${3:none #  A description of the repository}
+    name=${4:none # ! A name for the repository.}
+    disable_gpg_check=${5:no #  Whether to disable GPG signature checking of all packages. Has an effect only if state is I(present).}
+  ]]></content>
+  <tabTrigger>an-zypper_repository</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

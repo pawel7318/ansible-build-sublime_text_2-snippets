@@ -1,0 +1,10 @@
+---
+module: ping
+version_added: historical
+short_description: Try to connect to host and return C(pong) on success.
+description:
+   - A trivial test module, this module always returns C(pong) on successful
+     contact. It does not make sense in playbooks, but it is useful from
+     C(/usr/bin/ansible)
+options: {}
+author: Michael DeHaan

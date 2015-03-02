@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  sns: >
+    aws_secret_key=${1:None #  AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.}
+    aws_access_key=${2:None #  AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.}
+    http=${3: #  Message to send to HTTP-only subscription}
+    sqs=${4: #  Message to send to SQS-only subscription}
+    region=${5: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    sms=${6: #  Message to send to SMS-only subscription}
+    topic=${7: # ! The topic you want to publish to.}
+    https=${8: #  Message to send to HTTPS-only subscription}
+    msg=${9: # ! Default message to send.}
+    email=${10: #  Message to send to email-only subscription}
+    subject=${11: #  Subject line for email delivery.}
+  ]]></content>
+  <tabTrigger>an-sns</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

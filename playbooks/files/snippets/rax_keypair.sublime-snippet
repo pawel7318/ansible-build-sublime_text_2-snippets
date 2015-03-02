@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  rax_keypair: >
+    public_key=${1:None #  Public Key string to upload}
+    state=${2:present #  Indicate desired state of the resource}
+    name=${3: # ! Name of keypair}
+  ]]></content>
+  <tabTrigger>an-rax_keypair</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

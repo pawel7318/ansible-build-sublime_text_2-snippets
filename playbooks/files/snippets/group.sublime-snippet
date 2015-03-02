@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  group: >
+    state=${1:present #  Whether the group should be present or not on the remote host.}
+    gid=${2: #  Optional I(GID) to set for the group.}
+    name=${3: # ! Name of the group to manage.}
+    system=${4:no #  If I(yes), indicates that the group created is a system group.}
+  ]]></content>
+  <tabTrigger>an-group</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

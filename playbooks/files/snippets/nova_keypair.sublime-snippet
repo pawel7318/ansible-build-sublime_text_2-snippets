@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  nova_keypair: >
+    public_key=${1:None #  The public key that would be uploaded to nova and injected to vm's upon creation}
+    region_name=${2:None #  Name of the region}
+    login_tenant_name=${3:yes # ! The tenant name of the login user}
+    state=${4:present #  Indicate desired state of the resource}
+    auth_url=${5:http://127.0.0.1:35357/v2.0/ #  The keystone url for authentication}
+    login_password=${6:yes # ! Password of login user}
+    login_username=${7:admin # ! login username to authenticate to keystone}
+    name=${8:None # ! Name that has to be given to the key pair}
+  ]]></content>
+  <tabTrigger>an-nova_keypair</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

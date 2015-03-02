@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  newrelic_deployment: >
+    application_id=${1: #  (one of app_name or application_id are required) The application id, found in the URL when viewing the application in RPM}
+    description=${2: #  Text annotation for the deployment - notes for you}
+    appname=${3: #  Name of the application}
+    changelog=${4: #  A list of changes for this deployment}
+    environment=${5: #  The environment for this deployment}
+    token=${6: # ! API token.}
+    user=${7: #  The name of the user/process that triggered this deployment}
+    app_name=${8: #  (one of app_name or application_id are required) The value of app_name in the newrelic.yml file used by the application}
+    validate_certs=${9:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    revision=${10: #  A revision number (e.g., git commit SHA)}
+  ]]></content>
+  <tabTrigger>an-newrelic_deployment</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

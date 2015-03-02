@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  pkgutil: >
+    state=${1: # ! Whether to install (C(present)), or remove (C(absent)) a package.}
+    name=${2: # ! Package name, e.g. (C(CSWnrpe))}
+    site=${3: #  Specifies the repository path to install the package from.}
+  ]]></content>
+  <tabTrigger>an-pkgutil</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

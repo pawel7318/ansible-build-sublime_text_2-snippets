@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  template: >
+    dest=${1:None # ! Location to render the template to on the remote machine.}
+    src=${2:None # ! Path of a Jinja2 formatted template on the local server. This can be a relative or absolute path.}
+    validate=${3: #  The validation command to run before copying into place.}
+    backup=${4:no #  Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.}
+  ]]></content>
+  <tabTrigger>an-template</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

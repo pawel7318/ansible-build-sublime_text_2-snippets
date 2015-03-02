@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  arista_l2interface: >
+    logging=${1:False #  enables or disables the syslog facility for this module}
+    tagged_vlans=${2: #  specifies the list of vlans that should be allowed to transit this interface}
+    vlan_tagging=${3:True #  specifies whether or not vlan tagging should be enabled for this interface}
+    untagged_vlan=${4:default #  specifies the vlan that untagged traffic should be placed in for transit across a vlan tagged link}
+    interface_id=${5: # ! the full name of the interface}
+    state=${6:present #  describe the desired state of the interface related to the config}
+  ]]></content>
+  <tabTrigger>an-arista_l2interface</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

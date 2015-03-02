@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  datadog_event: >
+    date_happened=${1:now #  POSIX timestamp of the event.}
+    alert_type=${2:info #  Type of alert.}
+    title=${3:None # ! The event title.}
+    text=${4:None # ! The body of the event.}
+    tags=${5:None #  Comma separated list of tags to apply to the event.}
+    priority=${6:normal #  The priority of the event.}
+    aggregation_key=${7:None #  An arbitrary string to use for aggregation.}
+    api_key=${8:None # ! Your DataDog API key.}
+    validate_certs=${9:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+  ]]></content>
+  <tabTrigger>an-datadog_event</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

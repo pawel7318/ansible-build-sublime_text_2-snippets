@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  airbrake_deployment: >
+    environment=${1: # ! The airbrake environment name, typically 'production', 'staging', etc.}
+    url=${2:https://airbrake.io/deploys #  Optional URL to submit the notification to. Use to send notifications to Airbrake-compliant tools like Errbit.}
+    repo=${3: #  URL of the project repository}
+    token=${4: # ! API token.}
+    user=${5: #  The username of the person doing the deployment}
+    validate_certs=${6:yes #  If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    revision=${7: #  A hash, number, tag, or other identifier showing what revision was deployed}
+  ]]></content>
+  <tabTrigger>an-airbrake_deployment</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

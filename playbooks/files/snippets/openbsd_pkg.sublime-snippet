@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  openbsd_pkg: >
+    state=${1: # ! C(present) will make sure the package is installed. C(latest) will make sure the latest version of the package is installed. C(absent) will make sure the specified package is not installed.}
+    name=${2: # ! Name of the package.}
+  ]]></content>
+  <tabTrigger>an-openbsd_pkg</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

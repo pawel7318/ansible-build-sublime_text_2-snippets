@@ -1,0 +1,22 @@
+<snippet>
+  <content><![CDATA[
+  elasticache: >
+    engine=${1:memcached #  Name of the cache engine to be used (memcached or redis)}
+    aws_secret_key=${2:None #  AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.}
+    cache_port=${3:11211 #  The port number on which each of the cache nodes will accept connections}
+    name=${4: # ! The cache cluster identifier}
+    cache_engine_version=${5:1.4.14 #  The version number of the cache engine}
+    region=${6: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    node_type=${7:cache.m1.small #  The compute and memory capacity of the nodes in the cache cluster}
+    num_nodes=${8: #  The initial number of cache nodes that the cache cluster will have}
+    state=${9: # ! C(absent) or C(present) are idempotent actions that will create or destroy a cache cluster as needed. C(rebooted) will reboot the cluster, resulting in a momentary outage.}
+    cache_security_groups=${10:['default'] #  A list of cache security group names to associate with this cache cluster}
+    zone=${11:None #  The EC2 Availability Zone in which the cache cluster will be created}
+    hard_modify=${12:False #  Whether to destroy and recreate an existing cache cluster if necessary in order to modify its state}
+    aws_access_key=${13:None #  AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.}
+    security_group_ids=${14:['default'] #  A list of vpc security group names to associate with this cache cluster. Only use if inside a vpc}
+    wait=${15:True #  Wait for cache cluster result before returning}
+  ]]></content>
+  <tabTrigger>an-elasticache</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

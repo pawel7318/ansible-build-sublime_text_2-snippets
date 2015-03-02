@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  ec2_key: >
+    name=${1: # ! Name of the key pair.}
+    region=${2:None #  the EC2 region to use}
+    key_material=${3: #  Public key material.}
+    state=${4:present #  create or delete keypair}
+    wait_timeout=${5:300 #  How long before wait gives up, in seconds}
+    wait=${6:False #  Wait for the specified action to complete before returning.}
+  ]]></content>
+  <tabTrigger>an-ec2_key</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

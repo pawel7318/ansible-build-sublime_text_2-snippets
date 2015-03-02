@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  homebrew: >
+    update_homebrew=${1:no #  update homebrew itself first}
+    install_options=${2:None #  options flags to install a package}
+    state=${3:present #  state of the package}
+    upgrade_all=${4:False #  upgrade all homebrew packages}
+    name=${5: # ! name of package to install/remove}
+  ]]></content>
+  <tabTrigger>an-homebrew</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

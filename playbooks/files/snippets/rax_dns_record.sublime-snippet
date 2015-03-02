@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  rax_dns_record: >
+    comment=${1: #  Brief description of the domain. Maximum length of 160 characters}
+    domain=${2: # ! Domain name to create the record in}
+    name=${3: # ! FQDN record name to create}
+    type=${4:A #  DNS record type}
+    priority=${5: #  Required for MX and SRV records, but forbidden for other record types. If specified, must be an integer from 0 to 65535.}
+    state=${6:present #  Indicate desired state of the resource}
+    ttl=${7:3600 #  Time to live of domain in seconds}
+    data=${8: # ! IP address for A/AAAA record, FQDN for CNAME/MX/NS, or text data for SRV/TXT}
+  ]]></content>
+  <tabTrigger>an-rax_dns_record</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

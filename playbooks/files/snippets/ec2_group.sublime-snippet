@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  ec2_group: >
+    rules_egress=${1: #  List of firewall outbound rules to enforce in this group (see example).}
+    name=${2: # ! Name of the security group.}
+    rules=${3: #  List of firewall inbound rules to enforce in this group (see example).}
+    region=${4:None #  the EC2 region to use}
+    state=${5:present #  create or delete security group}
+    vpc_id=${6: #  ID of the VPC to create the group in.}
+    description=${7: # ! Description of the security group.}
+  ]]></content>
+  <tabTrigger>an-ec2_group</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

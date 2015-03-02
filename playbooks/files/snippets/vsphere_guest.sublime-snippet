@@ -1,0 +1,22 @@
+<snippet>
+  <content><![CDATA[
+  vsphere_guest: >
+    resource_pool=${1:None #  The name of the resource_pool to create the VM in.}
+    vm_hw_version=${2:None #  Desired hardware version identifier (for example, "vmx-08" for vms that needs to be managed with vSphere Client). Note that changing hardware version of existing vm is not supported.}
+    vcenter_hostname=${3:None # ! The hostname of the vcenter server the module will connect to, to create the guest.}
+    force=${4:no #  Boolean. Allows you to run commands which may alter the running state of a guest. Also used to reconfigure and destroy.}
+    guest=${5: # ! The virtual server name you wish to manage.}
+    vm_disk=${6:None #  A key, value list of disks and their sizes and which datastore to keep it in.}
+    esxi=${7:None #  Dictionary which includes datacenter and hostname on which the VM should be created.}
+    vm_nic=${8:None #  A key, value list of nics, their types and what network to put them on.}
+    vm_hardware=${9:None #  A key, value list of VM config settings. Must include ['memory_mb', 'num_cpus', 'osid', 'scsi'].}
+    cluster=${10:None #  The name of the cluster to create the VM in. By default this is derived from the host you tell the module to build the guest on.}
+    state=${11:present #  Indicate desired state of the vm.}
+    vmware_guest_facts=${12:None #  Gather facts from vCenter on a particular VM}
+    user=${13:None # ! Username to connect to vcenter as.}
+    vm_extra_config=${14:None #  A key, value pair of any extra values you want set or changed in the vmx file of the VM. Useful to set advanced options on the VM.}
+    password=${15:None # ! Password of the user to connect to vcenter as.}
+  ]]></content>
+  <tabTrigger>an-vsphere_guest</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

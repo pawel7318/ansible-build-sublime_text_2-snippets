@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  apt: >
+    dpkg_options=${1:force-confdef,force-confold #  Add dpkg options to apt command. Defaults to '-o "Dpkg::Options::=--force-confdef" -o "Dpkg::Options::=--force-confold"'}
+    upgrade=${2:yes #  If yes or safe, performs an aptitude safe-upgrade.}
+    force=${3:no #  If C(yes), force installs/removes.}
+    name=${4:None #  A package name, like C(foo), or package specifier with version, like C(foo=1.0). Wildcards (fnmatch) like apt* are also supported.}
+    purge=${5:False #  Will force purging of configuration files if the module state is set to I(absent).}
+    state=${6:present #  Indicates the desired package state. C(latest) ensures that the latest version is installed.}
+    update_cache=${7:False #  Run the equivalent of C(apt-get update) before the operation. Can be run as part of the package installation or as a separate step.}
+    default_release=${8:None #  Corresponds to the C(-t) option for I(apt) and sets pin priorities}
+    install_recommends=${9:True #  Corresponds to the C(--no-install-recommends) option for I(apt). Default behavior (C(yes)) replicates apt's default behavior; C(no) does not install recommended packages. Suggested packages are never installed.}
+    deb=${10: #  Path to a .deb package on the remote machine.}
+    cache_valid_time=${11:False #  If C(update_cache) is specified and the last run is less or equal than I(cache_valid_time) seconds ago, the C(update_cache) gets skipped.}
+  ]]></content>
+  <tabTrigger>an-apt</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

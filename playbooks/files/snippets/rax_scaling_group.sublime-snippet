@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+  rax_scaling_group: >
+    files=${1:None #  Files to insert into the instance. Hash of C(remotepath: localpath)}
+    max_entities=${2: # ! The maximum number of entities that are allowed in the scaling group. Must be an integer between 0 and 1000.}
+    name=${3: # ! Name to give the scaling group}
+    server_name=${4: # ! The base name for servers created by Autoscale}
+    loadbalancers=${5: #  List of load balancer C(id) and C(port) hashes}
+    key_name=${6:None #  key pair to use on the instance}
+    image=${7: # ! image to use for the instance. Can be an C(id), C(human_id) or C(name)}
+    disk_config=${8:auto #  Disk partitioning strategy}
+    min_entities=${9: # ! The minimum number of entities that are allowed in the scaling group. Must be an integer between 0 and 1000.}
+    state=${10:present #  Indicate desired state of the resource}
+    cooldown=${11: #  The period of time, in seconds, that must pass before any scaling can occur after the previous scaling. Must be an integer between 0 and 86400 (24 hrs).}
+    meta=${12:None #  A hash of metadata to associate with the instance}
+    flavor=${13: # ! flavor to use for the instance}
+    networks=${14:['public', 'private'] #  The network to attach to the instances. If specified, you must include ALL networks including the public and private interfaces. Can be C(id) or C(label).}
+  ]]></content>
+  <tabTrigger>an-rax_scaling_group</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

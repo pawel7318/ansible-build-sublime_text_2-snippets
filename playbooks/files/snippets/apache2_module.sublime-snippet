@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  apache2_module: >
+    state=${1:present #  indicate the desired state of the resource}
+    name=${2: # ! name of the module to enable/disable}
+  ]]></content>
+  <tabTrigger>an-apache2_module</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

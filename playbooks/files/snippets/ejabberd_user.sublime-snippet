@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  ejabberd_user: >
+    username=${1: # ! the name of the user to manage}
+    host=${2: # ! the ejabberd host associated with this username}
+    password=${3: #  the password to assign to the username}
+    logging=${4:False #  enables or disables the local syslog facility for this module}
+    state=${5:present #  describe the desired state of the user to be managed}
+  ]]></content>
+  <tabTrigger>an-ejabberd_user</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

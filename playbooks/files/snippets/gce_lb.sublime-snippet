@@ -1,0 +1,25 @@
+<snippet>
+  <content><![CDATA[
+  gce_lb: >
+    httphealthcheck_host=${1:None #  host header to pass through on HTTP check requests}
+    httphealthcheck_name=${2:None #  the name identifier for the HTTP health check}
+    name=${3:None #  name of the load-balancer resource}
+    external_ip=${4:None #  the external static IPv4 (or auto-assigned) address for the LB}
+    service_account_email=${5:None #  service account email}
+    region=${6: #  the GCE region where the load-balancer is defined}
+    httphealthcheck_unhealthy_count=${7:2 #  number of consecutive failed checks before marking a node unhealthy}
+    httphealthcheck_healthy_count=${8:2 #  number of consecutive successful checks before marking a node healthy}
+    pem_file=${9:None #  path to the pem file associated with the service account email}
+    httphealthcheck_path=${10:/ #  the url path to use for HTTP health checking}
+    port_range=${11:None #  the port (range) to forward, e.g. 80 or 8000-8888 defaults to all ports}
+    state=${12:present #  desired state of the LB}
+    httphealthcheck_timeout=${13:5 #  the timeout in seconds before a request is considered a failed check}
+    members=${14: #  a list of zone/nodename pairs, e.g ['us-central1-a/www-a', ...]}
+    httphealthcheck_port=${15:80 #  the TCP port to use for HTTP health checking}
+    protocol=${16:tcp #  the protocol used for the load-balancer packet forwarding, tcp or udp}
+    project_id=${17:None #  your GCE project ID}
+    httphealthcheck_interval=${18:5 #  the duration in seconds between each health check request}
+  ]]></content>
+  <tabTrigger>an-gce_lb</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

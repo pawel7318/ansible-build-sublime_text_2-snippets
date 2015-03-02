@@ -1,0 +1,13 @@
+---
+module: assert
+short_description: Fail with custom message
+description:
+     - This module asserts that a given expression is true and can be a simpler alternative to the 'fail' module in some cases.
+version_added: "1.5"
+options:
+  that:
+    description:
+      - "A string expression of the same form that can be passed to the 'when' statement"
+      - "Alternatively, a list of string expressions"
+    required: true
+author: Michael DeHaan

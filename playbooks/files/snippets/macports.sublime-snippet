@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  macports: >
+    state=${1:present #  state of the package}
+    update_cache=${2:no #  update the package db first}
+    name=${3: # ! name of package to install/remove}
+  ]]></content>
+  <tabTrigger>an-macports</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

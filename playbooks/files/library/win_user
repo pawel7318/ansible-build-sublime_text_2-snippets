@@ -1,0 +1,29 @@
+---
+module: win_user
+version_added: "1.7"
+short_description: Manages local Windows user accounts
+description:
+     - Manages local Windows user accounts
+options:
+  name:
+    description:
+      - Username of the user to manage
+    required: true
+    default: null
+    aliases: []
+  password:
+    description:
+      - Password for the user (plain text)
+    required: true
+    default: null
+    aliases: []
+  state:
+    description:
+      - Whether to create or delete a user
+    required: false
+    choices:
+      - present
+      - absent
+    default: present
+    aliases: []
+author: Paul Durivage

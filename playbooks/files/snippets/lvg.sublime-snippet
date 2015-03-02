@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  lvg: >
+    vg_options=${1:None #  Additional options to pass to C(vgcreate) when creating the volume group.}
+    pvs=${2: #  List of comma-separated devices to use as physical devices in this volume group. Required when creating or resizing volume group.}
+    force=${3:no #  If yes, allows to remove volume group with logical volumes.}
+    vg=${4: # ! The name of the volume group.}
+    state=${5:present #  Control if the volume group exists.}
+    pesize=${6:4 #  The size of the physical extent in megabytes. Must be a power of 2.}
+  ]]></content>
+  <tabTrigger>an-lvg</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

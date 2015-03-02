@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  yum: >
+    name=${1:None # ! Package name, or package specifier with version, like C(name-1.0). When using state=latest, this can be '*' which means run: yum -y update. You can also pass a url or a local path to a rpm file.}
+    list=${2:None #  Various (non-idempotent) commands for usage with C(/usr/bin/ansible) and I(not) playbooks. See examples.}
+    disable_gpg_check=${3:no #  Whether to disable the GPG checking of signatures of packages being installed. Has an effect only if state is I(present) or I(latest).}
+    conf_file=${4:None #  The remote yum configuration file to use for the transaction.}
+    state=${5:present #  Whether to install (C(present), C(latest)), or remove (C(absent)) a package.}
+    disablerepo=${6:None #  I(Repoid) of repositories to disable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a ",".}
+    enablerepo=${7:None #  I(Repoid) of repositories to enable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a ",".}
+  ]]></content>
+  <tabTrigger>an-yum</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

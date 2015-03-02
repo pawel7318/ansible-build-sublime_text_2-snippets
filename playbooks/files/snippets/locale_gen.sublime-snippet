@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  locale_gen: >
+    state=${1:present #  Whether the locale shall be present.}
+    name=${2:None # ! Name and encoding of the locale, such as "en_GB.UTF-8".}
+  ]]></content>
+  <tabTrigger>an-locale_gen</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,79 @@
+---
+module: quantum_network
+version_added: "1.4"
+short_description: Creates/Removes networks from OpenStack
+description:
+   - Add or Remove network from OpenStack.
+options:
+   login_username:
+     description:
+        - login username to authenticate to keystone
+     required: true
+     default: admin
+   login_password:
+     description:
+        - Password of login user
+     required: true
+     default: 'yes'
+   login_tenant_name:
+     description:
+        - The tenant name of the login user
+     required: true
+     default: 'yes'
+   tenant_name:
+     description:
+        - The name of the tenant for whom the network is created
+     required: false
+     default: None
+   auth_url:
+     description:
+        - The keystone url for authentication
+     required: false
+     default: 'http://127.0.0.1:35357/v2.0/'
+   region_name:
+     description:
+        - Name of the region
+     required: false
+     default: None
+   state:
+     description:
+        - Indicate desired state of the resource
+     choices: ['present', 'absent']
+     default: present
+   name:
+     description:
+        - Name to be assigned to the nework
+     required: true
+     default: None
+   provider_network_type:
+     description:
+        - The type of the network to be created, gre, vlan, local. Available types depend on the plugin. The Quantum service decides if not specified.
+     required: false
+     default: None
+   provider_physical_network:
+     description:
+        - The physical network which would realize the virtual network for flat and vlan networks.
+     required: false
+     default: None
+   provider_segmentation_id:
+     description:
+        - The id that has to be assigned to the network, in case of vlan networks that would be vlan id and for gre the tunnel id
+     required: false
+     default: None
+   router_external:
+     description:
+        - If 'yes', specifies that the virtual network is a external network (public).
+     required: false
+     default: false
+   shared:
+     description:
+        - Whether this network is shared or not
+     required: false
+     default: false
+   admin_state_up:
+     description:
+        - Whether the state should be marked as up or down
+     required: false
+     default: true
+requirements: ["quantumclient", "neutronclient", "keystoneclient"]
+

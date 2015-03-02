@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  alternatives: >
+    path=${1: # ! The path to the real executable that the link should point to.}
+    link=${2: #  The path to the symbolic link that should point to the real executable.}
+    name=${3: # ! The generic name of the link.}
+  ]]></content>
+  <tabTrigger>an-alternatives</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,27 @@
+<snippet>
+  <content><![CDATA[
+  mysql_replication: >
+    master_ssl_cert=${1: #  same as mysql variable}
+    master_log_pos=${2: #  same as mysql variable}
+    master_ssl=${3: #  same as mysql variable}
+    master_password=${4: #  same as mysql variable}
+    login_user=${5: #  username to connect mysql host, if defined login_password also needed.}
+    login_host=${6: #  mysql host to connect}
+    master_port=${7: #  same as mysql variable}
+    master_host=${8: #  same as mysql variable}
+    master_ssl_ca=${9: #  same as mysql variable}
+    master_ssl_key=${10: #  same as mysql variable}
+    login_unix_socket=${11: #  unix socket to connect mysql server}
+    master_connect_retry=${12: #  same as mysql variable}
+    master_user=${13: #  same as mysql variable}
+    master_ssl_capath=${14: #  same as mysql variable}
+    mode=${15:getslave #  module operating mode. Could be getslave (SHOW SLAVE STATUS), getmaster (SHOW MASTER STATUS), changemaster (CHANGE MASTER TO), startslave (START SLAVE), stopslave (STOP SLAVE)}
+    login_password=${16: #  password to connect mysql host, if defined login_user also needed.}
+    master_log_file=${17: #  same as mysql variable}
+    master_ssl_cipher=${18: #  same as mysql variable}
+    relay_log_pos=${19: #  same as mysql variable}
+    relay_log_file=${20: #  same as mysql variable}
+  ]]></content>
+  <tabTrigger>an-mysql_replication</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

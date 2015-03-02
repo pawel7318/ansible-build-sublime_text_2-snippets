@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+  lldp: >
+  ]]></content>
+  <tabTrigger>an-lldp</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,41 @@
+---
+module: virt
+short_description: Manages virtual machines supported by libvirt
+description:
+     - Manages virtual machines supported by I(libvirt).
+version_added: "0.2"
+options:
+  name:
+    description:
+      - name of the guest VM being managed. Note that VM must be previously
+        defined with xml.
+    required: true
+    default: null
+    aliases: []
+  state:
+    description:
+      - Note that there may be some lag for state requests like C(shutdown)
+        since these refer only to VM states. After starting a guest, it may not
+        be immediately accessible.
+    required: false
+    choices: [ "running", "shutdown", "destroyed", "paused" ]
+    default: "no"
+  command:
+    description:
+      - in addition to state management, various non-idempotent commands are available. See examples
+    required: false
+    choices: ["create","status", "start", "stop", "pause", "unpause",
+              "shutdown", "undefine", "destroy", "get_xml", "autostart",
+              "freemem", "list_vms", "info", "nodeinfo", "virttype", "define"]
+  uri:
+    description:
+      - libvirt connection uri
+    required: false
+    defaults: qemu:///system
+  xml:
+    description:
+      - XML document used with the define command
+    required: false
+    default: null
+requirements: [ "libvirt" ]
+author: Michael DeHaan, Seth Vidal

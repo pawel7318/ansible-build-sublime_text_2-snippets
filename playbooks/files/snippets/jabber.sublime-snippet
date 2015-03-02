@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  jabber: >
+    encoding=${1: #  m}
+    to=${2: # ! u}
+    host=${3: #  h}
+    user=${4: # ! U}
+    msg=${5:None # ! The message body.}
+    password=${6: # ! p}
+    port=${7:5222 #  p}
+  ]]></content>
+  <tabTrigger>an-jabber</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

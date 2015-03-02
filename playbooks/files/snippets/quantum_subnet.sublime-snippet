@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+  quantum_subnet: >
+    region_name=${1:None #  Name of the region}
+    enable_dhcp=${2:True #  Whether DHCP should be enabled for this subnet.}
+    tenant_name=${3:None #  The name of the tenant for whom the subnet should be created}
+    dns_nameservers=${4:None #  DNS nameservers for this subnet, comma-separated}
+    login_tenant_name=${5:True # ! The tenant name of the login user}
+    state=${6:present #  Indicate desired state of the resource}
+    allocation_pool_start=${7:None #  From the subnet pool the starting address from which the IP should be allocated}
+    auth_url=${8:http://127.0.0.1:35357/v2.0/ #  The keystone URL for authentication}
+    login_password=${9:True # ! Password of login user}
+    login_username=${10:admin # ! login username to authenticate to keystone}
+    gateway_ip=${11:None #  The ip that would be assigned to the gateway for this subnet}
+    cidr=${12:None # ! The CIDR representation of the subnet that should be assigned to the subnet}
+    network_name=${13:None # ! Name of the network to which the subnet should be attached}
+    ip_version=${14:4 #  The IP version of the subnet 4 or 6}
+    allocation_pool_end=${15:None #  From the subnet pool the last IP that should be assigned to the virtual machines}
+    name=${16:None # ! The name of the subnet that should be created}
+  ]]></content>
+  <tabTrigger>an-quantum_subnet</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

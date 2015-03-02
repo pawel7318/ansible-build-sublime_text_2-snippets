@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  nagios: >
+    author=${1:Ansible #  Author to leave downtime comments as. Only usable with the C(downtime) action.}
+    services=${2:None # ! What to manage downtime/alerts for. Separate multiple services with commas. C(service) is an alias for C(services). B(Required) option when using the C(downtime), C(enable_alerts), and C(disable_alerts) actions.}
+    host=${3:None #  Host to operate on in Nagios.}
+    command=${4:None # ! The raw command to send to nagios, which should not include the submitted time header or the line-feed B(Required) option when using the C(command) action.}
+    action=${5:None # ! Action to take.}
+    minutes=${6:30 #  Minutes to schedule downtime for.}
+    cmdfile=${7:auto-detected #  Path to the nagios I(command file) (FIFO pipe). Only required if auto-detection fails.}
+  ]]></content>
+  <tabTrigger>an-nagios</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

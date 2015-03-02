@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  rhn_register: >
+    username=${1:None #  Red Hat Network username}
+    server_url=${2:Current value of I(serverURL) from C(/etc/sysconfig/rhn/up2date) is the default #  Specify an alternative Red Hat Network server URL}
+    channels=${3:[] #  Optionally specify a list of comma-separated channels to subscribe to upon successful registration.}
+    state=${4:present #  whether to register (C(present)), or unregister (C(absent)) a system}
+    activationkey=${5:None #  supply an activation key for use with registration}
+    password=${6:None #  Red Hat Network password}
+  ]]></content>
+  <tabTrigger>an-rhn_register</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

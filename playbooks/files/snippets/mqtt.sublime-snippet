@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  mqtt: >
+    username=${1: #  Username to authenticate against the broker.}
+    qos=${2:0 #  QoS (Quality of Service)}
+    payload=${3:None # ! Payload. The special string C("None") may be used to send a NULL (i.e. empty) payload which is useful to simply notify with the I(topic) or to clear previously retained messages.}
+    server=${4:localhost #  MQTT broker address/name}
+    topic=${5:None # ! MQTT topic name}
+    client_id=${6:hostname + pid #  MQTT client identifier}
+    retain=${7:False #  Setting this flag causes the broker to retain (i.e. keep) the message so that applications that subsequently subscribe to the topic can received the last retained message immediately.}
+    password=${8: #  Password for C(username) to authenticate against the broker.}
+    port=${9:1883 #  MQTT broker port number}
+  ]]></content>
+  <tabTrigger>an-mqtt</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

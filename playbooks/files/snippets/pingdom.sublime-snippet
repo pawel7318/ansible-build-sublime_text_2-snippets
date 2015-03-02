@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  pingdom: >
+    checkid=${1:None # ! Pingdom ID of the check.}
+    passwd=${2:None # ! Pingdom user password.}
+    state=${3:None # ! Define whether or not the check should be running or paused.}
+    uid=${4:None # ! Pingdom user ID.}
+    key=${5:None # ! Pingdom API key.}
+  ]]></content>
+  <tabTrigger>an-pingdom</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

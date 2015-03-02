@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  portage: >
+    nodeps=${1:None #  Only merge packages but not their dependencies (--nodeps)}
+    onlydeps=${2:None #  Only merge packages' dependencies but not the packages (--onlydeps)}
+    newuse=${3:None #  Include installed packages where USE flags have changed (--newuse)}
+    package=${4:None #  Package atom or set, e.g. C(sys-apps/foo) or C(>foo-2.13) or C(@world)}
+    oneshot=${5:None #  Do not add the packages to the world file (--oneshot)}
+    update=${6:None #  Update packages to the best version available (--update)}
+    deep=${7:None #  Consider the entire dependency tree of packages (--deep)}
+    quiet=${8:None #  Run emerge in quiet mode (--quiet)}
+    sync=${9:None #  Sync package repositories first}
+    state=${10:present #  State of the package atom}
+    depclean=${11:None #  Remove packages not needed by explicitly merged packages (--depclean)}
+    noreplace=${12:None #  Do not re-emerge installed packages (--noreplace)}
+    verbose=${13:None #  Run emerge in verbose mode (--verbose)}
+  ]]></content>
+  <tabTrigger>an-portage</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

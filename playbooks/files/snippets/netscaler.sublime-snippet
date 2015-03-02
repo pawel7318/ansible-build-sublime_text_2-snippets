@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  netscaler: >
+    name=${1:hostname # ! name of the entity}
+    validate_certs=${2:yes #  If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    nsc_protocol=${3:https #  protocol used to access netscaler}
+    nsc_host=${4:None # ! hostname or ip of your netscaler}
+    user=${5:None # ! username}
+    action=${6:disable #  the action you want to perform on the entity}
+    password=${7:None # ! password}
+    type=${8:server #  type of the entity}
+  ]]></content>
+  <tabTrigger>an-netscaler</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

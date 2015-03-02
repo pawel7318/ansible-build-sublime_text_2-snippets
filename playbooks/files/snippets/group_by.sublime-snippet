@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+  group_by: >
+    key=${1: # ! The variables whose values will be used as groups}
+  ]]></content>
+  <tabTrigger>an-group_by</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

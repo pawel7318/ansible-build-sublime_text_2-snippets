@@ -1,0 +1,25 @@
+---
+module: modprobe
+short_description: Add or remove kernel modules
+requirements: []
+version_added: 1.4
+author: David Stygstra, Julien Dauphant, Matt Jeffery
+description:
+    - Add or remove kernel modules.
+options:
+    name:
+        required: true
+        description:
+            - Name of kernel module to manage.
+    state:
+        required: false
+        default: "present"
+        choices: [ present, absent ]
+        description:
+            - Whether the module should be present or absent.
+    params:
+        required: false
+        default: ""
+        version_added: "1.6"
+        description:
+            - Modules parameters.

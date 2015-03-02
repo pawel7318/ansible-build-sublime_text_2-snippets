@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+  ec2_facts: >
+    validate_certs=${1:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+  ]]></content>
+  <tabTrigger>an-ec2_facts</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

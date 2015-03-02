@@ -1,0 +1,77 @@
+---
+module: ec2_metric_alarm
+short_description: "Create/update or delete AWS Cloudwatch 'metric alarms'"
+description:
+ - Can create or delete AWS metric alarms
+ - Metrics you wish to alarm on must already exist
+version_added: "1.6"
+author: Zacharie Eakin
+options:
+    state:
+        description:
+          - register or deregister the alarm
+        required: true
+        choices: ['present', 'absent']
+    name:
+        desciption:
+          - Unique name for the alarm
+        required: true
+    metric:
+        description:
+          - Name of the monitored metric (e.g. CPUUtilization)
+          - Metric must already exist
+        required: false
+    namespace:
+        description:
+          - Name of the appropriate namespace, which determines the category it will appear under in cloudwatch
+        required: false
+        options: ['AWS/AutoScaling','AWS/Billing','AWS/DynamoDB','AWS/ElastiCache','AWS/EBS','AWS/EC2','AWS/ELB','AWS/ElasticMapReduce','AWS/OpsWorks','AWS/Redshift','AWS/RDS','AWS/Route53','AWS/SNS','AWS/SQS','AWS/StorageGateway']
+    statistic:
+        description:
+          - Operation applied to the metric
+          - Works in conjunction with period and evaluation_periods to determine the comparison value
+        required: false
+        options: ['SampleCount','Average','Sum','Minimum','Maximum']
+    comparison:
+        description:
+          - Determines how the threshold value is compared
+        required: false
+        options: ['<=','<','>','>=']
+    threshold:
+        description:
+          - Sets the min/max bound for triggering the alarm
+        required: false
+    period:
+        description:
+          - The time (in seconds) between metric evaluations
+        required: false
+    evaluation_periods:
+        description:
+          - The number of times in which the metric is evaluated before final calculation
+        required: false
+    unit:
+        description:
+          - The threshold's unit of measurement
+        required: false
+        options: ['Seconds','Microseconds','Milliseconds','Bytes','Kilobytes','Megabytes','Gigabytes','Terabytes','Bits','Kilobits','Megabits','Gigabits','Terabits','Percent','Count','Bytes/Second','Kilobytes/Second','Megabytes/Second','Gigabytes/Second','Terabytes/Second','Bits/Second','Kilobits/Second','Megabits/Second','Gigabits/Second','Terabits/Second','Count/Second','None']
+    description:
+        description:
+          - A longer desciption of the alarm
+        required: false
+    dimensions:
+        description:
+          - Describes to what the alarm is applied
+        required: false
+    alarm_actions:
+        description:
+          - A list of the names action(s) taken when the alarm is in the 'alarm' status
+        required: false
+    insufficient_data_actions:
+        description:
+          - A list of the names of action(s) to take when the alarm is in the 'insufficient_data' status
+        required: false
+    ok_actions:
+        description:
+          - A list of the names of action(s) to take when the alarm is in the 'ok' status
+        required: false
+extends_documentation_fragment: aws

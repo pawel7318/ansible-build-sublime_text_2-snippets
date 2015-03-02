@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  win_get_url: >
+    url=${1:None # ! The full URL of a file to download}
+    dest=${2:True #  The absolute path of the location to save the file at the URL. Be sure to include a filename and extension as appropriate.}
+  ]]></content>
+  <tabTrigger>an-win_get_url</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

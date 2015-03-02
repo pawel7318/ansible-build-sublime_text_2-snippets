@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  rabbitmq_parameter: >
+    node=${1:rabbit #  erlang node name of the rabbit we wish to configure}
+    name=${2:None # ! Name of the parameter being set}
+    component=${3:None # ! Name of the component of which the parameter is being set}
+    value=${4:None #  Value of the parameter, as a JSON term}
+    vhost=${5:/ #  vhost to apply access privileges.}
+    state=${6:present #  Specify if user is to be added or removed}
+  ]]></content>
+  <tabTrigger>an-rabbitmq_parameter</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

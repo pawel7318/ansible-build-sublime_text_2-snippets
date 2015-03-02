@@ -1,0 +1,31 @@
+---
+module: win_feature
+version_added: "1.7"
+short_description: Installs and uninstalls Windows Features
+description:
+     - Installs or uninstalls Windows Roles or Features
+options:
+  name:
+    description:
+      - Names of roles or features to install as a single feature or a comma-separated list of features
+    required: true
+    default: null
+    aliases: []
+  state:
+    description:
+      - State of the features or roles on the system
+    required: false
+    choices: 
+      - present
+      - absent
+    default: present
+    aliases: []
+  restart:
+    description:
+      - Restarts the computer automatically when installation is complete, if restarting is required by the roles or features installed.
+    choices:
+      - yes
+      - no
+    default: null
+    aliases: []
+author: Paul Durivage

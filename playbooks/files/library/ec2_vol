@@ -1,0 +1,81 @@
+---
+module: ec2_vol
+short_description: create and attach a volume, return volume id and device map
+description:
+    - creates an EBS volume and optionally attaches it to an instance.  If both an instance ID and a device name is given and the instance has a device at the device name, then no volume is created and no attachment is made.  This module has a dependency on python-boto.
+version_added: "1.1"
+options:
+  instance:
+    description:
+      - instance ID if you wish to attach the volume. 
+    required: false
+    default: null 
+    aliases: []
+  name:
+    description:
+      - volume Name tag if you wish to attach an existing volume (requires instance)
+    required: false
+    default: null
+    aliases: []
+    version_added: "1.6"
+  id:
+    description:
+      - volume id if you wish to attach an existing volume (requires instance) or remove an existing volume
+    required: false
+    default: null
+    aliases: []
+    version_added: "1.6"
+  volume_size:
+    description:
+      - size of volume (in GB) to create.
+    required: false
+    default: null
+    aliases: []
+  iops:
+    description:
+      - the provisioned IOPs you want to associate with this volume (integer).
+    required: false
+    default: 100
+    aliases: []
+    version_added: "1.3"
+  device_name:
+    description:
+      - device id to override device mapping. Assumes /dev/sdf for Linux/UNIX and /dev/xvdf for Windows.
+    required: false
+    default: null
+    aliases: []
+  region:
+    description:
+      - The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+    required: false
+    default: null
+    aliases: ['aws_region', 'ec2_region']
+  zone:
+    description:
+      - zone in which to create the volume, if unset uses the zone the instance is in (if set) 
+    required: false
+    default: null
+    aliases: ['aws_zone', 'ec2_zone']
+  snapshot:
+    description:
+      - snapshot ID on which to base the volume
+    required: false
+    default: null
+    version_added: "1.5"
+  validate_certs:
+    description:
+      - When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+    required: false
+    default: "yes"
+    choices: ["yes", "no"]
+    aliases: []
+    version_added: "1.5"
+  state:
+    description: 
+      - whether to ensure the volume is present or absent
+    required: false
+    default: present
+    choices: ['absent', 'present']
+    version_added: "1.6"
+author: Lester Wade
+extends_documentation_fragment: aws

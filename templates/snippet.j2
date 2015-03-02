@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  {{ module }}: >
+  {% for option in options %}
+  {{ option }}=${{'{'}}{{loop.index}}:{{ options[option].default|default('') }} # {%if options[option].required|default(False) %}!{% endif %} {{ options[option].description[0] }}{{'}'}}
+  {% endfor %}
+]]></content>
+  <tabTrigger>an-{{ module }}</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

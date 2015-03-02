@@ -1,0 +1,63 @@
+---
+module: hipchat
+version_added: "1.2"
+short_description: Send a message to hipchat
+description:
+   - Send a message to hipchat
+options:
+  token:
+    description:
+      - API token.
+    required: true
+  room:
+    description:
+      - ID or name of the room.
+    required: true
+  from:
+    description:
+      - Name the message will appear be sent from. max 15 characters.
+        Over 15, will be shorten.
+    required: false
+    default: Ansible
+  msg:
+    description:
+      - The message body.
+    required: true
+    default: null
+  color:
+    description:
+      - Background color for the message. Default is yellow.
+    required: false
+    default: yellow
+    choices: [ "yellow", "red", "green", "purple", "gray", "random" ]
+  msg_format:
+    description:
+      - message format. html or text. Default is text.
+    required: false
+    default: text
+    choices: [ "text", "html" ]
+  notify:
+    description:
+      - notify or not (change the tab color, play a sound, etc)
+    required: false
+    default: 'yes'
+    choices: [ "yes", "no" ]
+  validate_certs:
+    description:
+      - If C(no), SSL certificates will not be validated. This should only be used
+        on personally controlled sites using self-signed certificates.
+    required: false
+    default: 'yes'
+    choices: ['yes', 'no']
+    version_added: 1.5.1
+  api:
+    description:
+      - API url if using a self-hosted hipchat server
+    required: false
+    default: 'https://api.hipchat.com/v1/rooms/message'
+    version_added: 1.6.0
+
+
+# informational: requirements for nodes
+requirements: [ urllib, urllib2 ]
+author: WAKAYAMA Shirou

@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  logentries: >
+    path=${1: # ! path to a log file}
+    state=${2:present #  following state of the log}
+  ]]></content>
+  <tabTrigger>an-logentries</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

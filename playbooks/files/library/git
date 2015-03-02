@@ -1,0 +1,112 @@
+---
+module: git
+author: Michael DeHaan
+version_added: "0.0.1"
+short_description: Deploy software (or files) from git checkouts
+description:
+    - Manage I(git) checkouts of repositories to deploy files or software.
+options:
+    repo:
+        required: true
+        aliases: [ name ]
+        description:
+            - git, SSH, or HTTP protocol address of the git repository.
+    dest:
+        required: true
+        description:
+            - Absolute path of where the repository should be checked out to.
+    version:
+        required: false
+        default: "HEAD"
+        description:
+            - What version of the repository to check out.  This can be the
+              full 40-character I(SHA-1) hash, the literal string C(HEAD), a
+              branch name, or a tag name.
+    accept_hostkey:
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        version_added: "1.5"
+        description:
+            - if C(yes), adds the hostkey for the repo url if not already 
+              added. If ssh_args contains "-o StrictHostKeyChecking=no", 
+              this parameter is ignored.
+    ssh_opts:
+        required: false
+        default: None
+        version_added: "1.5"
+        description:
+            - Creates a wrapper script and exports the path as GIT_SSH
+              which git then automatically uses to override ssh arguments.
+              An example value could be "-o StrictHostKeyChecking=no"
+    key_file:
+        required: false
+        default: None
+        version_added: "1.5"
+        description:
+            - Uses the same wrapper method as ssh_opts to pass 
+              "-i <key_file>" to the ssh arguments used by git
+    reference:
+        required: false
+        default: null
+        version_added: "1.4"
+        description:
+            - Reference repository (see "git clone --reference ...")
+    remote:
+        required: false
+        default: "origin"
+        description:
+            - Name of the remote.
+    force:
+        required: false
+        default: "yes"
+        choices: [ "yes", "no" ]
+        version_added: "0.7"
+        description:
+            - If C(yes), any modified files in the working
+              repository will be discarded.  Prior to 0.7, this was always
+              'yes' and could not be disabled.
+    depth:
+        required: false
+        default: null
+        version_added: "1.2"
+        description:
+            - Create a shallow clone with a history truncated to the specified
+              number or revisions. The minimum possible value is C(1), otherwise
+              ignored.
+    update:
+        required: false
+        default: "yes"
+        choices: [ "yes", "no" ]
+        version_added: "1.2"
+        description:
+            - If C(no), just returns information about the repository without updating.
+    executable:
+        required: false
+        default: null
+        version_added: "1.4"
+        description:
+            - Path to git executable to use. If not supplied,
+              the normal mechanism for resolving binary paths will be used.
+    bare:
+        required: false
+        default: "no"
+        choices: [ "yes", "no" ]
+        version_added: "1.4"
+        description:
+            - if C(yes), repository will be created as a bare repo, otherwise
+              it will be a standard repo with a workspace.
+
+    recursive:
+        required: false
+        default: "yes"
+        choices: [ "yes", "no" ]
+        version_added: "1.6"
+        description:
+            - if C(no), repository will be cloned without the --recursive
+              option, skipping sub-modules.
+notes:
+    - "If the task seems to be hanging, first verify remote host is in C(known_hosts).
+      SSH will prompt user to authorize the first contact with a remote host.  To avoid this prompt, 
+      one solution is to add the remote host public key in C(/etc/ssh/ssh_known_hosts) before calling 
+      the git module, with the following command: ssh-keyscan -H remote_host.com >> /etc/ssh/ssh_known_hosts."

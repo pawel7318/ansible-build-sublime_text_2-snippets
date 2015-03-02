@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  stackdriver: >
+    repository=${1:None #  The repository (or project) deployed}
+    level=${2:INFO #  one of INFO/WARN/ERROR, defaults to INFO if not supplied.  May affect display.}
+    annotated_by=${3:Ansible #  The person or robot who the annotation should be attributed to.}
+    deployed_by=${4:Ansible #  The person or robot responsible for deploying the code}
+    deployed_to=${5:None #  The environment code was deployed to. (ie: development, staging, production)}
+    instance_id=${6:None #  id of an EC2 instance that this event should be attached to, which will limit the contexts where this event is shown}
+    key=${7:None # ! API key.}
+    msg=${8:None #  The contents of the annotation message, in plain text.  Limited to 256 characters. Required for annotation.}
+    event_epoch=${9:None #  Unix timestamp of where the event should appear in the timeline, defaults to now. Be careful with this.}
+    revision_id=${10:None #  The revision of the code that was deployed. Required for deploy events}
+    event=${11:None #  The type of event to send, either annotation or deploy}
+  ]]></content>
+  <tabTrigger>an-stackdriver</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

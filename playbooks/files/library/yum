@@ -1,0 +1,66 @@
+---
+module: yum
+version_added: historical
+short_description: Manages packages with the I(yum) package manager
+description:
+     - Installs, upgrade, removes, and lists packages and groups with the I(yum) package manager.
+options:
+  name:
+    description:
+      - "Package name, or package specifier with version, like C(name-1.0). When using state=latest, this can be '*' which means run: yum -y update. You can also pass a url or a local path to a rpm file."
+    required: true
+    default: null
+    aliases: []
+  list:
+    description:
+      - Various (non-idempotent) commands for usage with C(/usr/bin/ansible) and I(not) playbooks. See examples.
+    required: false
+    default: null
+  state:
+    description:
+      - Whether to install (C(present), C(latest)), or remove (C(absent)) a package.
+    required: false
+    choices: [ "present", "latest", "absent" ]
+    default: "present"
+  enablerepo:
+    description:
+      - I(Repoid) of repositories to enable for the install/update operation.
+        These repos will not persist beyond the transaction.
+        When specifying multiple repos, separate them with a ",".
+    required: false
+    version_added: "0.9"
+    default: null
+    aliases: []
+    
+  disablerepo:
+    description:
+      - I(Repoid) of repositories to disable for the install/update operation.
+        These repos will not persist beyond the transaction.
+        When specifying multiple repos, separate them with a ",".
+    required: false
+    version_added: "0.9"
+    default: null
+    aliases: []
+
+  conf_file:
+    description:
+      - The remote yum configuration file to use for the transaction.
+    required: false
+    version_added: "0.6"
+    default: null
+    aliases: []
+
+  disable_gpg_check:
+    description:
+      - Whether to disable the GPG checking of signatures of packages being
+        installed. Has an effect only if state is I(present) or I(latest).
+    required: false
+    version_added: "1.2"
+    default: "no"
+    choices: ["yes", "no"]
+    aliases: []
+
+notes: []
+# informational: requirements for nodes
+requirements: [ yum, rpm ]
+author: Seth Vidal

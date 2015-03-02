@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  dnsimple: >
+    solo=${1:None #  Whether the record should be the only one for that record type and record name. Only use with state=present on a record}
+    domain=${2:None #  Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the domain in DNSimple. If ommitted, a list of domains will be returned.}
+    account_email=${3:None #  Account email. If ommitted, the env variables DNSIMPLE_EMAIL and DNSIMPLE_API_TOKEN will be looked for. If those aren't found, a C(.dnsimple) file will be looked for, see: U(https://github.com/mikemaccana/dnsimple-python#getting-started)}
+    record_ids=${4:None #  List of records to ensure they either exist or don't exist}
+    value=${5:None #  Record value}
+    priority=${6:None #  Record priority}
+    record=${7:None #  Record to add, if blank a record for the domain will be created, supports the wildcard (*)}
+    state=${8:None #  whether the record should exist or not}
+    ttl=${9:3600 (one hour) #  The TTL to give the new record}
+    type=${10:None #  The type of DNS record to create}
+    account_api_token=${11:None #  Account API token. See I(account_email) for info.}
+  ]]></content>
+  <tabTrigger>an-dnsimple</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

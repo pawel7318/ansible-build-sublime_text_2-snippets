@@ -1,0 +1,14 @@
+---
+module: win_ping
+version_added: "1.7"
+short_description: A windows version of the classic ping module.
+description:
+  - Checks management connectivity of a windows host
+options:
+  data:
+    description:
+      - Alternate data to return instead of 'pong'
+    required: false
+    default: 'pong'
+    aliases: []
+author: Chris Church

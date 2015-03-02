@@ -1,0 +1,56 @@
+---
+module: wait_for
+short_description: Waits for a condition before continuing.
+description:
+     - Waiting for a port to become available is useful for when services 
+       are not immediately available after their init scripts return - 
+       which is true of certain Java application servers. It is also 
+       useful when starting guests with the M(virt) module and
+       needing to pause until they are ready. 
+     - This module can also be used to wait for a regex match a string to be present in a file.
+     - In 1.6 and later, this module can 
+       also be used to wait for a file to be available or absent on the 
+       filesystem.
+version_added: "0.7"
+options:
+  host:
+    description:
+      - hostname or IP address to wait for
+    required: false
+    default: "127.0.0.1"
+    aliases: []
+  timeout:
+    description:
+      - maximum number of seconds to wait for
+    required: false
+    default: 300
+  delay:
+    description:
+      - number of seconds to wait before starting to poll
+    required: false
+    default: 0
+  port:
+    description:
+      - port number to poll
+    required: false
+  state:
+    description:
+      - either C(present), C(started), or C(stopped), C(absent)
+      - When checking a port C(started) will ensure the port is open, C(stopped) will check that it is closed
+      - When checking for a file or a search string C(present) or C(started) will ensure that the file or string is present before continuing, C(absent) will check that file is absent or removed
+    choices: [ "present", "started", "stopped", "absent" ]
+    default: "started"
+  path:
+    version_added: "1.4"
+    required: false
+    description:
+      - path to a file on the filesytem that must exist before continuing
+  search_regex:
+    version_added: "1.4"
+    required: false
+    description:
+      - with the path option can be used match a string in the file that must match before continuing.  Defaults to a multiline regex.
+   
+notes: []
+requirements: []
+author: Jeroen Hoekx, John Jarvis, Andrii Radyk

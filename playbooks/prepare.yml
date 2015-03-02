@@ -1,0 +1,60 @@
+---
+- name: run all locally
+  hosts: localhost
+  # gather_facts: true
+  tasks:
+    - name: Download ansible from git
+      tags: [ 'git' ]
+      git: >
+          repo=https://github.com/ansible/ansible.git
+          dest=files/ansible_git/
+          version=HEAD
+          update=no
+          depth=1
+          accept_hostkey=no
+
+    # it works much faster than ansible copy module
+    - name: Copy library doc files
+      tags: [ 'copy' ]
+      shell: find files/ansible_git/library/ ! -name "*.*" -exec cp {} files/library/ \;
+
+    - name: Filter library files with regexp
+      tags: [ 'regex' ]
+      replace: >
+        dest={{ item }}        
+        regexp="(.*\n)+DOCUMENTATION.*(\"\"\"|''')\n-*\n?((.*\n)+?)(\2)(.*\n)*"
+        replace='---\n\3'
+      with_fileglob: files/library/*
+
+    - name: Load variables from files
+      tags: [ 'load-vars' ]
+      include_vars: "{{ item }}"
+      ignore_errors: True
+      with_fileglob: files/library/*
+
+    - name: ansible-play - Download the extension
+      tags: [ 'ansible-play' ]
+      git: >
+        repo=https://github.com/gnosek/ansible-play.git
+        dest=../tmp
+
+    - name: ansible-play - Create directories
+      tags: [ 'ansible-play' ]
+      file: >
+        dest=../{{ item }}
+        state=directory        
+      with_items:
+        - action_plugins
+        - library
+
+    - name: ansible-play - Create links
+      tags: [ 'ansible-play' ]
+      file:
+        src={{ item.src }}
+        dest={{ item.dest }}
+        state=link
+        force=yes
+      with_items:
+        - { src: '../tmp/action_plugins/play.py', dest: '../action_plugins/play.py' }
+        - { src: '../tmp/library/play', dest: '../library/play' }
+

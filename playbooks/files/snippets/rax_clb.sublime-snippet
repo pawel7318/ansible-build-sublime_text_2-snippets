@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  rax_clb: >
+    protocol=${1:HTTP #  Protocol for the balancer being created}
+    name=${2:None #  Name to give the load balancer}
+    algorithm=${3:LEAST_CONNECTIONS #  algorithm for the balancer being created}
+    state=${4:present #  Indicate desired state of the resource}
+    wait_timeout=${5:300 #  how long before wait gives up, in seconds}
+    meta=${6:None #  A hash of metadata to associate with the instance}
+    timeout=${7:30 #  timeout for communication between the balancer and the node}
+    wait=${8:no #  wait for the balancer to be in state 'running' before returning}
+    type=${9:PUBLIC #  type of interface for the balancer being created}
+    port=${10:80 #  Port for the balancer being created}
+    vip_id=${11: #  Virtual IP ID to use when creating the load balancer for purposes of sharing an IP with another load balancer of another protocol}
+  ]]></content>
+  <tabTrigger>an-rax_clb</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

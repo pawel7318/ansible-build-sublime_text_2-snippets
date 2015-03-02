@@ -1,0 +1,14 @@
+---
+module: hostname
+author: Hiroaki Nakamura
+version_added: "1.4"
+short_description: Manage hostname
+requirements: [ hostname ]
+description:
+    - Set system's hostname
+    - Currently implemented on only Debian, Ubuntu, RedHat and CentOS.
+options:
+    name:
+        required: true
+        description:
+            - Name of the host

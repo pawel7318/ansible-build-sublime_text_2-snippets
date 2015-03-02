@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+  hostname: >
+    name=${1: # ! Name of the host}
+  ]]></content>
+  <tabTrigger>an-hostname</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

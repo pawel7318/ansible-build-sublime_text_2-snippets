@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  seboolean: >
+    state=${1:None # ! Desired boolean value}
+    name=${2:None # ! Name of the boolean to configure}
+    persistent=${3:False #  Set to C(yes) if the boolean setting should survive a reboot}
+  ]]></content>
+  <tabTrigger>an-seboolean</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

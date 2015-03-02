@@ -1,0 +1,43 @@
+---
+module: rabbitmq_policy
+short_description: Manage the state of policies in RabbitMQ.
+description:
+  - Manage the state of a virtual host in RabbitMQ.
+version_added: "1.5"
+author: John Dewey
+options:
+  name:
+    description:
+      - The name of the policy to manage.
+    required: true
+    default: null
+  vhost:
+    description:
+      - The name of the vhost to apply to.
+    required: false
+    default: /
+  pattern:
+    description:
+      - A regex of queues to apply the policy to.
+    required: true
+    default: null
+  tags:
+    description:
+      - A dict or string describing the policy.
+    required: true
+    default: null
+  priority:
+    description:
+      - The priority of the policy.
+    required: false
+    default: 0
+  node:
+    description:
+      - Erlang node name of the rabbit we wish to configure.
+    required: false
+    default: rabbit
+  state:
+    description:
+      - The state of the policy.
+    default: present
+    choices: [present, absent]

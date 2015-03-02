@@ -1,0 +1,48 @@
+---
+module: npm
+short_description: Manage node.js packages with npm
+description:
+  - Manage node.js packages with Node Package Manager (npm)
+version_added: 1.2
+author: Chris Hoffman
+options:
+  name:
+    description:
+      - The name of a node.js library to install
+    required: false
+  path:
+    description:
+      - The base path where to install the node.js libraries
+    required: false
+  version:
+    description:
+      - The version to be installed
+    required: false
+  global:
+    description:
+      - Install the node.js library globally
+    required: false
+    default: no
+    choices: [ "yes", "no" ]
+  executable:
+    description:
+      - The executable location for npm.
+      - This is useful if you are using a version manager, such as nvm
+    required: false
+  production:
+    description:
+      - Install dependencies in production mode, excluding devDependencies
+    required: false
+    choices: [ "yes", "no" ]
+    default: no
+  registry:
+    description:
+      - The registry to install modules from.
+    required: false
+    version_added: "1.6"
+  state:
+    description:
+      - The state of the node.js library
+    required: false
+    default: present
+    choices: [ "present", "absent", "latest" ]

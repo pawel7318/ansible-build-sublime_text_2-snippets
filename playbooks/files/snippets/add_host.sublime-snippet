@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  add_host: >
+    name=${1: # ! The hostname/ip of the host to add to the inventory, can include a colon and a port number.}
+    groups=${2: #  The groups to add the hostname to, comma separated.}
+  ]]></content>
+  <tabTrigger>an-add_host</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

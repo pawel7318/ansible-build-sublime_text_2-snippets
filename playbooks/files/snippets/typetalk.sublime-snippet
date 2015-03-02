@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  typetalk: >
+    topic=${1: # ! topic id to post message}
+    client_secret=${2: # ! OAuth2 client secret}
+    client_id=${3: # ! OAuth2 client ID}
+    msg=${4: # ! message body}
+  ]]></content>
+  <tabTrigger>an-typetalk</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

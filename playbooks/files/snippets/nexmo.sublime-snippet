@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  nexmo: >
+    src=${1: # ! Nexmo Number to send from}
+    dest=${2: # ! Phone number(s) to send SMS message to}
+    api_secret=${3: # ! Nexmo API Secret}
+    msg=${4: # ! Message to text to send. Messages longer than 160 characters will be split into multiple messages}
+    api_key=${5: # ! Nexmo API Key}
+    validate_certs=${6:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+  ]]></content>
+  <tabTrigger>an-nexmo</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

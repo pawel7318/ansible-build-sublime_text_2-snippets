@@ -1,0 +1,19 @@
+---
+module: homebrew_tap
+author: Daniel Jaouen
+short_description: Tap a Homebrew repository.
+description:
+    - Tap external Homebrew repositories.
+version_added: "1.6"
+options:
+    tap:
+        description:
+            - The repository to tap.
+        required: true
+    state:
+        description:
+            - state of the repository.
+        choices: [ 'present', 'absent' ]
+        required: false
+        default: 'present'
+requirements: [ homebrew ]

@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  rollbar_deployment: >
+    comment=${1: #  Deploy comment (e.g. what is being deployed).}
+    rollbar_user=${2: #  Rollbar username of the user who deployed.}
+    url=${3:https://api.rollbar.com/api/1/deploy/ #  Optional URL to submit the notification to.}
+    environment=${4: # ! Name of the environment being deployed, e.g. 'production'.}
+    token=${5: # ! Your project access token.}
+    user=${6: #  User who deployed.}
+    validate_certs=${7:yes #  If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    revision=${8: # ! Revision number/sha being deployed.}
+  ]]></content>
+  <tabTrigger>an-rollbar_deployment</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

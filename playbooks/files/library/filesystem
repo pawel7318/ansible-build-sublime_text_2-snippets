@@ -1,0 +1,27 @@
+---
+author: Alexander Bulimov
+module: filesystem
+short_description: Makes file system on block device
+description:
+  - This module creates file system.
+version_added: "1.2"
+options:
+  fstype:
+    description:
+    - File System type to be created.
+    required: true
+  dev:
+    description:
+    - Target block device.
+    required: true
+  force:
+    choices: [ "yes", "no" ]
+    default: "no"
+    description:
+    - If yes, allows to create new filesystem on devices that already has filesystem.
+    required: false
+  opts:
+    description:
+    - List of options to be passed to mkfs command.
+notes:
+  - uses mkfs command

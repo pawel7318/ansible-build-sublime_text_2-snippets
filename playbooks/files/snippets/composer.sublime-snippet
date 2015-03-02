@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  composer: >
+    no_scripts=${1:no #  Skips the execution of all scripts defined in composer.json ( see --no-scripts )}
+    no_plugins=${2:no #  Disables all plugins ( see --no-plugins )}
+    optimize_autoloader=${3:yes #  Optimize autoloader during autoloader dump ( see --optimize-autoloader ). Convert PSR-0/4 autoloading to classmap to get a faster autoloader. This is recommended especially for production, but can take a bit of time to run so it is currently not done by default.}
+    working_dir=${4:None # ! Directory of your project ( see --working-dir )}
+    no_dev=${5:yes #  Disables installation of require-dev packages ( see --no-dev )}
+    prefer_dist=${6:no #  Forces installation from package dist even for de versions ( see --prefer-dist )}
+    prefer_source=${7:no #  Forces installation from package sources when possible ( see --prefer-source )}
+  ]]></content>
+  <tabTrigger>an-composer</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

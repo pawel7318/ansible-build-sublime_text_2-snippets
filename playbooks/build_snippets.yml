@@ -1,0 +1,13 @@
+---
+- name: run all locally
+  hosts: localhost
+  tasks:
+    - play:
+        tasks:
+          - include_vars: "{{ item }}"
+          # - debug: var=options          
+          - template: src="templates/snippet.j2"
+                      dest="./playbooks/files/snippets/{{ item | basename }}.sublime-snippet"
+                      backup=no
+      with_fileglob:
+        - files/library/*

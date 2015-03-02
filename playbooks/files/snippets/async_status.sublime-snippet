@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  async_status: >
+    jid=${1:None # ! Job or task identifier}
+    mode=${2:status #  if C(status), obtain the status; if C(cleanup), clean up the async job cache located in C(~/.ansible_async/) for the specified job I(jid).}
+  ]]></content>
+  <tabTrigger>an-async_status</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

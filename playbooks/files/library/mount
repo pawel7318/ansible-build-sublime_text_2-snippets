@@ -1,0 +1,52 @@
+---
+module: mount
+short_description: Control active and configured mount points
+description:
+     - This module controls active and configured mount points in C(/etc/fstab).
+version_added: "0.6"
+options:
+  name:
+    description:
+      - "path to the mount point, eg: C(/mnt/files)"
+    required: true
+    default: null
+    aliases: []
+  src:
+    description:
+      - device to be mounted on I(name).
+    required: true
+    default: null
+  fstype:
+    description:
+      - file-system type
+    required: true
+    default: null
+  opts:
+    description:
+      - mount options (see fstab(8))
+    required: false
+    default: null
+  dump:
+    description:
+      - dump (see fstab(8))
+    required: false
+    default: null
+  passno:
+    description:
+      - passno (see fstab(8))
+    required: false
+    default: null
+  state:
+    description:
+      - If C(mounted) or C(unmounted), the device will be actively mounted or unmounted
+        as well as just configured in I(fstab). C(absent) and C(present) only deal with
+        I(fstab). C(mounted) will also automatically create the mount point
+        directory if it doesn't exist. If C(absent) changes anything, it will
+        remove the mount point directory.
+    required: true
+    choices: [ "present", "absent", "mounted", "unmounted" ]
+    default: null
+     
+notes: []
+requirements: []
+author: Seth Vidal

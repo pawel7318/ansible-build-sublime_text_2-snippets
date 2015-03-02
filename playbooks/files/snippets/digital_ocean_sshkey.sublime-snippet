@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+  digital_ocean_sshkey: >
+    name=${1: #  String, this is the name of an SSH key to create or destroy.}
+    id=${2: #  Numeric, the SSH key id you want to operate on.}
+    state=${3:present #  Indicate desired state of the target.}
+    client_id=${4: #  Digital Ocean manager id.}
+    api_key=${5: #  Digital Ocean api key.}
+    ssh_pub_key=${6: #  The public SSH key you want to add to your account.}
+  ]]></content>
+  <tabTrigger>an-digital_ocean_sshkey</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,24 @@
+<snippet>
+  <content><![CDATA[
+  glance_image: >
+    region_name=${1:None #  Name of the region}
+    login_tenant_name=${2:yes # ! The tenant name of the login user}
+    container_format=${3:bare #  The format of the container}
+    min_ram=${4:None #  The minimum ram required to deploy this image}
+    disk_format=${5:qcow2 #  The format of the disk that is getting uploaded}
+    timeout=${6:180 #  The time to wait for the image process to complete in seconds}
+    copy_from=${7:None #  A url from where the image can be downloaded, mutually exclusive with file parameter}
+    min_disk=${8:None #  The minimum disk space required to deploy this image}
+    state=${9:present #  Indicate desired state of the resource}
+    endpoint_type=${10:publicURL #  endpoint URL type}
+    auth_url=${11:http://127.0.0.1:35357/v2.0/ #  The keystone url for authentication}
+    file=${12:None #  The path to the file which has to be uploaded, mutually exclusive with copy_from}
+    login_password=${13:yes # ! Password of login user}
+    owner=${14:None #  The owner of the image}
+    is_public=${15:yes #  Whether the image can be accessed publicly}
+    login_username=${16:admin # ! login username to authenticate to keystone}
+    name=${17:None # ! Name that has to be given to the image}
+  ]]></content>
+  <tabTrigger>an-glance_image</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

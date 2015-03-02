@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  osx_say: >
+    msg=${1: # ! W}
+    voice=${2: #  W}
+  ]]></content>
+  <tabTrigger>an-osx_say</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  npm: >
+    executable=${1: #  The executable location for npm.}
+    name=${2: #  The name of a node.js library to install}
+    global=${3:False #  Install the node.js library globally}
+    state=${4:present #  The state of the node.js library}
+    production=${5:False #  Install dependencies in production mode, excluding devDependencies}
+    registry=${6: #  The registry to install modules from.}
+    version=${7: #  The version to be installed}
+    path=${8: #  The base path where to install the node.js libraries}
+  ]]></content>
+  <tabTrigger>an-npm</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

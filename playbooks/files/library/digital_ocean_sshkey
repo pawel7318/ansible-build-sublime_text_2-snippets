@@ -1,0 +1,30 @@
+---
+module: digital_ocean_sshkey
+short_description: Create/delete an SSH key in DigitalOcean
+description:
+     - Create/delete an SSH key.
+version_added: "1.6"
+options:
+  state:
+    description:
+     - Indicate desired state of the target.
+    default: present
+    choices: ['present', 'absent']
+  client_id:
+     description:
+     - Digital Ocean manager id.
+  api_key:
+    description:
+     - Digital Ocean api key.
+  id:
+    description:
+     - Numeric, the SSH key id you want to operate on.
+  name:
+    description:
+     - String, this is the name of an SSH key to create or destroy.
+  ssh_pub_key:
+    description:
+     - The public SSH key you want to add to your account.
+
+notes:
+  - Two environment variables can be used, DO_CLIENT_ID and DO_API_KEY.

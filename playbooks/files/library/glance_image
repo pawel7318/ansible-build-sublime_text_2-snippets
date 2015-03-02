@@ -1,0 +1,95 @@
+---
+module: glance_image
+version_added: "1.2"
+short_description: Add/Delete images from glance
+description:
+   - Add or Remove images from the glance repository.
+options:
+   login_username:
+     description:
+        - login username to authenticate to keystone
+     required: true
+     default: admin
+   login_password:
+     description:
+        - Password of login user
+     required: true
+     default: 'yes'
+   login_tenant_name:
+     description:
+        - The tenant name of the login user
+     required: true
+     default: 'yes'
+   auth_url:
+     description:
+        - The keystone url for authentication
+     required: false
+     default: 'http://127.0.0.1:35357/v2.0/'
+   region_name:
+     description:
+        - Name of the region
+     required: false
+     default: None
+   state:
+     description:
+        - Indicate desired state of the resource
+     choices: ['present', 'absent']
+     default: present
+   name:
+     description:
+        - Name that has to be given to the image
+     required: true
+     default: None
+   disk_format:
+     description:
+        - The format of the disk that is getting uploaded
+     required: false
+     default: qcow2
+   container_format:
+     description:
+        - The format of the container
+     required: false
+     default: bare
+   owner:
+     description:
+        - The owner of the image
+     required: false
+     default: None
+   min_disk:
+     description:
+        - The minimum disk space required to deploy this image
+     required: false
+     default: None
+   min_ram:
+     description:
+        - The minimum ram required to deploy this image
+     required: false
+     default: None
+   is_public:
+     description:
+        - Whether the image can be accessed publicly
+     required: false
+     default: 'yes'
+   copy_from:
+     description:
+        - A url from where the image can be downloaded, mutually exclusive with file parameter
+     required: false
+     default: None
+   timeout:
+     description:
+        - The time to wait for the image process to complete in seconds
+     required: false
+     default: 180
+   file:
+     description:
+        - The path to the file which has to be uploaded, mutually exclusive with copy_from
+     required: false
+     default: None
+   endpoint_type:
+     description:
+        - endpoint URL type
+     choices: [publicURL, internalURL]
+     required: false
+     default: publicURL
+requirements: ["glanceclient", "keystoneclient"]
+

@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  arista_vlan: >
+    state=${1:present #  describe the desired state of the vlan related to the config}
+    logging=${2: #  enables or disables the syslog facility for this module}
+    name=${3: #  a descriptive name for the vlan}
+    vlan_id=${4: # ! the vlan id}
+  ]]></content>
+  <tabTrigger>an-arista_vlan</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

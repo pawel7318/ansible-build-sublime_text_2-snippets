@@ -1,0 +1,62 @@
+---
+module: mqtt
+short_description: Publish a message on an MQTT topic for the IoT
+version_added: "1.2"
+description:
+   - Publish a message on an MQTT topic.
+options:
+  server:
+    description:
+      - MQTT broker address/name
+    required: false
+    default: localhost
+  port:
+    description:
+      - MQTT broker port number
+    required: false
+    default: 1883
+  username:
+    description:
+      - Username to authenticate against the broker.
+    required: false
+  password:
+    description:
+      - Password for C(username) to authenticate against the broker.
+    required: false
+  client_id:
+    description:
+      - MQTT client identifier
+    required: false
+    default: hostname + pid
+  topic:
+    description:
+      - MQTT topic name
+    required: true
+    default: null
+  payload:
+    description:
+      - Payload. The special string C("None") may be used to send a NULL
+        (i.e. empty) payload which is useful to simply notify with the I(topic)
+        or to clear previously retained messages.
+    required: true
+    default: null
+  qos:
+    description:
+      - QoS (Quality of Service)
+    required: false
+    default: 0
+    choices: [ "0", "1", "2" ]
+  retain:
+    description:
+      - Setting this flag causes the broker to retain (i.e. keep) the message so that
+        applications that subsequently subscribe to the topic can received the last
+        retained message immediately.
+    required: false
+    default: False
+
+# informational: requirements for nodes
+requirements: [ mosquitto ]
+notes:
+ - This module requires a connection to an MQTT broker such as Mosquitto
+   U(http://mosquitto.org) and the I(Paho) C(mqtt) Python client (U(https://pypi.python.org/pypi/paho-mqtt)).
+author: Jan-Piet Mens

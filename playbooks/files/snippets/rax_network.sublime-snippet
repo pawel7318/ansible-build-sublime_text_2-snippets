@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  rax_network: >
+    state=${1:present #  Indicate desired state of the resource}
+    cidr=${2:None #  cidr of the network being created}
+    label=${3:None #  Label (name) to give the network}
+  ]]></content>
+  <tabTrigger>an-rax_network</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

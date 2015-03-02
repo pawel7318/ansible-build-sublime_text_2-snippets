@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  rax_cbs: >
+    description=${1:None #  Description to give the volume being created}
+    volume_type=${2:SATA # ! Type of the volume being created}
+    name=${3:None # ! Name to give the volume being created}
+    state=${4:present # ! Indicate desired state of the resource}
+    wait_timeout=${5:300 #  how long before wait gives up, in seconds}
+    meta=${6:None #  A hash of metadata to associate with the volume}
+    snapshot_id=${7:None #  The id of the snapshot to create the volume from}
+    wait=${8:no #  wait for the volume to be in state 'available' before returning}
+    size=${9:100 # ! Size of the volume to create in Gigabytes}
+  ]]></content>
+  <tabTrigger>an-rax_cbs</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

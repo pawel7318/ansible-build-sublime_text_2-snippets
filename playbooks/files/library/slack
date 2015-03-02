@@ -1,0 +1,64 @@
+---
+module: slack
+short_description: Send Slack notifications
+description:
+    - The M(slack) module sends notifications to U(http://slack.com) via the Incoming WebHook integration
+version_added: 1.6
+author: Ramon de la Fuente <ramon@delafuente.nl>
+options:
+  domain:
+    description:
+      - Slack (sub)domain for your environment without protocol.
+        (i.e. C(future500.slack.com))
+    required: true
+  token:
+    description:
+      - Slack integration token
+    required: true
+  msg:
+    description:
+      - Message to send.
+    required: true
+  channel:
+    description:
+      - Channel to send the message to. If absent, the message goes to the channel selected for the I(token).
+    required: false
+  username:
+    description:
+      - This is the sender of the message.
+    required: false
+    default: ansible
+  icon_url:
+    description:
+      - Url for the message sender's icon (default C(http://www.ansible.com/favicon.ico))
+    required: false
+  icon_emoji:
+    description:
+      - Emoji for the message sender. See Slack documentation for options.
+        (if I(icon_emoji) is set, I(icon_url) will not be used)
+    required: false
+  link_names:
+    description:
+      - Automatically create links for channels and usernames in I(msg).
+    required: false
+    default: 1
+    choices:
+      - 1
+      - 0
+  parse:
+    description:
+      - Setting for the message parser at Slack
+    required: false
+    choices:
+      - 'full'
+      - 'none'
+  validate_certs:
+    description:
+      - If C(no), SSL certificates will not be validated. This should only be used
+        on personally controlled sites using self-signed certificates.
+    required: false
+    default: 'yes'
+    choices:
+      - 'yes'
+      - 'no'
+main()

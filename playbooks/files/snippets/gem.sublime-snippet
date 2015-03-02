@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  gem: >
+    include_dependencies=${1:yes #  Wheter to include dependencies or not.}
+    executable=${2: #  Override the path to the gem executable}
+    name=${3: # ! The name of the gem to be managed.}
+    repository=${4: #  The repository from which the gem will be installed}
+    user_install=${5:yes #  Install gem in user's local gems cache or for all users}
+    pre_release=${6:no #  Allow installation of pre-release versions of the gem.}
+    state=${7:present #  The desired state of the gem. C(latest) ensures that the latest version is installed.}
+    version=${8: #  Version of the gem to be installed/removed.}
+    gem_source=${9: #  The path to a local gem used as installation source.}
+  ]]></content>
+  <tabTrigger>an-gem</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

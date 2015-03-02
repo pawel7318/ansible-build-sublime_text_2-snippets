@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  mail: >
+    body=${1:$subject #  The body of the email being sent.}
+    from=${2:root #  The email-address the mail is sent from. May contain address and phrase.}
+    headers=${3:None #  A vertical-bar-separated list of headers which should be added to the message. Each individual header is specified as C(header=value) (see example below).}
+    cc=${4: #  The email-address(es) the mail is being copied to. This is a comma-separated list, which may contain address and phrase portions.}
+    charset=${5:us-ascii #  The character set of email being sent}
+    bcc=${6: #  The email-address(es) the mail is being 'blind' copied to. This is a comma-separated list, which may contain address and phrase portions.}
+    port=${7:25 #  The mail server port}
+    to=${8:root #  The email-address(es) the mail is being sent to. This is a comma-separated list, which may contain address and phrase portions.}
+    host=${9:localhost #  The mail server}
+    attach=${10:None #  A space-separated list of pathnames of files to attach to the message. Attached files will have their content-type set to C(application/octet-stream).}
+    subject=${11: # ! The subject of the email being sent.}
+  ]]></content>
+  <tabTrigger>an-mail</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

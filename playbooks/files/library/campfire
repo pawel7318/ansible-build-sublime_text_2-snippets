@@ -1,0 +1,38 @@
+---
+module: campfire
+version_added: "1.2"
+short_description: Send a message to Campfire
+description:
+   - Send a message to Campfire.
+   - Messages with newlines will result in a "Paste" message being sent.
+version_added: "1.2"
+options:
+  subscription:
+    description:
+      - The subscription name to use.
+    required: true
+  token:
+    description:
+      - API token.
+    required: true
+  room:
+    description:
+      - Room number to which the message should be sent.
+    required: true
+  msg:
+    description:
+      - The message body.
+    required: true
+  notify:
+    description:
+      - Send a notification sound before the message.
+    required: false
+    choices: ["56k", "bueller", "crickets", "dangerzone", "deeper",
+              "drama", "greatjob", "horn", "horror" , "inconceivable",
+              "live", "loggins", "noooo", "nyan", "ohmy", "ohyeah",
+              "pushit", "rimshot", "sax", "secret", "tada", "tmyk",
+              "trombone", "vuvuzela", "yeah", "yodel"]
+
+# informational: requirements for nodes
+requirements: [ urllib2, cgi ]
+author: Adam Garside <adam.garside@gmail.com>

@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+  wait_for: >
+    host=${1:127.0.0.1 #  hostname or IP address to wait for}
+    delay=${2:0 #  number of seconds to wait before starting to poll}
+    state=${3:started #  either C(present), C(started), or C(stopped), C(absent)}
+    timeout=${4:300 #  maximum number of seconds to wait for}
+    search_regex=${5: #  with the path option can be used match a string in the file that must match before continuing.  Defaults to a multiline regex.}
+    path=${6: #  path to a file on the filesytem that must exist before continuing}
+    port=${7: #  port number to poll}
+  ]]></content>
+  <tabTrigger>an-wait_for</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

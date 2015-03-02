@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+  fail: >
+    msg=${1:'Failed as requested from task' #  The customized message used for failing execution. If omitted, fail will simple bail out with a generic message.}
+  ]]></content>
+  <tabTrigger>an-fail</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

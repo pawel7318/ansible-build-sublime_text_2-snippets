@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  ec2_tag: >
+    state=${1:present #  Whether the tags should be present or absent on the resource. Use list to interrogate the tags of an instance.}
+    resource=${2:None # ! The EC2 resource id.}
+    region=${3:None #  region in which the resource exists.}
+  ]]></content>
+  <tabTrigger>an-ec2_tag</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

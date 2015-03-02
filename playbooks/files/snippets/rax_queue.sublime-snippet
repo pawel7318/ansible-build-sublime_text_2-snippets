@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  rax_queue: >
+    state=${1:present #  Indicate desired state of the resource}
+    name=${2:None #  Name to give the queue}
+  ]]></content>
+  <tabTrigger>an-rax_queue</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

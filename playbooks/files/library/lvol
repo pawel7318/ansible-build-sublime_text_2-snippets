@@ -1,0 +1,38 @@
+---
+author: Jeroen Hoekx
+module: lvol
+short_description: Configure LVM logical volumes
+description:
+  - This module creates, removes or resizes logical volumes.
+version_added: "1.1"
+options:
+  vg:
+    description:
+    - The volume group this logical volume is part of.
+    required: true
+  lv:
+    description:
+    - The name of the logical volume.
+    required: true
+  size:
+    description:
+    - The size of the logical volume, according to lvcreate(8) --size, by
+      default in megabytes or optionally with one of [bBsSkKmMgGtTpPeE] units; or
+      according to lvcreate(8) --extents as a percentage of [VG|PVS|FREE];
+      resizing is not supported with percentages.
+  state:
+    choices: [ "present", "absent" ]
+    default: present
+    description:
+    - Control if the logical volume exists.
+    required: false
+  force:
+    version_added: "1.5"
+    choices: [ "yes", "no" ]
+    default: "no"
+    description:
+    - Shrink or remove operations of volumes requires this switch. Ensures that
+      that filesystems get never corrupted/destroyed by mistake.
+    required: false
+notes:
+  - Filesystems on top of the volume are not resized.

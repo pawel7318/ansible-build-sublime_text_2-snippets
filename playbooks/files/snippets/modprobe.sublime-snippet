@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  modprobe: >
+    state=${1:present #  Whether the module should be present or absent.}
+    params=${2: #  Modules parameters.}
+    name=${3: # ! Name of kernel module to manage.}
+  ]]></content>
+  <tabTrigger>an-modprobe</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

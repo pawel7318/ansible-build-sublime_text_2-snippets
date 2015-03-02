@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  mongodb_user: >
+    login_port=${1:27017 #  The port to connect to}
+    roles=${2:readWrite #  The database user roles valid values are one or more of the following: read, 'readWrite', 'dbAdmin', 'userAdmin', 'clusterAdmin', 'readAnyDatabase', 'readWriteAnyDatabase', 'userAdminAnyDatabase', 'dbAdminAnyDatabase'}
+    database=${3: # ! The name of the database to add/remove the user from}
+    login_user=${4:None #  The username used to authenticate with}
+    login_host=${5:localhost #  The host running the database}
+    state=${6:present #  The database user state}
+    user=${7:None # ! The name of the user to add or remove}
+    login_password=${8:None #  The password used to authenticate with}
+    password=${9:None #  The password to use for the user}
+    replica_set=${10:None #  Replica set to connect to (automatically connects to primary for writes)}
+  ]]></content>
+  <tabTrigger>an-mongodb_user</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

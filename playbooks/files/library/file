@@ -1,0 +1,13 @@
+---
+module: file
+version_added: "historical"
+short_description: Sets attributes of files
+extends_documentation_fragment: files
+description: 
+     - Sets attributes of files, symlinks, and directories, or removes
+       files/symlinks/directories. Many other modules support the same options as
+       the M(file) module - including M(copy), M(template), and M(assemble).
+notes:
+    - See also M(copy), M(template), M(assemble)
+requirements: [ ]
+author: Michael DeHaan

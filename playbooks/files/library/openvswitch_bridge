@@ -1,0 +1,24 @@
+---
+module: openvswitch_bridge
+version_added: 1.4
+author: David Stygstra
+short_description: Manage Open vSwitch bridges
+requirements: [ ovs-vsctl ]
+description:
+    - Manage Open vSwitch bridges
+options:
+    bridge:
+        required: true
+        description:
+            - Name of bridge to manage
+    state:
+        required: false
+        default: "present"
+        choices: [ present, absent ]
+        description:
+            - Whether the bridge should exist
+    timeout:
+        required: false
+        default: 5
+        description:
+            - How long to wait for ovs-vswitchd to respond

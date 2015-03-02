@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+  ping: >
+  ]]></content>
+  <tabTrigger>an-ping</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

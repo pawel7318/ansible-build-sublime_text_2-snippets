@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  route53: >
+    aws_secret_key=${1:None #  AWS secret key.}
+    aws_access_key=${2:None #  AWS access key.}
+    zone=${3:None # ! The DNS zone to modify}
+    value=${4:None #  The new value when creating a DNS record.  Multiple comma-spaced values are allowed.  When deleting a record all values for the record must be specified or Route53 will not delete it.}
+    record=${5:None # ! The full DNS record to create or delete}
+    command=${6:None # ! Specifies the action to take.}
+    ttl=${7:3600 (one hour) #  The TTL to give the new record}
+    type=${8:None # ! The type of DNS record to create}
+    overwrite=${9:None #  Whether an existing record should be overwritten on create if values do not match}
+  ]]></content>
+  <tabTrigger>an-route53</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

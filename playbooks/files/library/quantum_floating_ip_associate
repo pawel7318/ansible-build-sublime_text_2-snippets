@@ -1,0 +1,48 @@
+---
+module: quantum_floating_ip_associate
+version_added: "1.2"
+short_description: Associate or disassociate a particular floating IP with an instance
+description:
+   - Associates or disassociates a specific floating IP with a particular instance
+options:
+   login_username:
+     description:
+        - login username to authenticate to keystone
+     required: true
+     default: admin
+   login_password:
+     description:
+        - password of login user
+     required: true
+     default: 'yes'
+   login_tenant_name:
+     description:
+        - the tenant name of the login user
+     required: true
+     default: true
+   auth_url:
+     description:
+        - the keystone url for authentication
+     required: false
+     default: 'http://127.0.0.1:35357/v2.0/'
+   region_name:
+     description:
+        - name of the region
+     required: false
+     default: None
+   state:
+     description:
+        - indicates the desired state of the resource
+     choices: ['present', 'absent']
+     default: present
+   instance_name:
+     description:
+        - name of the instance to which the public IP should be assigned
+     required: true
+     default: None
+   ip_address:
+     description:
+        - floating ip that should be assigned to the instance
+     required: true
+     default: None
+requirements: ["quantumclient", "neutronclient", "keystoneclient"]

@@ -1,0 +1,80 @@
+---
+module: ec2_elb_lb
+description: Creates or destroys Amazon ELB.
+short_description: Creates or destroys Amazon ELB.
+  - Returns information about the load balancer.
+  - Will be marked changed when called only if state is changed.
+version_added: "1.5"
+author: Jim Dalton
+options:
+  state:
+    description:
+      - Create or destroy the ELB
+    required: true
+  name:
+    description:
+      - The name of the ELB
+    required: true
+  listeners:
+    description:
+      - List of ports/protocols for this ELB to listen on (see example)
+    required: false
+  purge_listeners:
+    description:
+      - Purge existing listeners on ELB that are not found in listeners
+    required: false
+    default: true
+  zones:
+    description:
+      - List of availability zones to enable on this ELB
+    required: false
+  purge_zones:
+    description:
+      - Purge existing availability zones on ELB that are not found in zones
+    required: false
+    default: false
+  security_group_ids:
+    description:
+      - A list of security groups to apply to the elb
+    require: false
+    default: None
+    version_added: "1.6"
+  health_check:
+    description:
+      - An associative array of health check configuration settigs (see example)
+    require: false
+    default: None
+  region:
+    description:
+      - The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+    required: false
+    aliases: ['aws_region', 'ec2_region']
+  subnets:
+    description:
+      - A list of VPC subnets to use when creating ELB. Zones should be empty if using this. 
+    required: false
+    default: None
+    aliases: []
+    version_added: "1.7"
+  purge_subnets:
+    description:
+      - Purge existing subnet on ELB that are not found in subnets
+    required: false
+    default: false  
+    version_added: "1.7"
+  scheme:
+    description:
+      - The scheme to use when creating the ELB. For a private VPC-visible ELB use 'internal'.
+    required: false
+    default: 'internet-facing'
+    version_added: "1.7"
+  validate_certs:
+    description:
+      - When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+    required: false
+    default: "yes"
+    choices: ["yes", "no"]
+    aliases: []
+    version_added: "1.5"
+
+extends_documentation_fragment: aws

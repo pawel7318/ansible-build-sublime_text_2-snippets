@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  quantum_router: >
+    region_name=${1:None #  Name of the region}
+    admin_state_up=${2:True #  desired admin state of the created router .}
+    tenant_name=${3:None #  Name of the tenant for which the router has to be created, if none router would be created for the login tenant.}
+    login_tenant_name=${4:yes # ! The tenant name of the login user}
+    state=${5:present #  Indicate desired state of the resource}
+    auth_url=${6:http://127.0.0.1:35357/v2.0/ #  The keystone url for authentication}
+    login_password=${7:yes # ! Password of login user}
+    login_username=${8:admin # ! login username to authenticate to keystone}
+    name=${9:None # ! Name to be give to the router}
+  ]]></content>
+  <tabTrigger>an-quantum_router</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

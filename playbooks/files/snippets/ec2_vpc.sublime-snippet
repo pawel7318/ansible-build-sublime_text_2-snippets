@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+  ec2_vpc: >
+    aws_secret_key=${1:None #  AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.}
+    subnets=${2:None #  A dictionary array of subnets to add of the form: { cidr: ..., az: ... , resource_tags: ... }. Where az is the desired availability zone of the subnet, but it is not required. Tags (i.e.: resource_tags) is also optional and use dictionary form: { "Environment":"Dev", "Tier":"Web", ...}. All VPC subnets not in this list will be removed.}
+    aws_access_key=${3:None #  AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.}
+    route_tables=${4:None #  A dictionary array of route tables to add of the form: { subnets: [172.22.2.0/24, 172.22.3.0/24,], routes: [{ dest: 0.0.0.0/0, gw: igw},] }. Where the subnets list is those subnets the route table should be associated with, and the routes list is a list of routes to be in the table.  The special keyword for the gw of igw specifies that you should the route should go through the internet gateway attached to the VPC. gw also accepts instance-ids in addition igw. This module is currently unable to affect the "main" route table due to some limitations in boto, so you must explicitly define the associated subnets or they will be attached to the main table implicitly.}
+    dns_support=${5:yes #  toggles the "Enable DNS resolution" flag}
+    internet_gateway=${6:no #  Toggle whether there should be an Internet gateway attached to the VPC}
+    region=${7:None #  region in which the resource exists.}
+    vpc_id=${8:None #  A VPC id to terminate when state=absent}
+    instance_tenancy=${9:default #  The supported tenancy options for instances launched into the VPC.}
+    state=${10:present # ! Create or terminate the VPC}
+    wait_timeout=${11:300 #  how long before wait gives up, in seconds}
+    dns_hostnames=${12:yes #  toggles the "Enable DNS hostname support for instances" flag}
+    resource_tags=${13:None # ! A dictionary array of resource tags of the form: { tag1: value1, tag2: value2 }.  Tags in this list are used in conjunction with CIDR block to uniquely identify a VPC in lieu of vpc_id. Therefore, if CIDR/Tag combination does not exits, a new VPC will be created.  VPC tags not on this list will be ignored. Prior to 1.7, specifying a resource tag was optional.}
+    cidr_block=${14: # ! The cidr block representing the VPC, e.g. 10.0.0.0/16}
+    validate_certs=${15:yes #  When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.}
+    wait=${16:no #  wait for the VPC to be in state 'available' before returning}
+  ]]></content>
+  <tabTrigger>an-ec2_vpc</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

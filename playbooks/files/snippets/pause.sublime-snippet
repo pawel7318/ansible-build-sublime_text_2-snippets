@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  pause: >
+    seconds=${1:None #  Number of seconds to pause for.}
+    prompt=${2:None #  Optional text to use for the prompt message.}
+    minutes=${3:None #  Number of minutes to pause for.}
+  ]]></content>
+  <tabTrigger>an-pause</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

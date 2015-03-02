@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  jira: >
+    username=${1: # ! The username to log-in with.}
+    comment=${2: #  The comment text to add.}
+    description=${3: #  The issue description, where appropriate.}
+    fields=${4: #  This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API (possibly after merging with other required data, as when passed to create). See examples for more information, and the JIRA REST API for the structure required for various fields.}
+    uri=${5: # ! Base URI for the JIRA instance}
+    summary=${6: #  The issue summary, where appropriate.}
+    project=${7: #  The project for this operation. Required for issue creation.}
+    assignee=${8: #  Sets the assignee on create or transition operations. Note not all transitions will allow this.}
+    status=${9: #  The desired status; only relevant for the transition operation.}
+    issuetype=${10: #  The issue type, for issue creation.}
+    operation=${11: # ! The operation to perform.}
+    password=${12: # ! The password to log-in with.}
+    issue=${13: #  An existing issue key to operate on.}
+  ]]></content>
+  <tabTrigger>an-jira</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

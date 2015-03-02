@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  openvswitch_port: >
+    bridge=${1: # ! Name of bridge to manage}
+    state=${2:present #  Whether the port should exist}
+    port=${3: # ! Name of port to manage on the bridge}
+    timeout=${4:5 #  How long to wait for ovs-vswitchd to respond}
+  ]]></content>
+  <tabTrigger>an-openvswitch_port</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

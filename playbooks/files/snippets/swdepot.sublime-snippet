@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  swdepot: >
+    state=${1:None # ! whether to install (C(present), C(latest)), or remove (C(absent)) a package.}
+    depot=${2:None #  The source repository from which install or upgrade a package.}
+    name=${3:None # ! package name.}
+  ]]></content>
+  <tabTrigger>an-swdepot</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

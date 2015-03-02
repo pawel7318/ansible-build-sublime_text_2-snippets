@@ -1,0 +1,24 @@
+<snippet>
+  <content><![CDATA[
+  digital_ocean: >
+    unique_name=${1:no #  Bool, require unique hostnames.  By default, DigitalOcean allows multiple hosts with the same name.  Setting this to "yes" allows only one host per name.  Useful for idempotence.}
+    virtio=${2:yes #  Bool, turn on virtio driver in droplet for improved network and storage I/O.}
+    region_id=${3: #  Numeric, this is the id of the region you would like your server to be created in.}
+    size_id=${4: #  Numeric, this is the id of the size you would like the droplet created with.}
+    private_networking=${5:no #  Bool, add an additional, private network interface to droplet for inter-droplet communication.}
+    backups_enabled=${6:no #  Optional, Boolean, enables backups for your droplet.}
+    name=${7: #  String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key.}
+    image_id=${8: #  Numeric, this is the id of the image you would like the droplet created with.}
+    state=${9:present #  Indicate desired state of the target.}
+    wait_timeout=${10:300 #  How long before wait gives up, in seconds.}
+    command=${11:droplet #  Which target you want to operate on.}
+    client_id=${12: #  DigitalOcean manager id.}
+    id=${13: #  Numeric, the droplet id you want to operate on.}
+    ssh_key_ids=${14: #  Optional, comma separated list of ssh_key_ids that you would like to be added to the server.}
+    api_key=${15: #  DigitalOcean api key.}
+    ssh_pub_key=${16: #  The public SSH key you want to add to your account.}
+    wait=${17:yes #  Wait for the droplet to be in state 'running' before returning.  If wait is "no" an ip_address may not be returned.}
+  ]]></content>
+  <tabTrigger>an-digital_ocean</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

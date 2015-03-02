@@ -1,0 +1,20 @@
+---
+module: debug
+short_description: Print statements during execution
+description:
+     - This module prints statements during execution and can be useful
+       for debugging variables or expressions without necessarily halting
+       the playbook. Useful for debugging together with the 'when:' directive.
+
+version_added: "0.8"
+options:
+  msg:
+    description:
+      - The customized message that is printed. If omitted, prints a generic
+        message.
+    required: false
+    default: "Hello world!"
+  var:
+    description:
+      - A variable name to debug.  Mutually exclusive with the 'msg' option.
+author: Dag Wieers, Michael DeHaan

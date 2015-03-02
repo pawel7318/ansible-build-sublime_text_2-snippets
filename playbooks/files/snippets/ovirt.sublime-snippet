@@ -1,0 +1,27 @@
+<snippet>
+  <content><![CDATA[
+  ovirt: >
+    sdomain=${1:None #  the Storage Domain where you want to create the instance's disk on.}
+    instance_os=${2:None #  type of Operating System}
+    instance_mem=${3:None #  the instance's amount of memory in MB}
+    zone=${4:None #  deploy the image to this oVirt cluster}
+    instance_cores=${5:1 #  define the instance's number of cores}
+    disk_alloc=${6:thin #  define if disk is thin or preallocated}
+    instance_cpus=${7:1 #  the instance's number of cpu's}
+    image=${8:None #  template to use for the instance}
+    state=${9:present #  create, terminate or remove instances}
+    instance_name=${10:None # ! the name of the instance to use}
+    instance_disksize=${11:None #  size of the instance's disk in GB}
+    instance_nic=${12:None #  name of the network interface in oVirt/RHEV}
+    user=${13:None # ! the user to authenticate with}
+    instance_network=${14:rhevm #  the logical network the machine should belong to}
+    url=${15:None # ! the url of the oVirt instance}
+    instance_type=${16:server #  define if the instance is a server or desktop}
+    password=${17:None # ! password of the user to authenticate with}
+    region=${18:None #  the oVirt/RHEV datacenter where you want to deploy to}
+    resource_type=${19:None #  whether you want to deploy an image or create an instance from scratch.}
+    disk_int=${20:virtio #  interface type of the disk}
+  ]]></content>
+  <tabTrigger>an-ovirt</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

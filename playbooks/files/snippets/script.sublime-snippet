@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  script: >
+    creates=${1:None #  a filename, when it already exists, this step will B(not) be run.}
+    free_form=${2:None # ! path to the local script file followed by optional arguments.}
+    removes=${3:None #  a filename, when it does not exist, this step will B(not) be run.}
+  ]]></content>
+  <tabTrigger>an-script</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

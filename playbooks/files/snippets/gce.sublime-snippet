@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  gce: >
+    name=${1: #  identifier when working with a single instance}
+    zone=${2:us-central1-a # ! the GCE zone to use}
+    tags=${3:None #  a comma-separated list of tags to associate with the instance}
+    service_account_email=${4:None #  service account email}
+    image=${5:debian-7 #  image string to use for the instance}
+    persistent_boot_disk=${6:false #  if set, create the instance with a persistent boot disk}
+    pem_file=${7:None #  path to the pem file associated with the service account email}
+    network=${8:default #  name of the network, 'default' will be used if not specified}
+    state=${9:present #  desired state of the resource}
+    machine_type=${10:n1-standard-1 #  machine type to use for the instance, use 'n1-standard-1' by default}
+    project_id=${11:None #  your GCE project ID}
+    instance_names=${12:None #  a comma-separated list of instance names to create or destroy}
+    metadata=${13:None #  a hash/dictionary of custom data for the instance; '{"key":"value",...}'}
+  ]]></content>
+  <tabTrigger>an-gce</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

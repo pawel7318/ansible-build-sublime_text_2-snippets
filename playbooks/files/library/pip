@@ -1,0 +1,78 @@
+---
+module: pip
+short_description: Manages Python library dependencies.
+description:
+     - "Manage Python library dependencies. To use this module, one of the following keys is required: C(name)
+       or C(requirements)."
+version_added: "0.7"
+options:
+  name:
+    description:
+      - The name of a Python library to install or the url of the remote package.
+    required: false
+    default: null
+  version:
+    description:
+      - The version number to install of the Python library specified in the I(name) parameter
+    required: false
+    default: null
+  requirements:
+    description:
+      - The path to a pip requirements file
+    required: false
+    default: null
+  virtualenv:
+    description:
+      - An optional path to a I(virtualenv) directory to install into
+    required: false
+    default: null
+  virtualenv_site_packages:
+    version_added: "1.0"
+    description:
+      - Whether the virtual environment will inherit packages from the
+        global site-packages directory.  Note that if this setting is
+        changed on an already existing virtual environment it will not
+        have any effect, the environment must be deleted and newly
+        created.
+    required: false
+    default: "no"
+    choices: [ "yes", "no" ]
+  virtualenv_command:
+    version_aded: "1.1"
+    description:
+      - The command or a pathname to the command to create the virtual
+        environment with. For example C(pyvenv), C(virtualenv),
+        C(virtualenv2), C(~/bin/virtualenv), C(/usr/local/bin/virtualenv).
+    required: false
+    default: virtualenv
+  state:
+    description:
+      - The state of module
+    required: false
+    default: present
+    choices: [ "present", "absent", "latest" ]
+  extra_args:
+    description:
+      - Extra arguments passed to pip.
+    required: false
+    default: null
+    version_added: "1.0"
+  chdir:
+    description:
+      - cd into this directory before running the command
+    version_added: "1.3"
+    required: false
+    default: null
+  executable:
+    description:
+      - The explicit executable or a pathname to the executable to be used to
+        run pip for a specific version of Python installed in the system. For
+        example C(pip-3.3), if there are both Python 2.7 and 3.3 installations
+        in the system and you want to run pip for the Python 3.3 installation.
+    version_added: "1.3"
+    required: false
+    default: null
+notes:
+   - Please note that virtualenv (U(http://www.virtualenv.org/)) must be installed on the remote host if the virtualenv parameter is specified.
+requirements: [ "virtualenv", "pip" ]
+author: Matt Wright

@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+  librato_annotation: >
+    user=${1: # ! Librato account username}
+    name=${2: #  The annotation stream name}
+    links=${3: # ! See examples}
+    title=${4: # ! The title of an annotation is a string and may contain spaces}
+    start_time=${5: #  The unix timestamp indicating the the time at which the event referenced by this annotation started}
+    source=${6: #  A string which describes the originating source of an annotation when that annotation is tracked across multiple members of a population}
+    end_time=${7: #  The unix timestamp indicating the the time at which the event referenced by this annotation ended}
+    api_key=${8: # ! Librato account api key}
+    description=${9: #  The description contains extra meta-data about a particular annotation}
+  ]]></content>
+  <tabTrigger>an-librato_annotation</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

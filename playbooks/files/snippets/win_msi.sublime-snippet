@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  win_msi: >
+    creates=${1: #  Path to a file created by installing the MSI to prevent from attempting to reinstall the package on every run}
+    path=${2: # ! File system path to the MSI file to install}
+    state=${3:present #  Whether the MSI file should be installed or uninstalled}
+  ]]></content>
+  <tabTrigger>an-win_msi</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,29 @@
+---
+module: win_group
+version_added: "1.7"
+short_description: Add and remove local groups
+description:
+    - Add and remove local groups
+options:
+  name:
+    description:
+      - Name of the group
+    required: true
+    default: null
+    aliases: []
+  description:
+    description:
+      - Description of the group
+    required: false
+    default: null
+    aliases: []
+  state:
+    description:
+      - Create or remove the group
+    required: false
+    choices:
+      - present
+      - absent
+    default: present
+    aliases: []
+author: Chris Hoffman

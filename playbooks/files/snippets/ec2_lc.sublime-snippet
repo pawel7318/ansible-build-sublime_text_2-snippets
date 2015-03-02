@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  ec2_lc: >
+    spot_price=${1:None #  The spot price you are bidding. Only applies for an autoscaling group with spot instances.}
+    name=${2: # ! Unique name for configuration}
+    image_id=${3: #  The AMI unique identifier to be used for the group}
+    key_name=${4: #  The SSH key name to be used for access to managed instances}
+    region=${5: #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    user_data=${6:None #  opaque blob of data which is made available to the ec2 instance}
+    instance_type=${7:None # ! instance type to use for the instance}
+    state=${8: # ! register or deregister the instance}
+    volumes=${9:None #  a list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and type (and number of iops for io device type) must be specified for a new volume or a root volume, and may be passed for a snapshot volume. For any volume, a volume size less than 1 will be interpreted as a request not to create the volume.}
+    instance_monitoring=${10:False #  whether instances in group are launched with detailed monitoring.}
+    security_groups=${11: #  A list of security groups into which instances should be found}
+  ]]></content>
+  <tabTrigger>an-ec2_lc</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

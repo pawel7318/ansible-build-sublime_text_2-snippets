@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+  quantum_network: >
+    region_name=${1:None #  Name of the region}
+    provider_network_type=${2:None #  The type of the network to be created, gre, vlan, local. Available types depend on the plugin. The Quantum service decides if not specified.}
+    admin_state_up=${3:True #  Whether the state should be marked as up or down}
+    router_external=${4:False #  If 'yes', specifies that the virtual network is a external network (public).}
+    tenant_name=${5:None #  The name of the tenant for whom the network is created}
+    provider_physical_network=${6:None #  The physical network which would realize the virtual network for flat and vlan networks.}
+    login_tenant_name=${7:yes # ! The tenant name of the login user}
+    state=${8:present #  Indicate desired state of the resource}
+    auth_url=${9:http://127.0.0.1:35357/v2.0/ #  The keystone url for authentication}
+    login_password=${10:yes # ! Password of login user}
+    login_username=${11:admin # ! login username to authenticate to keystone}
+    shared=${12:False #  Whether this network is shared or not}
+    provider_segmentation_id=${13:None #  The id that has to be assigned to the network, in case of vlan networks that would be vlan id and for gre the tunnel id}
+    name=${14:None # ! Name to be assigned to the nework}
+  ]]></content>
+  <tabTrigger>an-quantum_network</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,52 @@
+---
+module: arista_interface
+version_added: "1.3"
+author: Peter Sprygada
+short_description: Manage physical Ethernet interfaces
+requirements:
+    - Arista EOS 4.10
+    - Netdev extension for EOS
+description:
+    - Manage physical Ethernet interface resources on Arista EOS network devices
+options:
+    interface_id:
+        description:
+            - the full name of the interface
+        required: true
+    logging:
+        description:
+            - enables or disables the syslog facility for this module
+        required: false
+        default: false
+        choices: [ 'true', 'false', 'yes', 'no' ]
+    admin:
+        description:
+            - controls the operational state of the interface
+        required: false
+        choices: [ 'up', 'down' ]
+    description:
+        description:
+            - a single line text string describing the interface
+        required: false
+    mtu:
+        description:
+            - configureds the maximum transmission unit for the interface
+        required: false
+        default: 1500
+    speed:
+        description:
+            - sets the interface speed setting
+        required: false
+        default: 'auto'
+        choices: [ 'auto', '100m', '1g', '10g' ]
+    duplex:
+        description:
+            - sets the interface duplex setting
+        required: false
+        default: 'auto'
+        choices: [ 'auto', 'half', 'full' ]
+notes:
+    - Requires EOS 4.10 or later 
+    - The Netdev extension for EOS must be installed and active in the 
+      available extensions (show extensions from the EOS CLI)
+    - See http://eos.aristanetworks.com for details

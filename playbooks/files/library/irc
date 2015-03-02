@@ -1,0 +1,51 @@
+---
+module: irc
+version_added: "1.2"
+short_description: Send a message to an IRC channel
+description:
+   - Send a message to an IRC channel. This is a very simplistic implementation.
+options:
+  server:
+    description:
+      - IRC server name/address
+    required: false
+    default: localhost
+  port:
+    description:
+      - IRC server port number
+    required: false
+    default: 6667
+  nick:
+    description:
+      - Nickname. May be shortened, depending on server's NICKLEN setting.
+    required: false
+    default: ansible
+  msg:
+    description:
+      - The message body.
+    required: true
+    default: null
+  color:
+    description:
+      - Text color for the message. ("none" is a valid option in 1.6 or later, in 1.6 and prior, the default color is black, not "none"). 
+    required: false
+    default: "none"
+    choices: [ "none", "yellow", "red", "green", "blue", "black" ]
+  channel:
+    description:
+      - Channel name
+    required: true
+  passwd:
+    description:
+      - Server password
+    required: false
+  timeout:
+    description:
+      - Timeout to use while waiting for successful registration and join
+        messages, this is to prevent an endless loop
+    default: 30
+    version_added: 1.5
+
+# informational: requirements for nodes
+requirements: [ socket ]
+author: Jan-Piet Mens, Matt Martz

@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+  pkgng: >
+    cached=${1:False #  use local package base or try to fetch an updated one}
+    state=${2:present #  state of the package}
+    pkgsite=${3: #  for pkgng versions before 1.1.4, specify packagesite to use for downloading packages, if not specified, use settings from /usr/local/etc/pkg.conf for newer pkgng versions, specify a the name of a repository configured in /usr/local/etc/pkg/repos}
+    name=${4: # ! name of package to install/remove}
+    annotation=${5: #  a comma-separated list of keyvalue-pairs of the form <+/-/:><key>[=<value>]. A '+' denotes adding an annotation, a '-' denotes removing an annotation, and ':' denotes modifying an annotation. If setting or modifying annotations, a value must be provided.}
+  ]]></content>
+  <tabTrigger>an-pkgng</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

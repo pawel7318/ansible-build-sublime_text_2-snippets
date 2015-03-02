@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+  linode: >
+    datacenter=${1:None #  datacenter to create an instance in (Linode Datacenter)}
+    password=${2:None #  root password to apply to a new server (auto generated if missing)}
+    name=${3:None #  Name to give the instance (alphanumeric, dashes, underscore)}
+    payment_term=${4:1 #  payment term to use for the instance (payment term in months)}
+    linode_id=${5:None #  Unique ID of a linode server}
+    state=${6:present #  Indicate desired state of the resource}
+    wait_timeout=${7:300 #  how long before wait gives up, in seconds}
+    swap=${8:512 #  swap size in MB}
+    wait=${9:no #  wait for the instance to be in state 'running' before returning}
+    distribution=${10:None #  distribution to use for the instance (Linode Distribution)}
+    api_key=${11:None #  Linode API key}
+    ssh_pub_key=${12:None #  SSH public key applied to root user}
+    plan=${13:None #  plan to use for the instance (Linode plan)}
+  ]]></content>
+  <tabTrigger>an-linode</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

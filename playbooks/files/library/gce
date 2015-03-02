@@ -1,0 +1,96 @@
+---
+module: gce
+version_added: "1.4"
+short_description: create or terminate GCE instances
+description:
+     - Creates or terminates Google Compute Engine (GCE) instances.  See
+       U(https://cloud.google.com/products/compute-engine) for an overview.
+       Full install/configuration instructions for the gce* modules can
+       be found in the comments of ansible/test/gce_tests.py.
+options:
+  image:
+    description:
+       - image string to use for the instance
+    required: false
+    default: "debian-7"
+    aliases: []
+  instance_names:
+    description:
+      - a comma-separated list of instance names to create or destroy
+    required: false
+    default: null
+    aliases: []
+  machine_type:
+    description:
+      - machine type to use for the instance, use 'n1-standard-1' by default
+    required: false
+    default: "n1-standard-1"
+    aliases: []
+  metadata:
+    description:
+      - a hash/dictionary of custom data for the instance; '{"key":"value",...}'
+    required: false
+    default: null
+    aliases: []
+  service_account_email:
+    version_added: 1.5.1
+    description:
+      - service account email
+    required: false
+    default: null
+    aliases: []
+  pem_file:
+    version_added: 1.5.1
+    description:
+      - path to the pem file associated with the service account email
+    required: false
+    default: null
+    aliases: []
+  project_id:
+    version_added: 1.5.1
+    description:
+      - your GCE project ID
+    required: false
+    default: null
+    aliases: []
+  name:
+    description:
+      - identifier when working with a single instance
+    required: false
+    aliases: []
+  network:
+    description:
+      - name of the network, 'default' will be used if not specified
+    required: false
+    default: "default"
+    aliases: []
+  persistent_boot_disk:
+    description:
+      - if set, create the instance with a persistent boot disk
+    required: false
+    default: "false"
+    aliases: []
+  state:
+    description:
+      - desired state of the resource
+    required: false
+    default: "present"
+    choices: ["active", "present", "absent", "deleted"]
+    aliases: []
+  tags:
+    description:
+      - a comma-separated list of tags to associate with the instance
+    required: false
+    default: null
+    aliases: []
+  zone:
+    description:
+      - the GCE zone to use
+    required: true
+    default: "us-central1-a"
+    aliases: []
+
+requirements: [ "libcloud" ]
+notes:
+  - Either I(name) or I(instance_names) is required.
+author: Eric Johnson <erjohnso@google.com>

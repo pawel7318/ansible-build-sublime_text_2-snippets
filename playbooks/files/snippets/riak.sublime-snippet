@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+  riak: >
+    target_node=${1:riak@127.0.0.1 #  The target node for certain operations (join, ping)}
+    validate_certs=${2:yes #  If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.}
+    wait_for_service=${3:None #  Waits for a riak service to come online before continuing.}
+    http_conn=${4:127.0.0.1:8098 #  The ip address and port that is listening for Riak HTTP queries}
+    wait_for_ring=${5:None #  Number of seconds to wait for all nodes to agree on the ring.}
+    wait_for_handoffs=${6:None #  Number of seconds to wait for handoffs to complete.}
+    command=${7:None #  The command you would like to perform against the cluster.}
+    config_dir=${8:/etc/riak #  The path to the riak configuration directory}
+  ]]></content>
+  <tabTrigger>an-riak</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

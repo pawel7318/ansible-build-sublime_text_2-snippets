@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+  ec2_ami: >
+    name=${1:None #  The name of the new image to create}
+    delete_snapshot=${2:None #  Whether or not to deleted an AMI while deregistering it.}
+    region=${3:None #  The AWS region to use.  Must be specified if ec2_url is not used. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    description=${4:None #  An optional human-readable string describing the contents and purpose of the AMI.}
+    no_reboot=${5:False #  An optional flag indicating that the bundling process should not attempt to shutdown the instance before bundling. If this flag is True, the responsibility of maintaining file system integrity is left to the owner of the instance. The default choice is "no".}
+    instance_id=${6:None #  instance id of the image to create}
+    image_id=${7:None #  Image ID to be deregistered.}
+    state=${8:present #  create or deregister/delete image}
+    wait_timeout=${9:300 #  how long before wait gives up, in seconds}
+    wait=${10:no #  wait for the AMI to be in state 'available' before returning.}
+  ]]></content>
+  <tabTrigger>an-ec2_ami</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

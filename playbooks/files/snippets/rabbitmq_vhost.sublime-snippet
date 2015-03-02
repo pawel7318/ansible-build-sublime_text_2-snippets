@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+  rabbitmq_vhost: >
+    node=${1:rabbit #  erlang node name of the rabbit we wish to configure}
+    tracing=${2:no #  Enable/disable tracing for a vhost}
+    state=${3:present #  The state of vhost}
+    name=${4:None # ! The name of the vhost to manage}
+  ]]></content>
+  <tabTrigger>an-rabbitmq_vhost</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

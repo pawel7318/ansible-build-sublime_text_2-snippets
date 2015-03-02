@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+  ec2_vol: >
+    name=${1:None #  volume Name tag if you wish to attach an existing volume (requires instance)}
+    zone=${2:None #  zone in which to create the volume, if unset uses the zone the instance is in (if set)}
+    volume_size=${3:None #  size of volume (in GB) to create.}
+    region=${4:None #  The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.}
+    device_name=${5:None #  device id to override device mapping. Assumes /dev/sdf for Linux/UNIX and /dev/xvdf for Windows.}
+    instance=${6:None #  instance ID if you wish to attach the volume.}
+    state=${7:present #  whether to ensure the volume is present or absent}
+    iops=${8:100 #  the provisioned IOPs you want to associate with this volume (integer).}
+    snapshot=${9:None #  snapshot ID on which to base the volume}
+    validate_certs=${10:yes #  When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.}
+    id=${11:None #  volume id if you wish to attach an existing volume (requires instance) or remove an existing volume}
+  ]]></content>
+  <tabTrigger>an-ec2_vol</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

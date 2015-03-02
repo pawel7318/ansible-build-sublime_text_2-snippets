@@ -1,0 +1,44 @@
+---
+module: ec2_key
+version_added: "1.5"
+short_description: maintain an ec2 key pair.
+description:
+    - maintains ec2 key pairs. This module has a dependency on python-boto >= 2.5
+options:
+  name:
+    description:
+      - Name of the key pair.
+    required: true
+  key_material:
+    description:
+      - Public key material.
+    required: false
+  region:
+    description:
+      - the EC2 region to use
+    required: false
+    default: null
+    aliases: []
+  state:
+    description:
+      - create or delete keypair
+    required: false
+    default: 'present'
+    aliases: []
+  wait:
+    description:
+      - Wait for the specified action to complete before returning.
+    required: false
+    default: false
+    aliases: []
+    version_added: "1.6"
+  wait_timeout:
+    description:
+      - How long before wait gives up, in seconds
+    required: false
+    default: 300
+    aliases: []
+    version_added: "1.6"
+
+extends_documentation_fragment: aws
+author: Vincent Viallet

@@ -1,0 +1,45 @@
+<snippet>
+  <content><![CDATA[
+  zfs: >
+    setuid=${1: #  The setuid property.}
+    zoned=${2: #  The zoned property.}
+    primarycache=${3: #  The primarycache property.}
+    logbias=${4: #  The logbias property.}
+    sync=${5: #  The sync property.}
+    dedup=${6: #  The dedup property.}
+    sharenfs=${7: #  The sharenfs property.}
+    sharesmb=${8: #  The sharesmb property.}
+    reservation=${9: #  The reservation property.}
+    mountpoint=${10: #  The mountpoint property.}
+    casesensitivity=${11: #  The casesensitivity property.}
+    utf8only=${12: #  The utf8only property.}
+    xattr=${13: #  The xattr property.}
+    compression=${14: #  The compression property.}
+    shareiscsi=${15: #  The shareiscsi property.}
+    snapdir=${16: #  The snapdir property.}
+    aclmode=${17: #  The aclmode property.}
+    copies=${18: #  The copies property.}
+    aclinherit=${19: #  The aclinherit property.}
+    readonly=${20: #  The readonly property.}
+    normalization=${21: #  The normalization property.}
+    jailed=${22: #  The jailed property.}
+    secondarycache=${23: #  The secondarycache property.}
+    exec=${24: #  The exec property.}
+    refquota=${25: #  The refquota property.}
+    quota=${26: #  The quota property.}
+    state=${27: # ! Whether to create (C(present)), or remove (C(absent)) a file system, snapshot or volume.}
+    volsize=${28: #  The volsize property.}
+    vscan=${29: #  The vscan property.}
+    canmount=${30: #  The canmount property.}
+    atime=${31: #  The atime property.}
+    recordsize=${32: #  The recordsize property.}
+    volblocksize=${33: #  The volblocksize property.}
+    name=${34: # ! File system, snapshot or volume name e.g. C(rpool/myfs)}
+    checksum=${35: #  The checksum property.}
+    devices=${36: #  The devices property.}
+    refreservation=${37: #  The refreservation property.}
+    nbmand=${38: #  The nbmand property.}
+  ]]></content>
+  <tabTrigger>an-zfs</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

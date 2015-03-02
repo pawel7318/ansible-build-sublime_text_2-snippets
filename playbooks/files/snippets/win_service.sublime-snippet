@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  win_service: >
+    start_mode=${1: #  Set the startup type for the service}
+    state=${2:None #  C(started)/C(stopped) are idempotent actions that will not run commands unless necessary.  C(restarted) will always bounce the service.}
+    name=${3:None # ! Name of the service}
+  ]]></content>
+  <tabTrigger>an-win_service</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

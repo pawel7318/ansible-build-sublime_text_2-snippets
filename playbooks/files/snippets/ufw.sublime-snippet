@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+  ufw: >
+    insert=${1: #  Insert the corresponding rule as rule number NUM}
+    direction=${2: #  Select direction for a rule or default policy command.}
+    from_port=${3: #  Source port.}
+    logging=${4: #  Toggles logging. Logged packets use the LOG_KERN syslog facility.}
+    log=${5: #  Log new connections matched to this rule}
+    proto=${6: #  TCP/IP protocol.}
+    to_port=${7: #  Destination port.}
+    from_ip=${8:any #  Source IP address.}
+    rule=${9: #  Add firewall rule}
+    state=${10: #  C(enabled) reloads firewall and enables firewall on boot.}
+    policy=${11: #  Change the default policy for incoming or outgoing traffic.}
+    to_ip=${12:any #  Destination IP address.}
+    delete=${13: #  Delete rule.}
+    name=${14: #  Use profile located in C(/etc/ufw/applications.d)}
+  ]]></content>
+  <tabTrigger>an-ufw</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>

@@ -1,0 +1,36 @@
+---
+module: ec2_snapshot
+short_description: creates a snapshot from an existing volume
+description:
+    - creates an EC2 snapshot from an existing EBS volume
+version_added: "1.5"
+options:
+  region:
+    description:
+      - The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+    required: false
+    aliases: ['aws_region', 'ec2_region']
+  volume_id:
+    description:
+      - volume from which to take the snapshot
+    required: false
+  description:
+    description:
+      - description to be applied to the snapshot
+    required: false
+  instance_id:
+    description:
+    - instance that has the required volume to snapshot mounted
+    required: false
+  device_name:
+    description:
+    - device name of a mounted volume to be snapshotted
+    required: false
+  snapshot_tags:
+    description:
+      - a hash/dictionary of tags to add to the snapshot
+    required: false
+    version_added: "1.6"
+
+author: Will Thames
+extends_documentation_fragment: aws

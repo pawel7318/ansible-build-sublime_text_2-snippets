@@ -1,0 +1,20 @@
+---
+module: monit
+short_description: Manage the state of a program monitored via Monit
+description:
+     - Manage the state of a program monitored via I(Monit)
+version_added: "1.2"
+options:
+  name:
+    description:
+      - The name of the I(monit) program/process to manage
+    required: true
+    default: null
+  state:
+    description:
+      - The state of service
+    required: true
+    default: null
+    choices: [ "present", "started", "stopped", "restarted", "monitored", "unmonitored", "reloaded" ]
+requirements: [ ]
+author: Darryl Stoflet

@@ -1,0 +1,66 @@
+---
+module: mongodb_user
+short_description: Adds or removes a user from a MongoDB database.
+description:
+    - Adds or removes a user from a MongoDB database.
+version_added: "1.1"
+options:
+    login_user:
+        description:
+            - The username used to authenticate with
+        required: false
+        default: null
+    login_password:
+        description:
+            - The password used to authenticate with
+        required: false
+        default: null
+    login_host:
+        description:
+            - The host running the database
+        required: false
+        default: localhost
+    login_port:
+        description:
+            - The port to connect to
+        required: false
+        default: 27017
+    replica_set:
+        version_added: "1.6"
+        description:
+            - Replica set to connect to (automatically connects to primary for writes)
+        required: false
+        default: null
+    database:
+        description:
+            - The name of the database to add/remove the user from
+        required: true
+    user:
+        description:
+            - The name of the user to add or remove
+        required: true
+        default: null
+    password:
+        description:
+            - The password to use for the user
+        required: false
+        default: null
+    roles:
+        version_added: "1.3"
+        description:
+            - "The database user roles valid values are one or more of the following: read, 'readWrite', 'dbAdmin', 'userAdmin', 'clusterAdmin', 'readAnyDatabase', 'readWriteAnyDatabase', 'userAdminAnyDatabase', 'dbAdminAnyDatabase'"
+            - This param requires mongodb 2.4+ and pymongo 2.5+
+        required: false
+        default: "readWrite"
+    state:
+        state:
+        description:
+            - The database user state
+        required: false
+        default: present
+        choices: [ "present", "absent" ]
+notes:
+    - Requires the pymongo Python package on the remote host, version 2.4.2+. This
+      can be installed using pip or the OS package manager. @see http://api.mongodb.org/python/current/installation.html
+requirements: [ "pymongo" ]
+author: Elliott Foster

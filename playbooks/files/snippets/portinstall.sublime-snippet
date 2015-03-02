@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+  portinstall: >
+    state=${1:present #  state of the package}
+    use_packages=${2:True #  use packages instead of ports whenever available}
+    name=${3: # ! name of package to install/remove}
+  ]]></content>
+  <tabTrigger>an-portinstall</tabTrigger>
+  <scope>source.yaml</scope>
+</snippet>
